@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bloccit</title>
+    <%= csrf_meta_tags %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-sm">
+        <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#socialContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa fa-align-justify"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="socialContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-facebook-square"></i><span class="sr-only">(current)</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-twitter-square"></i><span class="sr-only">(current)</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-instagram"></i><span class="sr-only">(current)</span></a></li>
+          </ul>
+
+           <ul class="navbar-nav ml-auto">
+            <% if current_user %>
+              <li class="nav-item"><%= current_user.name %> - <%= link_to "Sign Out", session_path(current_user), method: :delete %></li>
+            <% else %>
+              <li class="nav-item"><%= link_to "Sign In", new_session_path %></li>
+              |  
+              <li class="nav-item"><%= link_to "Sign Up", new_user_path %></li>
+            <% end %>
+          </ul>
+        </div>
+      </nav>
+      <nav class="navbar navbar-second navbar-expand-lg">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa fa-align-justify"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Навчання
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Гурти і Курси
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Шкільне Життя
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <!--
+      <ul class="nav nav-tabs">
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "Topics", topics_path %></li>
+
+       
+      </ul>
+      -->
+      <% if flash[:notice] %>
+        <div class="alert alert-success">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= flash[:notice] %>
+        </div>
+      <% elsif flash.now[:alert] %>
+        <div class="alert alert-danger">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= flash.now[:alert] %>
+        </div>
+      <% elsif flash[:alert] %>
+        <div class="alert alert-waring">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= flash[:alert] %>
+        </div>
+    <div class="container-fluid"> 
+      
+      <% end %>
+    <%= yield %>
+    </div>
+  </body>
+</html>
