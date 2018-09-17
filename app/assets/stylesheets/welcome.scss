@@ -4,6 +4,12 @@
 
 * {box-sizing:border-box}
 
+@font-face {
+  font-family: 'Academic';
+  src: url('academic.ttf') format('truetype');
+  
+  }
+
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
@@ -100,15 +106,89 @@
 
 .index-img-container  {
     position: relative;
+    .img-desc {
+      position: absolute;
+      right: 100px;
+      top: 80px;
+      font-size: 3.5em;
+      z-index: 1;
+      color: white;
+      background-color:lightblue;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      padding: 40px;
+      .pic-main-title {
+        z-index: 2;
+      }
+      .pic-main-desc {
+        margin-top: -40px;
+        z-index: 2;
+      }
+      .pic-main-end {
+        margin-top: -50px;
+        font-family: Snell Roundhand;
+        z-index: 2;
+        text-align: right;
+        
+      }
+  }
+  .title-image {
+    filter: grayscale(25%);
+    width: 100%;
+    height: auto;
+  }
 }
-.img-desc {
+
+@media screen and (max-width: 400px) {
+  .img-desc {
     position: absolute;
-    right: 100px;
-    top: 80px;
-    font-size: 3.5em;
-    border: 1px solid white;
-    color: white;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    background: #e5e6e8;
-    opacity: .25;
+    top: 10px !important;
+    right: 10px !important;
+    display: block;
+    width: 175px;
+    .pic-main-title {
+      font-size: 20px;
+      position: absolute;
+      top: 2px;
+    }
+    .pic-main-desc {
+      font-size: 15px;
+      position: absolute;
+      top: 70px;
+    }
+    .pic-main-end {
+      font-size: 15px;
+      position: absolute;
+      top: 100px;
+    }
+  }
+}
+
+
+
+.announcements {
+  width: 100%;
+  min-height: 300px;
+}
+
+#friend-column1 {
+  height: 200px;
+  background-color: orange;
+  z-index: 1;
+  text-align: center;
+}
+
+#friend-column2 {
+  height: 200px;
+  background-color: blue;
+}
+
+#friend-column3 {
+  height: 200px;
+  background-color: red;
+}
+
+.cal {
+  color: white;
+  z-index: 2;
+  font-size: 6em;
 }
