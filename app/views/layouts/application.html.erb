@@ -10,6 +10,7 @@
   </head>
 
   <body>
+    <% unless controller_name == 'intro'%>
     <nav class="navbar navbar-expand-sm">
         <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#socialContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fa fa-align-justify"></i>
@@ -79,6 +80,7 @@
           </ul>
         </div>
       </nav>
+      <% end %>
       <!--
       <ul class="nav nav-tabs">
         <li><%= link_to "Home", root_path %></li>

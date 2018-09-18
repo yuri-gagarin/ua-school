@@ -10,6 +10,8 @@
   
   }
 
+
+
 /* Slideshow container */
 .slideshow-container {
   max-width: 1000px;
@@ -137,33 +139,6 @@
     height: auto;
   }
 }
-
-@media screen and (max-width: 400px) {
-  .img-desc {
-    position: absolute;
-    top: 10px !important;
-    right: 10px !important;
-    display: block;
-    width: 175px;
-    .pic-main-title {
-      font-size: 20px;
-      position: absolute;
-      top: 2px;
-    }
-    .pic-main-desc {
-      font-size: 15px;
-      position: absolute;
-      top: 70px;
-    }
-    .pic-main-end {
-      font-size: 15px;
-      position: absolute;
-      top: 100px;
-    }
-  }
-}
-
-
 
 .announcements {
   width: 100%;

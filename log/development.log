@@ -4957,3 +4957,773 @@ Processing by WelcomeController#index as HTML
 Completed 200 OK in 3000ms (Views: 2996.1ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/" for ::1 at 2018-09-18 18:27:57 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (5.7ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 4985ms (Views: 4971.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 19:04:00 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 5112ms (Views: 5107.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 19:04:54 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 59ms (Views: 54.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 19:06:19 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 49ms (Views: 45.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 19:07:22 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 52ms (Views: 48.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 19:07:31 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 46ms (Views: 43.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 19:09:46 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 125ms (Views: 122.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 19:10:34 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 58ms (Views: 54.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 19:12:33 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 4293ms (Views: 4289.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 19:26:18 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 70ms (Views: 66.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:08:58 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 4621ms (Views: 4613.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:12:40 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 4388ms (Views: 4384.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:12:48 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 51ms (Views: 46.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:14:16 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 68ms (Views: 64.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:14:35 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 47ms (Views: 44.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:15:47 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 58ms (Views: 54.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:16:12 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 51ms (Views: 48.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:16:14 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 49ms (Views: 45.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:16:34 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 4168ms (Views: 4163.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:18:58 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 59ms (Views: 56.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:19:06 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 53ms (Views: 49.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:25:48 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 4246ms (Views: 4243.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for ::1 at 2018-09-18 20:25:56 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 67ms (Views: 61.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/index" for ::1 at 2018-09-18 20:27:31 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 4373ms (Views: 4370.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:28:47 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 4090ms (Views: 4087.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:29:27 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 56ms (Views: 52.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/index" for ::1 at 2018-09-18 20:29:30 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 75ms (Views: 70.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/index" for ::1 at 2018-09-18 20:31:29 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 4102ms (Views: 4099.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:31:37 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 62ms (Views: 58.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:32:37 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 138ms (Views: 135.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:33:50 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 4059ms (Views: 4056.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:35:25 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3910ms (Views: 3906.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:35:42 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 51ms (Views: 47.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:36:56 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 47ms (Views: 44.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:37:15 +0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 6174ms (Views: 6160.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:39:09 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3915ms (Views: 3911.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/index" for ::1 at 2018-09-18 20:39:27 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 64ms (Views: 60.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/index" for ::1 at 2018-09-18 20:40:46 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3930ms (Views: 3928.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:40:59 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 53ms (Views: 49.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:41:52 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 49ms (Views: 45.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:42:05 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3821ms (Views: 3818.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:42:56 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 4145ms (Views: 4142.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:43:55 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 3810ms (Views: 3804.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:45:51 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 131ms (Views: 127.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index" for ::1 at 2018-09-18 20:45:55 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 63ms (Views: 59.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:48:10 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 82ms (Views: 79.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:57:32 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 4233ms (Views: 4224.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:58:55 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 4035ms (Views: 4032.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:59:20 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 42ms (Views: 39.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 20:59:56 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 44ms (Views: 42.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index" for ::1 at 2018-09-18 20:59:58 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 70ms (Views: 63.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:01:45 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 3613ms (Views: 3610.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:02:15 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3705ms (Views: 3702.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:03:12 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 3656ms (Views: 3652.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:03:37 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 3858ms (Views: 3855.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:04:08 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 4085ms (Views: 4082.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:04:23 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3879ms (Views: 3876.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:04:46 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3797ms (Views: 3793.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:05:35 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3747ms (Views: 3744.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:07:12 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 4023ms (Views: 4019.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:07:38 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3836ms (Views: 3833.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:11:42 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 55ms (Views: 51.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index" for ::1 at 2018-09-18 21:12:20 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 65ms (Views: 59.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:13:17 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 41ms (Views: 38.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:13:43 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 40ms (Views: 38.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:18:32 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 3662ms (Views: 3660.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:19:08 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3584ms (Views: 3581.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:19:39 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3597ms (Views: 3594.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:20:56 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3583ms (Views: 3581.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index" for ::1 at 2018-09-18 21:21:09 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 64ms (Views: 61.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:22:51 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3793ms (Views: 3790.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:23:07 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3283ms (Views: 3281.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:23:48 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3646ms (Views: 3643.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:24:41 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3605ms (Views: 3602.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:24:52 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3577ms (Views: 3574.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:25:09 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3974ms (Views: 3972.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:26:58 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3960ms (Views: 3957.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:27:45 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 3687ms (Views: 3684.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:28:50 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3951ms (Views: 3947.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:29:50 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3805ms (Views: 3802.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:33:08 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 4058ms (Views: 4054.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:34:01 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3832ms (Views: 3828.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:34:41 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3726ms (Views: 3722.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:35:05 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3681ms (Views: 3678.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:37:38 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 4010ms (Views: 4004.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:37:52 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 45ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:38:17 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 3719ms (Views: 3716.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:38:52 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3922ms (Views: 3918.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:40:19 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3861ms (Views: 3856.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:40:56 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3881ms (Views: 3878.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:41:30 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3842ms (Views: 3838.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:42:57 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3750ms (Views: 3747.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:43:54 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3799ms (Views: 3796.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:45:16 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3679ms (Views: 3675.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:46:53 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3703ms (Views: 3700.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:47:32 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3647ms (Views: 3645.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:48:07 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3948ms (Views: 3945.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/index" for ::1 at 2018-09-18 21:49:39 +0200
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (0.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+Completed 200 OK in 69ms (Views: 64.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:51:05 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 68ms (Views: 62.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 21:51:10 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 52ms (Views: 50.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 22:01:47 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 4049ms (Views: 4047.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 22:03:04 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3889ms (Views: 3886.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2018-09-18 22:03:29 +0200
+Processing by IntroController#intro as HTML
+  Rendering intro/intro.html.erb within layouts/application
+  Rendered intro/intro.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3951ms (Views: 3948.5ms | ActiveRecord: 0.0ms)
+
+

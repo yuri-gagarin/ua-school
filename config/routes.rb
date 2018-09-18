@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+
   resources :topics do
     resources :posts, except: [:index]
     resources :sponsored_posts, except: [:index]
@@ -18,7 +19,8 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
 
   get 'about' => 'welcome#about'
+  get 'index' => 'welcome#index'
 
-  root 'welcome#index'
+  root 'intro#intro'
 
 end

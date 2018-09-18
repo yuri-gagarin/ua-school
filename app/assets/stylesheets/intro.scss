@@ -1,0 +1,58 @@
+// Place all the styles related to the Intro controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.intro {
+    border: 3px solid #e0cc1f;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/intro/introSplash.jpg') no-repeat 50% 50%;
+    background-size: cover;
+    display: table;
+    top: 0;
+    opacity: 50%;
+    .inner {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        padding-bottom: 25%;
+        color: white;
+        text-shadow: 2px 2px #938401;
+        .title1{
+            font-size: 400%;
+            font-family: Brush Script MT;
+        }
+        .title2{
+            font-size: 650%;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            text-shadow: 3px 3px  #938401;
+        }
+        .title3{
+            font-size: 300%;
+            font-style: bold;
+            font-family: Snell Roundhand;
+        }
+        .enter-btn {
+            font-size: 400%;
+            font-family: 'Academic';
+            color: #e0cc1f;
+            border: 3px solid#e0cc1f;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            &:hover {
+                color: #ffe600;
+                border: 3px solid #ffe60c;
+            }
+        }
+    }
+}
+
