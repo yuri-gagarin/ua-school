@@ -105,41 +105,6 @@
 }
 
 /* caruousel image description */
-
-.index-img-container  {
-    position: relative;
-    .img-desc {
-      position: absolute;
-      right: 100px;
-      top: 80px;
-      font-size: 3.5em;
-      z-index: 1;
-      color: white;
-      background-color:lightblue;
-      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-      padding: 40px;
-      .pic-main-title {
-        z-index: 2;
-      }
-      .pic-main-desc {
-        margin-top: -40px;
-        z-index: 2;
-      }
-      .pic-main-end {
-        margin-top: -50px;
-        font-family: Snell Roundhand;
-        z-index: 2;
-        text-align: right;
-        
-      }
-  }
-  .title-image {
-    filter: grayscale(25%);
-    width: 100%;
-    height: auto;
-  }
-}
-
 .announcements {
   width: 100%;
   min-height: 300px;
