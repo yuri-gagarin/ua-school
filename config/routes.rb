@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+  mount Ckeditor::Engine => '/ckeditor'
+  resources :courses
   resources :topics do
     resources :posts, except: [:index]
     resources :sponsored_posts, except: [:index]
