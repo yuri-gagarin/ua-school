@@ -22,13 +22,15 @@
 @import "./courses.scss";
 
 body {
-  background-color: #f9cf00;
+  background-color: wheat;
 }
 
 .user-info {
   margin-top: 9px;
 }
-
+.navbar-first {
+  background-color: #f9cf00;
+}
 .navbar-second {
  background-color:#4484ce;
  border-color: #E7E7E7;

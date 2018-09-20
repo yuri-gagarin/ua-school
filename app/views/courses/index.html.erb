@@ -2,10 +2,9 @@
 <h1 class="course-title">Courses</h1>
 <div class="container-fluid course-container">
   <% @courses.each do |course| %>
-    <div class="container-fluid">
       <div class="row course-row">
 
-        <div class="col-sm-9 course">
+        <div class="col-sm-9 course bottom-shadow">
           <div class="course-div">
             <h1><%= course.name %></h1>
             <p><%= raw(course.description) %>
@@ -13,27 +12,33 @@
             <div class="course-details">
               <%= link_to 'Details', course_path(course.id), {class: 'course-details-link'} %>
             </div>
-          </div>
-          
+          </div>    
         </div>
 
-        <div class="col-sm-3">
-          <table class="course-controls">
-            <thead>
-              <tr>
-                <th colspan="3">Course Controls</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><%= link_to 'Show', course %></td>
-                <td><%= link_to 'Edit', edit_course_path(course) %></td>
-                <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+        <% if @current_user && (@current_user.admin?) %>
+          <div class="col-sm-3 course-controls bottom-shadow">
+            <div class="user-info-section">
+              <div class="user-heading">
+                <h3>Welcome <%= @current_user.name %></h3>
+                <h5>You are <%= @current_user.role %></h5>
+              </div>
+              <div class="user-pic">
+                <img src="assets/stock/stock_man.jpg" class="img-thumbnail" alt="man">
+              </div>
+
+              <div class="user-description">
+              </div>
+
+            </div>
+
+            <div class="course-controls-table">
+              <h2>Course Controls</h2>
+                <%= link_to 'Show', course, class: 'show-course-btn' %>
+                <%= link_to 'Edit', edit_course_path(course), class: 'edit-course-btn' %>
+                <%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-course-btn' %>
+            </div>
+          </div>
+        <% end %>
 
     </div>
   <% end %>

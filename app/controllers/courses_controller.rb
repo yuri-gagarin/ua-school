@@ -4,6 +4,7 @@ class CoursesController < ApplicationController
 
   def index
     @courses = Course.all;
+    @current_user = current_user || nil
   end
 
   def new 
