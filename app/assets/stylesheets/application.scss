@@ -28,38 +28,55 @@ html, body {
   width: 100%;
 }
 
-.user-info {
-  margin-top: 9px;
-}
-.navbar-first {
-  background-color: #f9cf00;
-  min-height: 10px;
-  #socialContent {
-    padding: 0 0;
-    height: 20px;
-  }
-  .social-btn {
-    font-size: 25px;
-  }
-  .login-control {
-    margin: 3px 10px;
-    color: #f9cf00;
-    border-radius: 5px;
-    background-color: #4484ce;
-    padding: 2.5px 7.5px;
-    text-decoration: none;
-    font-size: 85%;
-    &:hover {
-      background-color: #0b3f7a
+
+@media only screen and (min-width: 576px) {
+  .navbar-first {
+    min-height: 10px;
+    #socialContent {
+      padding: 0 0;
+      height: 20px;
+    }
+    .social-btn {
+      font-size: 25px;
+    }
+    .login-control {
+      margin: 3px 10px;
+      color: #f9cf00;
+      border-radius: 5px;
+      background-color: #4484ce;
+      padding: 2.5px 7.5px;
+      text-decoration: none;
+      font-size: 85%;
+      &:hover {
+        background-color: #0b3f7a
+      }
     }
   }
+  
+
+}
+
+@media only screen and (min-width: 768px) {
+  .navbar-second {
+    max-height: 65px;
+  }  
+}
+@media only screen and (max-width: 768px) {
+  .navbar-second {
+    .navbar-brand {
+      display: none;
+    }
+  }
+}
+
+.navbar-first {
+  background-color: #f9cf00
+
 }
 
 .navbar-second {
   background-color:#4484ce;
   border-color: #E7E7E7;
-  max-height: 55px;
-  z-index: 1000;
   position: relative;
   .navbar-toggler {
     color: white;
@@ -70,10 +87,15 @@ html, body {
       background-color:#6492c7;
     }
   }
-  .logo {
+  .navbar-brand {
     width: 100px;
     height: 100px;
     border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    z-index: 2;
   }
 }
 
@@ -104,4 +126,6 @@ html, body {
   transition:padding 0.2s linear;  
   background-color: #0b3f7a;
 }
+
+
 

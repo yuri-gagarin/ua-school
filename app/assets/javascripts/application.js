@@ -20,7 +20,6 @@
 
 $(function() {
     console.log('here');
-    /*
     var stickyToggle = function(sticky, stickyWrapper, scrollElement) {
         var stickyHeight = sticky.outerHeight();
         var stickyTop = stickyWrapper.offset().top;
@@ -49,6 +48,6 @@ $(function() {
         // On page load
         stickyToggle(sticky, stickyWrapper, $(window));
       });
-      */
+      
 
-})
+});
