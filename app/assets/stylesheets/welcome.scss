@@ -10,7 +10,10 @@
   
   }
 
-
+.main-container {
+  padding: 0%;
+  position: relative;
+}
 
 /* Slideshow container */
 .slideshow-container {
@@ -104,31 +107,84 @@
   to {opacity: 1}
 }
 
-/* caruousel image description */
-.announcements {
+#frontCarousel {
+  margin: 0;
+  width: 100%;
+}
+//announcements front page
+
+.announcements-row {
+  background-color: #05442c;
   width: 100%;
   min-height: 300px;
+  margin: 0 0;
+  .card-group {
+    margin: 0%;
+    width: 100%;
+  }
 }
 
-#friend-column1 {
+
+#schedule {
   height: 200px;
-  background-color: orange;
-  z-index: 1;
+  background-color: #007849;
   text-align: center;
+  i {
+    margin-top: 20px;
+    color: white;
+    font-size: 6em;
+  }
+  p {
+    margin-top: 10px;
+    font-family: "Arial Black";
+    color: white;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: #00b871;
+  }
 }
 
-#friend-column2 {
+#workshops {
   height: 200px;
-  background-color: blue;
+  width: 100%;
+  z-index: 1;
+  background-color: #fece00;
+  text-align: center;
+  i {
+    margin-top: 20px;
+    color: white;
+    font-size: 6em;
+  }
+  p {
+    margin-top: 10px;
+    font-family: "Arial Black";
+    color: white;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: #fcdb47;
+  }
 }
 
-#friend-column3 {
+
+#friends {
   height: 200px;
-  background-color: red;
+  background-color: #0375b4;
+  text-align: center;
+  i {
+    margin-top: 20px;
+    color: white;
+    font-size: 6em;
+  }
+  p {
+    margin-top: 10px;
+    font-family: "Arial Black";
+    color: white;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: #268bc2;
+  }
 }
 
-.cal {
-  color: white;
-  z-index: 2;
-  font-size: 6em;
-}

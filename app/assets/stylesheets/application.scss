@@ -21,8 +21,11 @@
 @import "./welcome.scss";
 @import "./courses.scss";
 
-body {
-  background-color: wheat;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .user-info {
@@ -30,17 +33,75 @@ body {
 }
 .navbar-first {
   background-color: #f9cf00;
+  min-height: 10px;
+  #socialContent {
+    padding: 0 0;
+    height: 20px;
+  }
+  .social-btn {
+    font-size: 25px;
+  }
+  .login-control {
+    margin: 3px 10px;
+    color: #f9cf00;
+    border-radius: 5px;
+    background-color: #4484ce;
+    padding: 2.5px 7.5px;
+    text-decoration: none;
+    font-size: 85%;
+    &:hover {
+      background-color: #0b3f7a
+    }
+  }
 }
+
 .navbar-second {
- background-color:#4484ce;
- border-color: #E7E7E7;
- .navbar-toggler {
-   color: white;
- }
- .navbar-brand{
-   color: white;
- }
- .nav-link {
-   color: white;
- }
+  background-color:#4484ce;
+  border-color: #E7E7E7;
+  max-height: 55px;
+  z-index: 1000;
+  position: relative;
+  .navbar-toggler {
+    color: white;
+  }
+  .nav-link {
+    color: white;
+    &:hover {
+      background-color:#6492c7;
+    }
+  }
+  .logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
 }
+
+.sticky.is-sticky {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+
+.navbar-second { 
+  -webkit-transition:padding 0.2s ease;
+  -moz-transition:padding 0.2s ease; 
+  -o-transition:padding 0.2s ease;        
+  transition:padding 0.2s ease;  
+}
+
+
+.sticky.is-sticky {
+  padding-top: 0.2em !important;
+  padding-bottom: 0.2em !important;
+  -webkit-transition:padding 0.2s linear;
+  -moz-transition:padding 0.2s linear;  
+  -o-transition:padding 0.2s linear;         
+  transition:padding 0.2s linear;  
+  background-color: #0b3f7a;
+}
+
