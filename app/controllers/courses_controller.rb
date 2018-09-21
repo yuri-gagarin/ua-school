@@ -9,10 +9,12 @@ class CoursesController < ApplicationController
 
   def new 
     @course = Course.new
+    @course_attachments = @course.course_attachments.build
   end
 
   def show
     @course = Course.find(params[:id])
+    @course_attachments = @course.course_attachments.all
   end
 
   def create
@@ -21,6 +23,10 @@ class CoursesController < ApplicationController
     @course.user = current_user
 
     if @course.save
+      params[:course_attachments]['image'].each do |img|
+        @course_attachment = @course.course_attachments.create!(course_id: @course.id, image: img)
+
+      end
       flash[:notice] = "Course Was Saved"
       redirect_to courses_path;
     else
@@ -37,9 +43,8 @@ class CoursesController < ApplicationController
 
   def update 
     @course = Course.find(params[:id])
-    @course = assign_attributes(course_params)
 
-    if @course.save  
+    if @course.update(course_params)
       flash[:notice] = "Success!"
       redirect_to courses_path
     else  
@@ -63,7 +68,7 @@ class CoursesController < ApplicationController
   private
 
   def course_params 
-    params.require(:course).permit(:name, :description)
+    params.require(:course).permit(:name, :description, course_attachment_attributes: [:id, :course_id, :image])
   end
 
   def authorize_user

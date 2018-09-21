@@ -14,6 +14,11 @@
         position: relative;
         min-width: 100%;
         height: 100%;
+        .course-index-img{
+            height: 100px;
+            width: 100px;
+            display: inline-block;
+        }
         .course-details {
             position: absolute;
             bottom: 30px;

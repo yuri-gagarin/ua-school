@@ -8,6 +8,11 @@
           <div class="course-div">
             <h1><%= course.name %></h1>
             <p><%= raw(course.description) %>
+            <% if !course.course_attachments.empty? %>
+              <% course.course_attachments.each do |attachment| %>
+                <img src="<%=attachment.image %>" class="course-index-img">
+              <% end %>
+            <% end %>
 
             <div class="course-details">
               <%= link_to 'Details', course_path(course.id), {class: 'course-details-link'} %>

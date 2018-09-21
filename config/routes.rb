@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
 
+  resources :course_attachments
   mount Ckeditor::Engine => '/ckeditor'
   resources :courses
   resources :topics do

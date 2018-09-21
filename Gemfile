@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -40,7 +40,9 @@ group :production do
 
  gem 'font-awesome-rails', github: "bokmann/font-awesome-rails", branch: "master"
 
+ #uploader and cloudinary
  gem 'carrierwave'
  gem 'mini_magick'
+ gem 'cloudinary'
  #text editor
  gem 'ckeditor'

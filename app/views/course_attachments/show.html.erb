@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Course:</strong>
+  <%= @course_attachment.course_id %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @course_attachment.image %>
+</p>
+
+<%= link_to 'Edit', edit_course_attachment_path(@course_attachment) %> |
+<%= link_to 'Back', course_attachments_path %>
