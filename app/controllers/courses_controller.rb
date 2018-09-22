@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
-  before_action :require_sign_in, except: [:index, :show]
-  before_action :authorize_user, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authorize_admin, except: [:index, :show]
 
   def index
     @courses = Course.all;
@@ -18,7 +18,7 @@ class CoursesController < ApplicationController
   end
 
   def create
- 
+
     @course = Course.new(course_params)
     @course.user = current_user
 

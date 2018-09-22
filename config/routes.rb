@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
 
+  devise_for :users
   resources :course_attachments
   mount Ckeditor::Engine => '/ckeditor'
   resources :courses
@@ -17,13 +18,9 @@ Rails.application.routes.draw do
     post '/down-vote' => 'votes#down_vote', as: :down_vote
   end
 
-  resources :users, only: [:new, :create]
-
-  resources :sessions, only: [:new, :create, :destroy]
-
   get 'about' => 'welcome#about'
   get 'index' => 'welcome#index'
 
-  root 'intro#intro'
+  root 'welcome#index'
 
 end

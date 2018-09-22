@@ -5,4 +5,13 @@ module ApplicationHelper
     css_class << ' has-error' if errors.any?
     content_tag :div, capture(&block), class: css_class
   end
+
+  def authorize_admin
+    current_user.admin?
+  end
+
+  def autorize_teacher
+    current_user.teacher?
+  end
+  
 end

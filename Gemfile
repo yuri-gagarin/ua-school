@@ -40,6 +40,9 @@ group :production do
 
  gem 'font-awesome-rails', github: "bokmann/font-awesome-rails", branch: "master"
 
+ #devise authentication
+ gem 'devise'
+ 
  #uploader and cloudinary
  gem 'carrierwave'
  gem 'mini_magick'
