@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 
-gem 'dotenv-rails', groups: [:development, :test]
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 
@@ -40,7 +39,6 @@ group :production do
 
  gem 'figaro', '1.0'
 
- gem 'font-awesome-rails', github: "bokmann/font-awesome-rails", branch: "master"
 
  #devise authentication
  gem 'devise'
