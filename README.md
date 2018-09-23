@@ -1,4 +1,7 @@
 # README
 
-Bloccit a Reddit clone to understand web development and rails
-Built at [Bloc](http://bloc.io)
+Front and Back End application for Ukrainian School in Vienna Austria
+
+Instructions:
+
+to fill in ...
