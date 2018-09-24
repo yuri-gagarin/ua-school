@@ -1,0 +1,64 @@
+.login-container {
+    width:66%;
+    background:rgb(240, 240, 240);
+    margin:40px auto;
+    h2 {
+        padding-top: 20px;
+    }
+    form {
+        padding: 15px 40px;
+    }
+    .btn {
+        margin-top: 30px;
+    }
+}
+.login-links-container {
+    margin: 10px auto;
+    width: 66%;
+    text-align: center;
+    background:rgb(240, 240, 240);
+    padding: 20px 0;
+    .login-links{
+        display: block;
+        padding-top: 20px;
+    }
+
+}
+input[type="radio"]{
+    margin: 0 10px 0 10px;
+}
+
+.login-box-shadow
+{
+  position: relative;
+}
+.login-box-shadow:before, .login-box-shadow:after
+{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width:300px;
+  background: #777;
+  -webkit-box-shadow: 0 15px 10px #777;
+  -moz-box-shadow: 0 15px 10px #777;
+  box-shadow: 0 15px 10px #777;
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+.login-box-shadow:after
+{
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
+}
