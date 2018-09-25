@@ -11,7 +11,8 @@ group :production do
 
  # #2
  group :development do
-   gem 'sqlite3'
+   gem 'pg'
+   gem 'rails_12factor'
    gem 'listen', '~> 3.0.4'
  end
 

@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20180922182316) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false
     t.string   "data_content_type"
@@ -21,7 +24,7 @@ ActiveRecord::Schema.define(version: 20180922182316) do
     t.integer  "height"
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
-    t.index ["type"], name: "index_ckeditor_assets_on_type"
+    t.index ["type"], name: "index_ckeditor_assets_on_type", using: :btree
   end
 
   create_table "comments", force: :cascade do |t|
@@ -30,8 +33,8 @@ ActiveRecord::Schema.define(version: 20180922182316) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "user_id"
-    t.index ["post_id"], name: "index_comments_on_post_id"
-    t.index ["user_id"], name: "index_comments_on_user_id"
+    t.index ["post_id"], name: "index_comments_on_post_id", using: :btree
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
   create_table "course_attachments", force: :cascade do |t|
@@ -47,7 +50,7 @@ ActiveRecord::Schema.define(version: 20180922182316) do
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.index ["user_id"], name: "index_courses_on_user_id"
+    t.index ["user_id"], name: "index_courses_on_user_id", using: :btree
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -55,8 +58,8 @@ ActiveRecord::Schema.define(version: 20180922182316) do
     t.integer  "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_favorites_on_post_id"
-    t.index ["user_id"], name: "index_favorites_on_user_id"
+    t.index ["post_id"], name: "index_favorites_on_post_id", using: :btree
+    t.index ["user_id"], name: "index_favorites_on_user_id", using: :btree
   end
 
   create_table "posts", force: :cascade do |t|
@@ -67,8 +70,8 @@ ActiveRecord::Schema.define(version: 20180922182316) do
     t.integer  "topic_id"
     t.integer  "user_id"
     t.float    "rank"
-    t.index ["topic_id"], name: "index_posts_on_topic_id"
-    t.index ["user_id"], name: "index_posts_on_user_id"
+    t.index ["topic_id"], name: "index_posts_on_topic_id", using: :btree
+    t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
   end
 
   create_table "sponsored_posts", force: :cascade do |t|
@@ -78,7 +81,7 @@ ActiveRecord::Schema.define(version: 20180922182316) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "topic_id"
-    t.index ["topic_id"], name: "index_sponsored_posts_on_topic_id"
+    t.index ["topic_id"], name: "index_sponsored_posts_on_topic_id", using: :btree
   end
 
   create_table "topics", force: :cascade do |t|
@@ -109,9 +112,9 @@ ActiveRecord::Schema.define(version: 20180922182316) do
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
     t.string   "last_name",              default: "Last Name", null: false
-    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
   create_table "votes", force: :cascade do |t|
@@ -120,8 +123,15 @@ ActiveRecord::Schema.define(version: 20180922182316) do
     t.integer  "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_votes_on_post_id"
-    t.index ["user_id"], name: "index_votes_on_user_id"
+    t.index ["post_id"], name: "index_votes_on_post_id", using: :btree
+    t.index ["user_id"], name: "index_votes_on_user_id", using: :btree
   end
 
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
+  add_foreign_key "courses", "users"
+  add_foreign_key "favorites", "posts"
+  add_foreign_key "favorites", "users"
+  add_foreign_key "votes", "posts"
+  add_foreign_key "votes", "users"
 end
