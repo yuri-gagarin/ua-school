@@ -14,6 +14,16 @@
     }
 }
 
+//course#edit
+.img-preview-control {
+    width: 100px;
+    height: 100px;
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
+}
+
 .course-row {
     margin-top: 30px;
     min-height: 500px;

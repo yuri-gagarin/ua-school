@@ -8,12 +8,12 @@
           <div class="course-div">
             <h1><%= course.name %></h1>
             <p><%= raw(course.description) %>
-            <% if !course.course_attachments.empty? %>
-              <% course.course_attachments.each do |attachment| %>
-                <img src="<%=attachment.image %>" class="course-index-img">
+            <% if !course.images.empty? %>
+            <%  course.images.each do |img_src| %>
+              <img src="<%=img_src %>" class="course-index-img"/>
               <% end %>
             <% end %>
-
+            <img src="assets/stock/stock_man.jpg" class="img-thumbnail" alt="man">
             <div class="course-details">
               <%= link_to 'Details', course_path(course.id), {class: 'course-details-link'} %>
             </div>
@@ -22,18 +22,18 @@
 
         <% if @current_user && (@current_user.admin?) %>
           <div class="col-sm-3 course-controls bottom-shadow">
+
             <div class="user-info-section">
               <div class="user-heading">
                 <h3>Welcome <%= @current_user.name %></h3>
                 <h5>You are <%= @current_user.role %></h5>
               </div>
               <div class="user-pic">
-                <img src="assets/stock/stock_man.jpg" class="img-thumbnail" alt="man">
               </div>
+              
 
               <div class="user-description">
               </div>
-
             </div>
 
             <div class="course-controls-table">
@@ -42,6 +42,7 @@
                 <%= link_to 'Edit', edit_course_path(course), class: 'edit-course-btn' %>
                 <%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-course-btn' %>
             </div>
+
           </div>
         <% end %>
 

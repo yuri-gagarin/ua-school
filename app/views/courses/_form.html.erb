@@ -19,13 +19,20 @@
     <%= f.label :description %>
     <%= f.cktext_area :description, rows: 20, class: 'form-control', placeholder: "description of a new class" %>
   <% end %>
-  
-  <%= f.fields_for :course_attachments do |p| %>
-  <div class="field">
-    <%= p.label :image %><br>
-    <%= p.file_field :image, multiple: true, name: "course_attachments[image][]" %>
-  </div>
+
+  <% if @course_images && !@course_images.empty? %>
+  <%   @course_images.each_with_index do |image, index| %>
+         <div class="img-preview-control">
+           <%= image_tag(image.url)  %>
+           <%= link_to 'Delete', course_course_image_path(@course, index), method: :delete %>
+         </div>
+       <% end %>
   <% end %>
+  
+  <div class="form-group">
+    <%= f.label :images %><br>
+    <%= f.file_field :images, multiple: true %>
+  </div>
 
   <div class="form-group">
     <%= f.submit "Save", class: 'btn btn-success' %>

@@ -10,24 +10,18 @@ class CoursesController < ApplicationController
 
   def new 
     @course = Course.new
-    @course_attachments = @course.course_attachments.build
   end
 
   def show
     @course = Course.find(params[:id])
-    @course_attachments = @course.course_attachments.all
   end
 
   def create
 
     @course = Course.new(course_params)
-    @course.user = current_user
+    @course.user_id = current_user.id
 
     if @course.save
-      params[:course_attachments]['image'].each do |img|
-        @course_attachment = @course.course_attachments.create!(course_id: @course.id, image: img)
-
-      end
       flash[:notice] = "Course Was Saved"
       redirect_to courses_path;
     else
@@ -40,6 +34,7 @@ class CoursesController < ApplicationController
 
   def edit
     @course = Course.find(params[:id])
+    @course_images = @course.images;
   end
 
   def update 
@@ -57,7 +52,7 @@ class CoursesController < ApplicationController
   def destroy
     @course = Course.find(params[:id])
 
-    if @post.destroy
+    if @course.destroy
       flash[:notice] = "\"#{@course.name}\" was successfully deleted"
       redirect_to courses_path
     else 
@@ -69,7 +64,7 @@ class CoursesController < ApplicationController
   private
 
   def course_params 
-    params.require(:course).permit(:name, :description, course_attachment_attributes: [:id, :course_id, :image])
+    params.require(:course).permit(:name, :description, :user_id, {images: []})
   end
 
   def authorize_user
