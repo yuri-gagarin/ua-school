@@ -1,6 +1,19 @@
 // Place all the styles related to the courses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//course#new
+.new-course-container {
+    margin-top: 30px;
+    .field {
+        margin-top: 25px;
+    }
+    .upload-btn {
+        background-color: green;
+        color: white;
+    }
+}
+
 .course-row {
     margin-top: 30px;
     min-height: 500px;

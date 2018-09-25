@@ -11,24 +11,24 @@
     </div>
   <% end %>
 
-    <%= form_group_tag(course.errors[:name]) do %>
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control', placeholder: "Name of a new class" %>
-    <% end %>
-    <%= form_group_tag(course.errors[:description]) do %>
-      <%= f.label :description %>
-      <%= f.cktext_area :description, rows: 20, class: 'form-control', placeholder: "description of a new class" %>
-    <% end %>
+  <%= form_group_tag(course.errors[:name]) do %>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control', placeholder: "Name of a new class" %>
+  <% end %>
+  <%= form_group_tag(course.errors[:description]) do %>
+    <%= f.label :description %>
+    <%= f.cktext_area :description, rows: 20, class: 'form-control', placeholder: "description of a new class" %>
+  <% end %>
+  
+  <%= f.fields_for :course_attachments do |p| %>
+  <div class="field">
+    <%= p.label :image %><br>
+    <%= p.file_field :image, multiple: true, name: "course_attachments[image][]" %>
+  </div>
+  <% end %>
 
-    <%= f.fields_for :course_attachments do |p| %>
-     <div class="field">
-       <%= p.label :image %><br>
-       <%= p.file_field :image, :multiple => true, name: "course_attachments[image][]" %>
-     </div>
-    <% end %>
-
-    <div class="form-group">
+  <div class="form-group">
     <%= f.submit "Save", class: 'btn btn-success' %>
-    </div>
+  </div>
 
 <% end %>
