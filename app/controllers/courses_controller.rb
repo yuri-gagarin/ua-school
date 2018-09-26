@@ -20,9 +20,9 @@ class CoursesController < ApplicationController
 
     @course = Course.new(course_params)
     @course.user_id = current_user.id
-
+    puts  @course.images[0].class
     if @course.save
-      flash[:notice] = "Course Was Saved"
+     flash[:notice] = "Course Was Saved"
       redirect_to courses_path;
     else
       flash.now[:alert] = "There was an error in saving the course"

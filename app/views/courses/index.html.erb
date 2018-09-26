@@ -13,7 +13,6 @@
               <img src="<%=img_src %>" class="course-index-img"/>
               <% end %>
             <% end %>
-            <img src="assets/stock/stock_man.jpg" class="img-thumbnail" alt="man">
             <div class="course-details">
               <%= link_to 'Details', course_path(course.id), {class: 'course-details-link'} %>
             </div>
@@ -29,6 +28,7 @@
                 <h5>You are <%= @current_user.role %></h5>
               </div>
               <div class="user-pic">
+                <img src="/assets/stock/stock_man.jpg" class="img-thumbnail" alt="man">
               </div>
               
 

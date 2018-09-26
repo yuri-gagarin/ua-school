@@ -2,6 +2,7 @@ class CourseImagesController < ApplicationController
     before_action :set_course
 
     def create
+        images = []
         images += @course.images
         images += images_params[:images]
         @course.images = images
@@ -15,11 +16,22 @@ class CourseImagesController < ApplicationController
     end
 
     def destroy
-        puts @course.class
-        remain_images = @course.images
-        deleted_image = remain_images.delete_at(params[:id].to_i)
-        deleted_image.remove!
-        @course.images = remain_images
+        if (@course.images.size == 1 && params[:id].to_i == 0)
+            @course.remove_images!
+        else  
+            remain_images = @course.images
+            deleted_image = remain_images.delete_at(params[:id].to_i)
+            deleted_image.remove!
+            @course.images = remain_images
+        end
+
+        if @course.save 
+            flash.now[:success] = "deleted image"
+            redirect_to :back
+        else 
+            flash.now[:error] = "failed image delete"
+            redirect_to :back
+        end
     end
 
 
