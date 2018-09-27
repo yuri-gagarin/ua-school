@@ -39,8 +39,18 @@ class CoursesController < ApplicationController
 
   def update 
     @course = Course.find(params[:id])
+    
+    if @course.images.length > 0
+      @course.name = course_params[:name]
+      @course.description = course_params[:description]
+      @course.images += course_params[:images]
 
-    if @course.update(course_params)
+      puts @course.images.length 
+
+    end
+
+
+    if @course.save 
       flash[:notice] = "Success!"
       redirect_to courses_path
     else  

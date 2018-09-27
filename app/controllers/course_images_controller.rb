@@ -1,5 +1,10 @@
 class CourseImagesController < ApplicationController
+    include AuthorizationsHelper
+
     before_action :set_course
+    before_action :authenticate_user!
+    before_action :authorize_admin
+
 
     def create
         images = []
