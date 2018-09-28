@@ -56,35 +56,45 @@ class CoursesController < ApplicationController
 
   def update 
     @course = Course.find(params[:id])
-    
-    if @course.images.length > 0
-      @course.name = course_params[:name]
-      @course.description = course_params[:description]
-      @course.images += course_params[:images]
-
-      puts @course.images.length 
-
+    @course.assign_attributes(course_params)
+    respond_to do |format|
+      if @course.save
+        if params[:course_images]
+          params[:course_images].each do |image|
+            @course.course_images.create(image: image)
+          end
+        end
+        format.html do 
+          flash[:notice] = "Course was Updated Successfully"
+          redirect_to courses_path 
+        end
+        format.json do 
+          render action: 'index', status: 'updated', location: @course
+        end
+      else  
+        format.html do 
+          flash.now[:alert] = "Error saving the course"
+          render :edit
+        end
+        format.json do
+          render json: @course.errors, status: :unprocessable_entity
+        end
+      end
     end
 
-
-    if @course.save 
-      flash[:notice] = "Success!"
-      redirect_to courses_path
-    else  
-      flash.now[:alert] = "Error saving the course"
-      render :edit
-    end
   end
 
   def destroy
     @course = Course.find(params[:id])
 
-    if @course.destroy
-      flash[:notice] = "\"#{@course.name}\" was successfully deleted"
-      redirect_to courses_path
-    else 
-      flash.now[:alert] = "There was an error deleting the course"
-      render :show
+    respond_to do |format|
+      if @course.destroy
+        format.html {redirect_to courses_path, notice: "Course Deleted"}
+        format.json {render action: 'index', status: :deleted, location: @courses}
+      else 
+        format.html {redirect_to courses_path, notice: 'Error Deleting Course'}
+        format.json {render json: @course.errors, action: 'index', status: :bad_request}
+      end
     end
   end
 
