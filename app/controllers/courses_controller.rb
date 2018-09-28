@@ -6,10 +6,12 @@ class CoursesController < ApplicationController
   def index
     @courses = Course.all;
     @current_user = current_user || nil
+
   end
 
   def new 
     @course = Course.new
+    @course_images = @course.course_images.build
   end
 
   def show
@@ -20,13 +22,30 @@ class CoursesController < ApplicationController
 
     @course = Course.new(course_params)
     @course.user_id = current_user.id
-    puts  @course.images[0].class
-    if @course.save
-     flash[:notice] = "Course Was Saved"
-      redirect_to courses_path;
-    else
-      flash.now[:alert] = "There was an error in saving the course"
-      render :new
+
+    respond_to do |format|
+      if @course.save
+        if params[:course_images]
+          params[:course_images].each do |image|
+            @course.course_images.create(image: image)
+          end
+        end
+        format.html do 
+          flash[:notice] = "Course Was Saved"
+          redirect_to courses_path;
+        end
+        format.json do 
+          render action: 'index', status: 'created', location: @course
+        end
+      else
+        format.html do 
+          flash.now[:alert] = 'There was an error in saving the course'
+          render :new 
+        end
+        format.json do 
+          render json: @course.errors, status: :unprocessable_entity 
+        end
+      end
     end
 
   end
@@ -34,7 +53,6 @@ class CoursesController < ApplicationController
 
   def edit
     @course = Course.find(params[:id])
-    @course_images = @course.images;
   end
 
   def update 
@@ -74,7 +92,7 @@ class CoursesController < ApplicationController
   private
 
   def course_params 
-    params.require(:course).permit(:name, :description, :user_id, {images: []})
+    params.require(:course).permit(:name, :description, :user_id, course_images_attributes: [:image, :course_id] )
   end
 
   def authorize_user

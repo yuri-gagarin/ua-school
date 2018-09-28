@@ -1,12 +1,10 @@
 Rails.application.routes.draw do
-
-
-
   devise_for :users
+
   mount Ckeditor::Engine => '/ckeditor'
-  resources :courses do 
-    resources :course_images,  only: [:create, :destroy]
-  end
+  
+  resources :courses 
+  resources :course_images,  only: [:destroy]
   resources :topics do
     resources :posts, except: [:index]
     resources :sponsored_posts, except: [:index]

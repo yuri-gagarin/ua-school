@@ -1,10 +1,10 @@
 <%= form_for(@course, html: {multipart: true}) do |f| %>
-  <% if course.errors.any? %>
+  <% if @course.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(course.errors.count, "error") %> prohibited this course from being saved:</h2>
 
       <ul>
-      <% course.errors.full_messages.each do |message| %>
+      <% @course.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -20,19 +20,23 @@
     <%= f.cktext_area :description, rows: 20, class: 'form-control', placeholder: "description of a new class" %>
   <% end %>
 
-  <% if @course_images && !@course_images.empty? %>
-  <%   @course_images.each_with_index do |image, index| %>
-         <div class="img-preview-control">
-           <%= image_tag(image.url)  %>
-           <%= link_to 'Delete', course_course_image_path(@course, index), method: :delete %>
-         </div>
-       <% end %>
-  <% end %>
+<% if @course.course_images.length > 0 %>
+<%   @course.course_images.each do |img_row| %>
+     <%= link_to "Delete", course_image_path(img_row.id), method: :delete %>
+     <div class="img-preview-control">
+       <img src="<%=img_row.image%>" alt="course image"/>
+     </div>
+<%   end %>
+<% end %>
+
+
   
-  <div class="form-group">
-    <%= f.label :images %><br>
-    <%= f.file_field :images, multiple: true %>
-  </div>
+ <%= f.fields_for :image do |ff| %>
+    <div class="field">
+      <%= ff.label :image %><br>
+      <%= ff.file_field :image, multiple: true, name: "course_images[]" %>
+    </div>
+  <% end %>
 
   <div class="form-group">
     <%= f.submit "Save", class: 'btn btn-success' %>

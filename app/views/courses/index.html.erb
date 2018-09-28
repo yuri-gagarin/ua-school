@@ -8,9 +8,9 @@
           <div class="course-div">
             <h1><%= course.name %></h1>
             <p><%= raw(course.description) %>
-            <% if !course.images.empty? %>
-            <%  course.images.each do |img_src| %>
-              <img src="<%=img_src %>" class="course-index-img"/>
+            <% if !course.course_images.empty? %>
+            <%  course.course_images.each do |img_row| %>
+              <img src="<%= img_row.image %>" class="course-index-img"/>
               <% end %>
             <% end %>
             <div class="course-details">
