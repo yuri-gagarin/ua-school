@@ -2,12 +2,26 @@ class CourseImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
-  include Cloudinary::CarrierWave
+  if Rails.env.production?
 
-  def extension_white_list 
-    %{jpg hpeg gif png}
+    include Cloudinary::CarrierWave
+
+    def extension_white_list 
+      %{jpg hpeg gif png}
+    end
+
+  else 
+    storage :file
+
+    def store_dir
+      "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+    end
+
+    def extension_white_list 
+      %{jpg hpeg gif png}
+    end
   end
-
+  
   # Choose what kind of storage to use for this uploader:
   #storage :file
   # storage :fog

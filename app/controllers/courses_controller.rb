@@ -11,7 +11,6 @@ class CoursesController < ApplicationController
 
   def new 
     @course = Course.new
-    @course_images = @course.course_images.build
   end
 
   def show
