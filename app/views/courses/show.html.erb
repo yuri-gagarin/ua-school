@@ -1,25 +1,38 @@
-<div class="container">
-    <div class="row class-header">
-    </div>
-    <div class="row class-description">
+<div class="container-fluid course-description-container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="row class-header">
+                <h3><%= @course.name %></h3>
+            </div>
+            <div class="row course-description">
+                <h5><%= raw(@course.description)%></h5>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="row course-instructor">
+                <h3>Teacher: Mike</h3>
+                <% puts @course_teacher.avatar %>
+                <img src="<%= @course_teacher.avatar %>" alt="teacher image" class="img-thumbnail">
+            </div>
+        </div>
     </div>
 </div>
-<div class="container class-gallery-container">
-    <img src="#" alt="image" class="img-fluid">
-    <img src="#" alt="image" class="img-fluid">
-    <img src="#" alt="image" class="img-fluid">
-    <img src="#" alt="image" class="img-fluid">
-
-    <img src="#" alt="image" class="img-fluid">
-    <img src="#" alt="image" class="img-fluid">
-    <img src="#" alt="image" class="img-fluid">
-    <img src="#" alt="image" class="img-fluid">
-
+<div class="container-fluid course-gallery-container">
+    <div class="row">
+    <% @course_images.each do |img| %>
+        <div class="col-md-4">
+         <img src="<%= img.image %>" alt="image" class="course-image img-fluid img-thumbnail">
+        </div>
+    <% end %>
+    </div>
 </div>
 
 
 
 <p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_course_path(@course.id) %> |
-<%= link_to 'Back', courses_path %>
+<div class="container-fluid course-bottom-container">
+    <div class="course-back-link">
+      <%= link_to 'Back', courses_path %>
+    </div>
+    
+</div>

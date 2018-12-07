@@ -17,6 +17,8 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find(params[:id])
+    @course_teacher = User.find(@course.user_id)
+    @course_images = @course.course_images
   end
 
   def create
