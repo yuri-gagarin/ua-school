@@ -17,10 +17,12 @@ group :production do
  end
 
  group :development, :test do
-   gem 'rspec-rails', '~> 3.0'
+   gem 'database_cleaner'
+   gem 'rspec-rails'
    gem 'rails-controller-testing'
    gem 'shoulda'
-   #env for env variables
+   gem 'capybara'
+   gem 'faker'
  end
 
  # Use SCSS for stylesheets

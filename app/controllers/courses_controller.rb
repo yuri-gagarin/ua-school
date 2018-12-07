@@ -1,7 +1,9 @@
 class CoursesController < ApplicationController
   include AuthorizationsHelper
-  before_action :authenticate_user!, except: [:index, :show]
-  before_action :authorize_admin, except: [:index, :show]
+  before_action :user_signed_in?, except: [:index, :show]
+  before_action :authorize_teacher, except: [:index, :new, :create, :show], unless: -> {current_user && current_user.admin?}
+  before_action :authorize_admin, except: [:index, :show], unless: -> {current_user && current_user.teacher?}
+
 
   def index
     @courses = Course.all;
@@ -18,7 +20,7 @@ class CoursesController < ApplicationController
   end
 
   def create
-
+    
     @course = Course.new(course_params)
     @course.user_id = current_user.id
 
@@ -104,11 +106,15 @@ class CoursesController < ApplicationController
     params.require(:course).permit(:name, :description, :user_id, course_images_attributes: [:image, :course_id] )
   end
 
-  def authorize_user
-
-    unless current_user.admin? || current_user.teacher?
-      flash[:alert] = "You do not have administrative privileges"
-      redirect_to courses_path
+  def authorize_teacher
+    course = Course.find(params[:id])
+    if current_user
+      unless current_user.admin? || (current_user.teacher? && current_user.id == course.user_id)
+        flash[:alert] = "You do not have administrative privileges"
+        redirect_to(new_user_session_path)
+      end
+    else 
+      redirect_to(new_user_session_path)
     end
   end
 
