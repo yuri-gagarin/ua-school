@@ -17,22 +17,63 @@
         </div>
     </div>
 </div>
-<div class="container-fluid course-gallery-container">
+
+<div class="container-fluid gal-container">
     <div class="row">
-    <% @course_images.each do |img| %>
-        <div class="col-md-4">
-         <img src="<%= img.image %>" alt="image" class="course-image img-fluid img-thumbnail">
-        </div>
-    <% end %>
+        <% @course.course_images.each_with_index do |data, index| %>
+            <% data_id = "pic" + (index+1).to_s %>
+            <% data_target = "#" + data_id %>
+            <% if (index == 0) %> 
+                <div class="col-md-8 col-sm-12 co-xs-12 gal-item">
+                    <div class="box">
+                        <a href="#" data-toggle="modal" data-target="<%=data_target%>">
+                            <img src="<%= data.image %>">
+                        </a>
+                        <div class="modal fade" id="<%= data_id %>" tabindex="-1" role="dialog">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                    <div class="modal-body">
+                                        <img src="<%= data.image %>">
+                                    </div>
+                                    <div class="col-md-12 description">
+                                        <h4>This is the first one on my Gallery</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>             
+            <% else %>  
+                <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
+                    <div class="box">
+                        <a href="#" data-toggle="modal" data-target="<%=data_target%>">
+                            <img src="<%= data.image %>">
+                        </a>
+                        <div class="modal fade" id="<%= data_id%>" tabindex="-1" role="dialog">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                    <div class="modal-body">
+                                        <img src="<%= data.image %>">
+                                    </div>
+                                    <div class="col-md-12 description">
+                                        <h4>This is the second one on my Gallery</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+        <% end %>  
     </div>
 </div>
-
 
 
 <p id="notice"><%= notice %></p>
 <div class="container-fluid course-bottom-container">
     <div class="course-back-link">
       <%= link_to 'Back', courses_path %>
-    </div>
-    
+    </div>  
 </div>
