@@ -64,7 +64,7 @@ html, body {
 }
 @media only screen and (max-width: 768px) {
   .navbar-second {
-    .navbar-brand {
+    #school-logo {
       display: none;
     }
   }
@@ -124,14 +124,20 @@ html, body {
 }
 
 
-.sticky.is-sticky {
+.sticky {
   padding-top: 0.2em !important;
   padding-bottom: 0.2em !important;
-  -webkit-transition:padding 0.2s linear;
-  -moz-transition:padding 0.2s linear;  
-  -o-transition:padding 0.2s linear;         
-  transition:padding 0.2s linear;  
   background-color: #0b3f7a;
+  min-height: 120px !important;
+  opacity: 0.7;
+}
+
+.sticky.is-sticky {
+  background-color: rgb(101, 172, 219) !important;
+  min-height: 0 !important;
+  opacity: 1;
+  transition: background-color 0.5s linear;
+  transition: min-height 0.5s linear;
 }
 
 
