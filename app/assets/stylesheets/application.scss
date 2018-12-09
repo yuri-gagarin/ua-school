@@ -20,6 +20,7 @@
 @import "./intro.scss";
 @import "./welcome.scss";
 @import "./courses.scss";
+@import "./galleries.scss";
 @import "./devise.scss";
 
 html, body {
@@ -27,6 +28,7 @@ html, body {
   padding: 0;
   height: 100%;
   width: 100%;
+  background-color:  white;
 }
 
 
@@ -79,6 +81,7 @@ html, body {
   background-color:#4484ce;
   border-color: #E7E7E7;
   position: relative;
+  z-index: 999;
   .navbar-toggler {
     color: white;
   }
@@ -139,6 +142,10 @@ html, body {
   transition: background-color 0.5s linear;
   transition: min-height 0.5s linear;
 }
-
+footer {
+  background-color: #f9cf00;
+  position: fixed;
+  bottom: 0;
+}
 
 

@@ -1,0 +1,110 @@
+// Place all the styles related to the galleries controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//gallerries#index
+.gallery-index-container {
+    position: relative;
+    height: auto;
+    .gallery-container {
+        border-bottom: 1px solid rgb(101, 172, 219);
+        position: relative;
+        margin-bottom: 50px;
+        .gallery-box{
+            -webkit-box-shadow: 0px 3px 32px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 3px 32px 0px rgba(0,0,0,0.75);
+            box-shadow: 0px 3px 32px 0px rgba(0,0,0,0.75);
+        }
+        .gal-title-row {
+            position: relative;
+            background-color: #f9cf00;
+            .gal-time-index {
+                position: absolute;
+                right: 10px;
+                top: 5px;
+                font-size: 18px;
+                font-family: Arial, Helvetica, sans-serif;
+
+            }
+            .gal-title-index {
+                font-family: 'Lucida Sans';
+                font-size: 28px;
+                margin-top: 25px;
+                margin-bottom: 25px;
+                border-bottom: 1px solid rgb(101, 172, 219);
+            }
+        }
+        
+        .gallery-images {
+            margin-top: 25px;
+            margin-bottom: 25px;
+            .gallery-image {
+                border: 1px solid;
+                height: 200px;
+                border-color: #f9cf00 !important;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+        }
+        .gallery-control-row {
+            position: relative;
+            height: 100px;
+            background-color: rgb(245, 241, 241);
+            .gallery-controls {
+                position: absolute;
+                bottom: 15px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+    
+                .gallery-control-link {
+                    border: 1px solid rgb(101, 172, 219);
+                    padding: 5px 10px;
+                    border-radius: 10px;
+                    text-decoration: none; 
+                }
+            }     
+        }
+        
+    }
+    
+    
+}
+
+.new-gallery-row-link {
+    position: relative;
+    height: 100px;
+    width: 100%;
+    .new-gallery-link {
+        position: absolute;
+        border: 1px solid rgb(101, 172, 219);
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
+        padding: 5px 10px;
+        left: 50%;
+        bottom: 40px;
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+
+
+//#galleries#show
+
+
+.gallery-back-link {
+    position: absolute;
+    left: 50%;
+    bottom: 25%;
+    border: 1px solid rgb(101, 172, 219);
+    border-radius: 10px;
+    padding: 5px 10px;
+        a{
+        text-decoration: none;
+    }
+}
+
+.gal-show-row {
+    position: relative;
+    height: 75px;
+}
