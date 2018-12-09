@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'teacher/index'
+
+  get 'teacher/show'
+
   resources :galleries
   devise_for :users, :controllers => { registrations: "registrations", sessions: "sessions"}
 
