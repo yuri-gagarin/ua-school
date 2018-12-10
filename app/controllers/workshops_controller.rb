@@ -4,6 +4,9 @@ class WorkshopsController < ApplicationController
   # GET /workshops
   def index
     @workshops = Workshop.all
+    @index_post = IndexPost.where({page_type: 2}).first
+    @index_post_image = @index_post.index_post_images[0]
+    puts @index_post_image
   end
 
   # GET /workshops/1
