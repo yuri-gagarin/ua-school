@@ -38,7 +38,17 @@
         margin: 0 auto;
     }
 }
-
+.workshop-index-description-row {
+    h5 {
+        margin: 0 auto;
+        border-bottom: 1px solid blue; 
+        font-size: 35px;       
+    }
+    .description-column {
+        margin-top: 25px;
+    }
+}
 .workshop-card-row {
+    margin-top: 25px;
     margin-bottom: 25px;
 }
