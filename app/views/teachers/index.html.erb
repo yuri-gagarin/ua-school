@@ -1,0 +1,58 @@
+<div class="container teacher-index-container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="directors-image-container">
+                <h3 class="text-center">Our Director</h3>
+                <div class="director-picture">
+                    <img src="/assets/stock/stock_man.jpg" class="director-img" alt="directors picture">
+                </div>
+               
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="directors-message">
+                <p>
+                The primary sort of the declarations is by weight and origin: 
+                for normal declarations, author style sheets override user style sheets which override the default style sheet. For "!important" declarations, user style sheets override author 
+                style sheets which override the default style sheet. "!important" declaration override normal declarations. An imported style sheet has the same origin as the 
+                style sheet that imported it.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="teacher-index-center-row">
+            <i class="fas fa-user-graduate"></i>
+            <h4 class="text-center">Our Teachers</h4>
+        </div>
+    </div>
+    <div class="row teacher-index-row">
+        <% @teachers.each do |teacher| %>
+            <div class="col-md-4 teacher-card">
+                <div class="card">
+                    <div class="teacher-index-img">
+                        <img class="card-img-top" src="/assets/stock/stock_man.jpg" alt="Card image cap">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><%=teacher.name + " " + teacher.last_name %></h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <%= link_to teacher_path(teacher) do %>
+                            <span>More...   <i class="fas fa-book-reader"></i></span>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        <% end %> 
+    </div>
+
+   
+</div>
+ <footer class="navbar nav-footer navbar-expand">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a class="nav-link social-btn" href="#"><i class="fab fa-facebook-square"></i><span class="sr-only">(current)</span></a></li>
+        <li class="nav-item"><a class="nav-link social-btn" href="#"><i class="fab fa-twitter-square"></i><span class="sr-only">(current)</span></a></li>
+        <li class="nav-item"><a class="nav-link social-btn" href="#"><i class="fab fa-instagram"></i><span class="sr-only">(current)</span></a></li>
+    </ul>
+</footer>

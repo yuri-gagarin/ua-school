@@ -1,0 +1,37 @@
+<div class="container teacher-container">
+  <div class="row">
+    <div class="col-md-6 img">
+      <div class="teacher-img">
+        <img src="/assets/stock/stock_man.jpg"  alt="" class="img-rounded">
+      </div>
+    </div>
+    <div class="col-md-6 details">
+      <blockquote>
+        <h5><%= @teacher.name + " " + @teacher.last_name %></h5>
+        <small><cite title="Source Title">Vienna, Austria<i class="icon-map-marker"></i></cite></small>
+      </blockquote>
+      <p>
+        <i class="fas fa-envelope-square"></i> <%= @teacher.email %><br>
+        www.ukrschule.com <br>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+     <div class="col-md-10 offset-md-1">
+        <div class="teacher-description">
+        <p>
+        Where does it come from?
+        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+        </p>
+        </div>
+     </div>
+  </div>
+</div>
+<footer class="navbar nav-footer navbar-expand">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item"><a class="nav-link social-btn" href="#"><i class="fab fa-facebook-square"></i><span class="sr-only">(current)</span></a></li>
+    <li class="nav-item"><a class="nav-link social-btn" href="#"><i class="fab fa-twitter-square"></i><span class="sr-only">(current)</span></a></li>
+    <li class="nav-item"><a class="nav-link social-btn" href="#"><i class="fab fa-instagram"></i><span class="sr-only">(current)</span></a></li>
+  </ul>
+</footer>

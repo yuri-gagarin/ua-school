@@ -8,12 +8,29 @@
 require 'random_data'
 
 5.times do
+  password =  RandomData.random_sentence
   User.create!(
   name: RandomData.random_name,
   email: RandomData.random_email,
-  password: RandomData.random_sentence
+  password: password,
+  password_confirmation: password,
+  role: "student",
+  confirmed_at: Time.now.utc
   )
 end
+5.times do 
+  password= RandomData.random_sentence
+  User.create!(
+    name: RandomData.random_name,
+    email: RandomData.random_email,
+    password: password,
+    password_confirmation: password,
+    role: "teacher",
+    confirmed_at: Time.now.utc
+  )
+end
+
+=begin
 users = User.all
 15.times do
   Topic.create!(
@@ -75,3 +92,4 @@ puts "#{Topic.count} topics created"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
 puts "#{Vote.count} votes created"
+=end

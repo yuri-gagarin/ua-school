@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  get 'teacher/index'
-
-  get 'teacher/show'
 
   resources :galleries
   devise_for :users, :controllers => { registrations: "registrations", sessions: "sessions"}
@@ -11,6 +8,8 @@ Rails.application.routes.draw do
   resources :courses 
   resources :course_images,  only: [:destroy]
   resources :gallery_images, only: [:destroy]
+  resources :topics, only: [:index, :show]
+  resources :teachers, only: [:index, :show]
   resources :topics do
     resources :posts, except: [:index]
     resources :sponsored_posts, except: [:index]
