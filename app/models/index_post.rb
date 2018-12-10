@@ -1,0 +1,2 @@
+class IndexPost < ApplicationRecord
+end

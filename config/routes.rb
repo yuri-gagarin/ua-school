@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :index_posts
+  resources :workshops
   resources :galleries
   devise_for :users, :controllers => { registrations: "registrations", sessions: "sessions"}
 
