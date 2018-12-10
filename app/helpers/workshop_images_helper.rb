@@ -1,0 +1,2 @@
+module WorkshopImagesHelper
+end

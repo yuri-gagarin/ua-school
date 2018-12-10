@@ -1,17 +1,60 @@
-<%= form_for(workshop) do |f| %>
-  <% if workshop.errors.any? %>
+<%= form_for(@workshop, html: {multipart: true}) do |f| %>
+  <% if @workshop.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(workshop.errors.count, "error") %> prohibited this workshop from being saved:</h2>
+      <h2><%= pluralize(@workshop.errors.count, "error") %> prohibited this @workshop from being saved:</h2>
 
       <ul>
-      <% workshop.errors.full_messages.each do |message| %>
+      <% @workshop.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit %>
+  <%= form_group_tag(@workshop.errors[:name]) do %>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control', placeholder:"...name" %>
+  <% end %>
+
+  <%= form_group_tag(@workshop.errors[:price]) do %>
+    <%= f.label :price %>
+    <%= f.text_field :price, class: 'form-control', placeholder: "...price" %>
+  <% end %>
+
+  <%= form_group_tag(@workshop.errors[:instructor]) do %>
+    <%= f.label :instructor %>
+    <%= f.text_field :instructor, class: 'form-control', placeholder: "...instructor" %>
+  <% end %>
+
+  <%= form_group_tag(@workshop.errors[:details]) do %>
+    <%= f.label :details %>
+    <%= f.cktext_area :details, rows: 20, class: 'form-control', placeholder: "...short detail" %>
+  <% end %>
+  <%= form_group_tag(@workshop.errors[:description]) do %>
+    <%= f.label :description %>
+    <%= f.cktext_area :description, rows: 60, class: 'form-control', placeholder: "...description of a new workshop" %>
+  <% end %>
+
+<% if @workshop.workshop_images.length > 0 %>
+<%   @workshop.workshop_images.each do |img_row| %>
+     <%= link_to "Delete", workshop_image_path(img_row.id), method: :delete %>
+     <div class="img-preview-control">
+       <img src="<%=img_row.image%>" alt="workshop_image"/>
+     </div>
+<%   end %>
+<% end %>
+
+
+  
+ <%= f.fields_for :image do |ff| %>
+    <div class="field">
+      <%= ff.label :image %><br>
+      <%= ff.file_field :image, multiple: true, name: "workshop_images[]" %>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.submit "Save", class: 'btn btn-success' %>
   </div>
+
 <% end %>
