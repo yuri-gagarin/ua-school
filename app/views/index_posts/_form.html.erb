@@ -1,21 +1,21 @@
-<%= form_for(index_post) do |f| %>
-  <% if index_post.errors.any? %>
+<%= form_for(@index_post, html: {multipart: true}) do |f| %>
+  <% if @index_post.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(index_post.errors.count, "error") %> prohibited this index_post from being saved:</h2>
+      <h2><%= pluralize(@index_post.errors.count, "error") %> prohibited this index_post from being saved:</h2>
 
       <ul>
-      <% index_post.errors.full_messages.each do |message| %>
+      <% @index_post.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <%= form_group_tag(index_post.errors[:title]) do %>
+  <%= form_group_tag(@index_post.errors[:title]) do %>
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control', placeholder: "Name of a new class" %>
   <% end %>
-  <%= form_group_tag(index_post.errors[:description]) do %>
+  <%= form_group_tag(@index_post.errors[:description]) do %>
     <%= f.label :description %>
     <%= f.cktext_area :description, rows: 20, class: 'form-control', placeholder: "description of a new class" %>
   <% end %>
@@ -27,6 +27,22 @@
       <option value=3>School</option>
       <option value=4>About</option>
  </select>
+
+ <% if @index_post.index_post_images.length > 0 %>
+  <% @index_post.index_post_images.each do |img_row| %>
+      <%= link_to "Delete", index_post_image_path(img_row.id), method: :delete %>
+      <div class="img-preview-control">
+        <img src="<%=img_row.image%>" alt="course image"/>
+      </div>
+  <% end %>
+<% end %>
+
+ <%= f.fields_for :image do |ff| %>
+    <div class="field">
+      <%= ff.label :image %><br>
+      <%= ff.file_field :image, multiple: true, name: "index_post_images[]" %>
+    </div>
+  <% end %>
 
   <div class="form-group">
     <%= f.submit "Save", class: "btn btn-success"%>

@@ -1,6 +1,8 @@
-<h1>Editing Index Post</h1>
+<div class="container">
+    <h1>Editing : <%=@index_post.title %></h1>
 
-<%= render 'form', index_post: @index_post %>
+    <%= render 'form', index_post: @index_post %>
 
-<%= link_to 'Show', @index_post %> |
-<%= link_to 'Back', index_posts_path %>
+    <%= link_to 'Show', @index_post %> |
+    <%= link_to 'Back', index_posts_path %>
+</div>

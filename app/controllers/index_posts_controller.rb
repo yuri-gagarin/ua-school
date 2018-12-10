@@ -52,24 +52,31 @@ class IndexPostsController < ApplicationController
 
   # PATCH/PUT /index_posts/1
   def update
+    @index_post = IndexPost.find(params[:id])
     @index_post.title = index_post_params[:title]
     @index_post.description = index_post_params[:description]
-
-    if @index_post.save
-      format.html do 
-        flash[:notice] = "Post was Updated Successfully"
-        redirect_to admin_path
-      end
-      format.json do 
-        render action: 'index', status: 'updated', location: @course
-      end
-    else  
-      format.html do 
-        flash.now[:alert] = "Error saving the post"
-        render :edit
-      end
-      format.json do
-        render json: @index_post.errors, status: :unprocessable_entity
+    respond_to do |format|
+      if @index_post.save
+        if params[:index_post_images]
+          params[:index_post_images].each do |image|
+              @index_post.index_post_images.create(image: image)
+          end
+        end
+        format.html do 
+          flash[:notice] = "Post was Updated Successfully"
+          redirect_to admin_path
+        end
+        format.json do 
+          render action: 'index', status: 'updated', location: @course
+        end
+      else  
+        format.html do 
+          flash.now[:alert] = "Error saving the post"
+          render :edit
+        end
+        format.json do
+          render json: @index_post.errors, status: :unprocessable_entity
+        end
       end
     end
   end
@@ -85,6 +92,6 @@ class IndexPostsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def index_post_params
-      params.require(:index_post).permit(:title, :description, :page_type)
+      params.require(:index_post).permit(:title, :description, :page_type, index_post_images_attributes: [:image, :index_post_id])
     end
 end

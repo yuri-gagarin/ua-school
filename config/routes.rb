@@ -1,17 +1,22 @@
 Rails.application.routes.draw do
+  devise_for :users, :controllers => { registrations: "registrations", sessions: "sessions"}
+
+  mount Ckeditor::Engine => '/ckeditor'
 
   resources :index_posts
   resources :workshops
   resources :galleries
-  devise_for :users, :controllers => { registrations: "registrations", sessions: "sessions"}
 
-  mount Ckeditor::Engine => '/ckeditor'
   
   resources :courses 
+
   resources :course_images,  only: [:destroy]
+  resources :index_post_images, only: [:destroy]
   resources :gallery_images, only: [:destroy]
+
   resources :topics, only: [:index, :show]
   resources :teachers, only: [:index, :show]
+
   resources :topics do
     resources :posts, except: [:index]
     resources :sponsored_posts, except: [:index]
