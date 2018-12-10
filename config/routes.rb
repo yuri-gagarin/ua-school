@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   end
 
   get "admin" => "admin#index"
+  post "admin/confirm_user" => "admin#confirm_user"
+  
   get 'about' => 'welcome#about'
   get 'index' => 'welcome#index'
   get '/' => 'intro#intro'

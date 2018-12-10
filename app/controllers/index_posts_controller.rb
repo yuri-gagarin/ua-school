@@ -76,6 +76,7 @@ class IndexPostsController < ApplicationController
 
   # DELETE /index_posts/1
   def destroy
+    @index_post = IndexPost.find(params[:id])
     @index_post.destroy
     redirect_to admin_path, notice: 'Index post was successfully destroyed.'
   end
