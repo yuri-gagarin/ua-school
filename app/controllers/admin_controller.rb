@@ -5,6 +5,7 @@ class AdminController < ApplicationController
         @users = User.all
         @courses = Course.all
         @index_posts = IndexPost.all
+        @workshops = Workshop.all
     end
 
     def confirm_user
