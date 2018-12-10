@@ -19,13 +19,13 @@
     <%= f.label :description %>
     <%= f.cktext_area :description, rows: 20, class: 'form-control', placeholder: "description of a new class" %>
   <% end %>
-  <select name="index_post[type]" class="form-control">
+  <select name="index_post[page_type]" class="form-control">
       <option value="">Please select</option>
-      <option value="1" selected="selected">Education</option>
-      <option value="2">Teachers</option>
-      <option value="3">Workshops</option>
-      <option value="4">School</option>
-      <option value="5">About</option>
+      <option value=0 selected="selected">Education</option>
+      <option value=1>Teachers</option>
+      <option value=2>Workshops</option>
+      <option value=3>School</option>
+      <option value=4>About</option>
  </select>
 
   <div class="form-group">
