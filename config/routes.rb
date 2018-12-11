@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'about/home'
+
+  get 'about/news'
+
+  get 'about/organization'
+
+  get 'about/history'
+
   devise_for :users, :controllers => { registrations: "registrations", sessions: "sessions"}
 
   mount Ckeditor::Engine => '/ckeditor'
