@@ -12,7 +12,7 @@
  *
  */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:800|Poppins:500');
-
+@import url('https://fonts.googleapis.com/css?family=Lobster');
 
 @import "bootstrap";
 @import "./animate.scss";
@@ -111,6 +111,9 @@ html, body {
   }
 }
 
+.navbar-second {
+  margin-bottom: 0px !important;
+}
 .sticky.is-sticky {
   position: fixed;
   left: 0;

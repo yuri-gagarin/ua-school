@@ -1,59 +1,46 @@
-<div class="container-fluid gallery-index-container">
+<div class="container-fluid gallery-intro-container">
+  <div class="gal-index-title">
+    <h3>Galleries</h3>
+  </div>
+  <div class="background-div">
+  </div>
+</div>
+<div class="gallery-index-container">
 <p id="notice"><%= notice %></p>
 
-<div class="container-fluid gallery-container">
-  <div class="row">
-    <% @galleries.each do |gallery| %>
-      <div class="col-md-6 form-group gal-index-column">
-        <div class="container-fluid gallery-box">
-          <div class="row gal-title-row justify-content-center">
-            <h3 class="gal-title-index"><%= gallery.title %><span class="gal-time-index">Created at: <%=time_ago_in_words(gallery.created_at) + " ago"%></span></h3>
-          </div>
-          <div class="row gallery-images">
-            <% gallery.gallery_images.limit(6).each do |data| %>
-              <div class="col-md-4 col-sm-12 co-xs-12 gal-item">
-                <div class="box gallery-image">
-                  <img src="<%= data.image %>" alt="gallery-image" >
-                </div>
-              </div>
-            <% end %>
-          </div>
+<% @galleries.each do |gallery| %>
 
-          <div class="row gallery-control-row">
-            <div class="gallery-controls">
-              <table>
-              <thead>
-                <tr>
-                  <th colspan="3"></th>
-                </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                    <td><%= link_to 'Show...', gallery, class: "gallery-control-link" %></td>
-                    <% if current_user && current_user.role == "admin" %>
-                      <td><%= link_to 'Edit', edit_gallery_path(gallery), class: "gallery-control-link" %></td>
-                      <td><%= link_to 'Destroy', gallery, method: :delete, data: { confirm: 'Are you sure?' }, class: "gallery-control-link" %></td>
-                    <% end %>
-                  </tr>
-              </tbody>
-              </table>
+  <section class="gallery-block compact-gallery">
+    <div class="gallery-container">
+
+        <div class="heading">
+            <h2><%=gallery.title%></h2>
+            <div class="gallery-time-tag">
+              <span><%= time_tag(gallery.created_at) %></span>
             </div>
-          </div>
         </div>
-      </div>
+        <div class="row no-gutters">
 
-    <% end %>
-  </div>
-</div>
+            <% gallery.gallery_images.limit(5).each do |img| %>
+            <div class="col-md-6 col-lg-4 item zoom-on-hover">
+                <a class="lightbox" href="galleries/<%=gallery.id%>">
+                    <img class="img-fluid image" src="<%=img.image%>">
+                    <span class="description">
+                        <span class="description-heading">Lorem Ipsum</span>
+                        <span class="description-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                    </span>
+                </a>
+            </div>
+            <% end %>    
 
+        </div>
+    </div>
+    
+    <div class="gallery-more-link">
+      <%= link_to "More....", gallery_path(gallery.id) %>
+    </div>
 
-<% if current_user && current_user.role == "admin" %> 
-<div class="new-gallery-row-link">
-  <div class="new-gallery-link">
-    <%= link_to 'New Gallery', new_gallery_path %>
-  </div>
-</div>
-
+  </section>
 
 <% end %>
 </div>

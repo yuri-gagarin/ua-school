@@ -3,70 +3,45 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //gallerries#index
+.gallery-intro-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background: url("backgrounds/gallery_background.jpg");
+    object-fit: cover;
+    padding-left: 0px;
+    padding-right: 0px;
+
+    .gal-index-title {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        h3 {
+            color: wheat;
+            font-family: 'Lobster', cursive;
+            font-size: 65px;
+            letter-spacing: 4px;
+        }
+    }
+
+    .background-div {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-color:black;
+        opacity: 0.3;
+    }
+}
 .gallery-index-container {
     position: relative;
-    height: auto;
+    margin-top: -15px;
     .gallery-container {
-        border-bottom: 1px solid rgb(101, 172, 219);
         position: relative;
         margin-bottom: 50px;
-        .gallery-box{
-            -webkit-box-shadow: 0px 3px 32px 0px rgba(0,0,0,0.75);
-            -moz-box-shadow: 0px 3px 32px 0px rgba(0,0,0,0.75);
-            box-shadow: 0px 3px 32px 0px rgba(0,0,0,0.75);
-        }
-        .gal-title-row {
-            position: relative;
-            background-color: #f9cf00;
-            .gal-time-index {
-                position: absolute;
-                right: 10px;
-                top: 5px;
-                font-size: 18px;
-                font-family: Arial, Helvetica, sans-serif;
-
-            }
-            .gal-title-index {
-                font-family: 'Lucida Sans';
-                font-size: 28px;
-                margin-top: 25px;
-                margin-bottom: 25px;
-                border-bottom: 1px solid rgb(101, 172, 219);
-            }
-        }
-        
-        .gallery-images {
-            margin-top: 25px;
-            margin-bottom: 25px;
-            .gallery-image {
-                border: 1px solid;
-                height: 200px;
-                border-color: #f9cf00 !important;
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            }
-        }
-        .gallery-control-row {
-            position: relative;
-            height: 100px;
-            background-color: rgb(245, 241, 241);
-            .gallery-controls {
-                position: absolute;
-                bottom: 15px;
-                left: 50%;
-                transform: translate(-50%, -50%);
-    
-                .gallery-control-link {
-                    border: 1px solid rgb(101, 172, 219);
-                    padding: 5px 10px;
-                    border-radius: 10px;
-                    text-decoration: none; 
-                }
-            }     
-        }
         
     }
-    
-    
 }
 
 .new-gallery-row-link {
@@ -86,6 +61,136 @@
         }
     }
 }
+
+
+.gallery-block{
+    position: relative;
+    border-bottom: 1px solid rgb(131, 131, 250);
+    background-color: #efe2ba;
+    .gallery-container {
+        height: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+        position: relative;
+
+        .gallery-time-tag {
+            position: absolute;
+            right: 30px;
+            top: 35px;
+            span {
+                color: white;
+            }
+        }
+
+        .row {
+            margin-bottom: -60px;
+        }
+        .heading{
+            color:#4056a1;
+            border-radius: 5px;
+            margin-top: 0px;
+            h2 {
+                padding-top: 35px;
+                color: wheat;
+                font-family: 'Lobster', cursive;
+                font-size: 25px;
+                letter-spacing: 4px;
+
+            }
+        }
+    }
+   
+    .gallery-more-link {
+        border: 1px solid #4056a1;
+        border-radius: 10px;
+        padding: 5px 10px;
+        position: absolute;
+        right: 5%;
+        bottom: 7%;
+    }
+  
+  }
+  
+  .gallery-block .heading{
+      height: 100px;
+      margin-top: -20px;
+      background-color: #4056a1;
+      text-align: center;
+  }
+  
+  .gallery-block .heading h2{
+      font-weight: bold;
+      font-size: 1.4rem;
+      text-transform: uppercase;
+  }
+  
+  .gallery-block.compact-gallery .item{
+    overflow: hidden;
+    margin-bottom: 0;
+    background: black;
+    height: 350px;
+    opacity: 1;
+  }
+  
+  .gallery-block.compact-gallery .item .image{
+    transition: 0.8s ease;
+    height:100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .gallery-block.compact-gallery .item .info{
+    position: relative;
+      display: inline-block;
+  }
+  
+  .gallery-block.compact-gallery .item .description{
+    display: grid;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      color: #fff;
+      padding: 10px;
+      font-size: 17px;
+      line-height: 18px;
+      width: 100%;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      opacity: 1;
+      color: #fff;
+      transition: 0.8s ease;
+      text-align: center;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+      background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.39));
+  }
+  
+  .gallery-block.compact-gallery .item .description .description-heading{
+    font-size: 1em;
+    font-weight: bold;
+  }
+  
+  .gallery-block.compact-gallery .item .description .description-body{
+    font-size: 0.8em;
+    margin-top: 10px;
+    font-weight: 300;
+  }
+  
+  @media (min-width: 576px) {
+  
+    .gallery-block.compact-gallery .item .description {
+      opacity: 0; 
+    }
+  
+    .gallery-block.compact-gallery .item a:hover .description {
+      opacity: 1; 
+    } 
+  
+    .gallery-block .zoom-on-hover:hover .image {
+      transform: scale(1.3);
+      opacity: 0.7; 
+    }
+  }
+  
 
 
 
@@ -108,3 +213,10 @@
     position: relative;
     height: 75px;
 }
+
+
+
+
+
+
+
