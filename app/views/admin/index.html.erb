@@ -32,7 +32,7 @@
         <td><%= user.last_sign_in_at %></td>
         <td><%= user.sign_in_count %></td>
         <td><%= button_to "CONFIRM", {controller: "admin", action: "confirm_user", user_id: user.id}, method: :post, class: "btn btn-warning" %></td>
-        <td><%= button_to "DELETE", {controller: "registrations", action: "destroy", user_id: user.id}, method: :delete, class: "btn btn-danger" %></td>
+        <td><%= button_to "DELETE", {controller: "registrations", action: "destroy", user_id: user.id}, method: :delete, class: "btn btn-danger", data: {confirm: "ARE YOU SURE?"} %></td>
       </tr>
     </tbody>
     <% end %>
@@ -48,7 +48,7 @@
     <thead class="thead-inverse">
       <tr>
         <th>#</th>
-        <th>Name</th>
+        <th>Title</th>
         <th>Description</th>
         <th>Price</th>
         <th>Instructor</th>
@@ -71,7 +71,7 @@
         <td><%= workshop.updated_at %></td>
         <td></td>
         <td><%= button_to "EDIT", {controller: "workshops", action: "edit", id: workshop.id}, method: :get, class: "btn btn-warning" %></td>
-        <td><%= button_to "DELETE", {controller: "workshops", action: "destroy", id: workshop.id}, method: :delete, class: "btn btn-danger" %></td>
+        <td><%= button_to "DELETE", {controller: "workshops", action: "destroy", id: workshop.id}, method: :delete, class: "btn btn-danger", data: {confirm: "ARE YOU SURE?"} %></td>
       </tr>
     </tbody>
     <% end %>
@@ -87,13 +87,13 @@
     <thead class="thead-inverse">
       <tr>
         <th>#</th>
-        <th>Name</th>
+        <th>Title</th>
+        <th>Teacher</th>
+        <th>Grade</th>
+        <th>Period</th> 
+        <th>Time</th>
         <th>Created At</th>
         <th>Updated At</th>
-        <th>Teacher</th>
-        <th></th>
-        <th></th> 
-        <th></th>
         <th>Edit</th>
         <th>Delete</th>
       </tr>
@@ -103,14 +103,14 @@
       <tr>
         <td scope="row"><%= (index + 1).to_s %></td>
         <td><%= course.name %></td>
+        <td><%= User.find(course.user_id).name %></td>
+        <td><%= course.grade || "" %></td>
+        <td><%= course.period || "" %></td>
+        <td><%= course.time || "" %></td>
         <td><%= course.created_at %></td>
         <td><%= course.updated_at %></td>
-        <td><%= User.where(id: course.user_id).name %></td>
-        <td></td>
-        <td></td>
-        <td></td>
         <td><%= button_to "EDIT", {controller: "courses", action: "edit", id: course.id}, method: :get, class: "btn btn-warning" %></td>
-        <td><%= button_to "DELETE", {controller: "courses", action: "destroy", id: course.id}, method: :delete, class: "btn btn-danger"%></td>
+        <td><%= button_to "DELETE", {controller: "courses", action: "destroy", id: course.id}, method: :delete, class: "btn btn-danger", data: {confirm: "ARE YOU SURE?"} %></td>
       </tr>
     </tbody>
     <% end %>
@@ -144,7 +144,7 @@
         <td><%= post.created_at %></td>
         <td><%= post.updated_at %></td>
         <td><%= button_to "EDIT", {controller: "index_posts", action: "edit", id: post.id}, method: :get, class: "btn btn-warning" %></td>
-        <td><%= button_to "DELETE", {controller: "index_posts", action: "destroy", id: post.id}, method: :delete, class: "btn btn-danger" %></td>
+        <td><%= button_to "DELETE", {controller: "index_posts", action: "destroy", id: post.id}, method: :delete, class: "btn btn-danger", data: {confirm: "ARE YOU SURE?"} %></td>
       </tr>
     </tbody>
     <% end %>

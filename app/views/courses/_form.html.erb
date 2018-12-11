@@ -20,6 +20,21 @@
     <%= f.label :description %>
     <%= f.cktext_area :description, rows: 20, class: 'form-control', placeholder: "description of a new class" %>
   <% end %>
+
+  <%= form_group_tag(course.errors[:name]) do %>
+    <%= f.label :grade %>
+    <%= f.number_field :grade, placeholder: 0 %>
+  <% end %>
+
+  <%= form_group_tag(course.errors[:name]) do %>
+    <%= f.label :period %>
+    <%= f.number_field :period, placeholder: 0 %>
+  <% end %>
+
+  <%= form_group_tag(course.errors[:name]) do %>
+    <%= f.label :time %>
+    <%= f.text_field :time, class: 'form-control', placeholder: "..time" %>
+  <% end %>
   
   <div class="form-group">
     <%= f.label :teacher, class: 'w-100' %>

@@ -37,7 +37,7 @@ class CoursesController < ApplicationController
         end
         format.html do 
           flash[:notice] = "Course Was Saved"
-          redirect_to courses_path;
+          redirect_to admin_path;
         end
         format.json do 
           render action: 'index', status: 'created', location: @course
@@ -58,10 +58,13 @@ class CoursesController < ApplicationController
 
   def edit
     @course = Course.find(params[:id])
+    @teachers = User.where(role: 'teacher')
   end
 
   def update 
+    @teachers = User.where(role: 'teacher')
     @course = Course.find(params[:id])
+    @course.user_id = params[:course_instructor][:user_id]
     @course.assign_attributes(course_params)
     respond_to do |format|
       if @course.save
@@ -72,7 +75,7 @@ class CoursesController < ApplicationController
         end
         format.html do 
           flash[:notice] = "Course was Updated Successfully"
-          redirect_to courses_path 
+          redirect_to admin_path
         end
         format.json do 
           render action: 'index', status: 'updated', location: @course
@@ -95,10 +98,10 @@ class CoursesController < ApplicationController
 
     respond_to do |format|
       if @course.destroy
-        format.html {redirect_to courses_path, notice: "Course Deleted"}
+        format.html {redirect_to admin_path, notice: "Course Deleted"}
         format.json {render action: 'index', status: :deleted, location: @courses}
       else 
-        format.html {redirect_to courses_path, notice: 'Error Deleting Course'}
+        format.html {redirect_to admin_path, notice: 'Error Deleting Course'}
         format.json {render json: @course.errors, action: 'index', status: :bad_request}
       end
     end
@@ -107,7 +110,7 @@ class CoursesController < ApplicationController
   private
 
   def course_params 
-    params.require(:course).permit(:name, :description, course_images_attributes: [:image, :course_id] )
+    params.require(:course).permit(:name, :description, :grade, :period, :time, course_images_attributes: [:image, :course_id] )
   end
 
   def authorize_teacher
