@@ -17,4 +17,8 @@ class User < ApplicationRecord
   def favorite_for(post)
     favorites.where(post_id: post.id).first
   end
+
+  def full_name 
+    "#{self.name}  #{self.last_name}"
+  end
 end

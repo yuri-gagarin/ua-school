@@ -1,53 +1,67 @@
 
-<h1 class="course-title">Courses</h1>
-<div class="container-fluid course-container">
-  <% @courses.each do |course| %>
-      <div class="row course-row">
+  <div id="course-index-intro">
+      <div class="bg-image bg-parallax overlay"></div>
+      <div id="course-index-title">
+        <h3>Our Courses</h3>
+      </div>
+  </div>
+  <div id="courses" class="section">
 
-        <div class="col-sm-9 course bottom-shadow">
-          <div class="course-div">
-            <h1><%= course.name %></h1>
-            <p><%= raw(course.description) %>
-            <% if !course.course_images.empty? %>
-            <%  course.course_images.each do |img_row| %>
-              <img src="<%= img_row.image %>" class="course-index-img"/>
-              <% end %>
-            <% end %>
-            <div class="course-details">
-              <%= link_to 'Details', course_path(course.id), {class: 'course-details-link'} %>
-            </div>
-          </div>    
+    <!-- container -->
+    <div class="container">
+
+      <!-- row -->
+      <div class="row">
+        <div class="section-header mx-auto">
+          <h2 class="text-center">Explore Courses</h2>
+          <p class="lead">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.</p>
         </div>
+      </div>
+      <!-- /row -->
 
-        <% if @current_user && (@current_user.admin?) %>
-          <div class="col-sm-3 course-controls bottom-shadow">
+      <!-- courses -->
+      <div id="courses-wrapper">
 
-            <div class="user-info-section">
-              <div class="user-heading">
-                <h3>Welcome <%= @current_user.name %></h3>
-                <h5>You are <%= @current_user.role %></h5>
-              </div>
-              <div class="user-pic">
-                <img src="/assets/stock/stock_man.jpg" class="img-thumbnail" alt="man">
-              </div>
-              <div class="user-description">
+        <!-- row -->
+        <div class="row">
+          <% 6.times do  %>
+          <!-- single course -->
+          <div class="col-md-4 col-sm-6 col-xs-6">
+            <div class="course">
+              <a href="#" class="course-img">
+                <img src="/assets/stock/workshop_stock_photo.jpg" alt="course image">
+                <i class="course-link-icon fa fa-link"></i>
+              </a>
+              <a class="course-title" href="courses">Beginner to Pro in Excel: Financial Modeling and Valuation</a>
+              <div class="course-details">
+                <span class="course-category">Business</span>
+                <span class="course-price course-free">Free</span>
               </div>
             </div>
-
-            <div class="course-controls-table">
-              <h2>Course Controls</h2>
-                <%= link_to 'Show', course, class: 'show-course-btn' %>
-                <%= link_to 'Edit', edit_course_path(course), class: 'edit-course-btn' %>
-                <%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-course-btn' %>
-            </div>
-
           </div>
-        <% end %>
+          <!-- /single course -->
+          <% end %>
+        </div>
+      </div>
+      <!-- /courses -->
+
+      <div class="row">
+        <div class="center-btn mx-auto">
+          <a class="main-button icon-button" href="#">Home</a>
+        </div>
+      </div>
 
     </div>
-  <% end %>
+    <!-- container -->
 
+  </div>
 
-  <%= link_to 'New Course', new_course_path %>
-</div>
+  <footer class="navbar nav-footer navbar-expand">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item"><a class="nav-link social-btn" href="#"><i class="fab fa-facebook-square"></i><span class="sr-only">(current)</span></a></li>
+    <li class="nav-item"><a class="nav-link social-btn" href="#"><i class="fab fa-twitter-square"></i><span class="sr-only">(current)</span></a></li>
+    <li class="nav-item"><a class="nav-link social-btn" href="#"><i class="fab fa-instagram"></i><span class="sr-only">(current)</span></a></li>
+  </ul>
+</footer>
+<!-- /Courses -->
 

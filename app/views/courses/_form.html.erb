@@ -15,19 +15,26 @@
     <%= f.label :name %>
     <%= f.text_field :name, class: 'form-control', placeholder: "Name of a new class" %>
   <% end %>
+
   <%= form_group_tag(course.errors[:description]) do %>
     <%= f.label :description %>
     <%= f.cktext_area :description, rows: 20, class: 'form-control', placeholder: "description of a new class" %>
   <% end %>
+  
+  <div class="form-group">
+    <%= f.label :teacher, class: 'w-100' %>
+    <%= collection_select(:course_instructor, :user_id, @teachers, :id, :full_name, prompt: true, class: 'dropdown') %>
+  </div>
 
-<% if @course.course_images.length > 0 %>
-<%   @course.course_images.each do |img_row| %>
-     <%= link_to "Delete", course_image_path(img_row.id), method: :delete %>
-     <div class="img-preview-control">
-       <img src="<%=img_row.image%>" alt="course image"/>
-     </div>
-<%   end %>
-<% end %>
+
+  <% if @course.course_images.length > 0 %>
+  <%   @course.course_images.each do |img_row| %>
+      <%= link_to "Delete", course_image_path(img_row.id), method: :delete %>
+      <div class="img-preview-control">
+        <img src="<%=img_row.image%>" alt="course image"/>
+      </div>
+  <%   end %>
+  <% end %>
 
 
   

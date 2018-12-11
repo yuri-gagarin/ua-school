@@ -13,6 +13,8 @@ class CoursesController < ApplicationController
 
   def new 
     @course = Course.new
+    @teachers = User.where(role: 'teacher')
+    puts @teachers
   end
 
   def show
@@ -22,9 +24,9 @@ class CoursesController < ApplicationController
   end
 
   def create
-    
+    @teachers = User.where(role: 'teacher')
     @course = Course.new(course_params)
-    @course.user_id = current_user.id
+    @course.user_id = params[:course_instructor][:user_id]
 
     respond_to do |format|
       if @course.save
@@ -105,7 +107,7 @@ class CoursesController < ApplicationController
   private
 
   def course_params 
-    params.require(:course).permit(:name, :description, :user_id, course_images_attributes: [:image, :course_id] )
+    params.require(:course).permit(:name, :description, course_images_attributes: [:image, :course_id] )
   end
 
   def authorize_teacher

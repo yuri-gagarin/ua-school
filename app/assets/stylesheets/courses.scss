@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 //course#new
+
 .new-course-container {
     margin-top: 30px;
     .field {
@@ -12,6 +13,136 @@
         background-color: green;
         color: white;
     }
+}
+
+//courses#index
+
+
+#course-index-intro {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    #course-index-title {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        h3{
+            color: white;
+            font-size: 75px;
+            font-family: cursive;
+            font-weight: bold;
+            letter-spacing: 5px;
+        }
+    }
+    .bg-image {
+        background-image: url("/assets/stock/workshop_stock_photo.jpg");
+        position:absolute;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        background-position:center;
+        background-size:cover;
+    }.bg-parallax {
+        background-attachment:fixed;
+    }.overlay:after {
+        content:"";
+        position:absolute;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#374050), to(#798696));
+        background-image: linear-gradient(to bottom, #374050 0%, #798696 100%);
+        opacity: 0.7;
+    }
+}
+#courses {
+    margin-top: 30px;
+}
+.course {
+	margin-top:20px;
+    margin-bottom:20px;
+    .course-img {
+        position: relative;
+        display:block;
+        margin-bottom:20px;
+        border-radius:4px;
+        overflow:hidden;
+        .course-link-icon {
+            position:absolute;
+            left:50%;
+            top:50%;
+            -webkit-transform: translate(-50% , calc(-50% - 15px));
+                -ms-transform: translate(-50% , calc(-50% - 15px));
+                    transform: translate(-50% , calc(-50% - 15px));
+            width:40px;
+            height:40px;
+            line-height:40px;
+            text-align:center;
+            border:2px solid #fff;
+            color:#fff;
+            border-radius:50%;
+            opacity:0;
+            z-index:10;
+            -webkit-transition:0.2s all;
+            transition:0.2s all;
+        }
+    }
+    .course-img:after {
+        content:"";
+        position:absolute;
+        left:0;
+        right:0;
+        bottom:0;
+        top:0;
+        background-color:rgb(92, 138, 207);
+        opacity:0;
+        -webkit-transition:0.2s opacity;
+        transition:0.2s opacity;
+    }
+    .course-img > img {
+        width:100%;
+    }
+    .course-img:hover:after {
+        opacity:0.7;
+    }
+    .course-title {
+        display:block;
+        height:42px;
+    }
+    .course-details {
+        margin-top: 20px;
+        padding-top: 10px;
+        border-top: 1px solid #EBEBEB;
+        .course-price {
+            float: right;
+        }
+        .course-price.course-free {
+            color: green;
+        }
+        .course-price.course-premium {
+            color: #FF6700;
+        }
+    }  
+}
+
+.course .course-img:hover .course-link-icon {
+	-webkit-transform: translate(-50% , -50%);
+	    -ms-transform: translate(-50% , -50%);
+	        transform: translate(-50% , -50%);
+	opacity:1;
+}
+
+
+#courses .center-btn {
+	text-align:center;
+    margin-top:40px;
+    border: 1px solid blue;
+    border-radius: 10px;
+    padding: 10px 15px;
+    margin-bottom: 20px;
 }
 
 //course#show
