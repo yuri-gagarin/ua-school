@@ -44,9 +44,11 @@
         bottom:0;
         background-position:center;
         background-size:cover;
-    }.bg-parallax {
+    }
+    .bg-parallax {
         background-attachment:fixed;
-    }.overlay:after {
+    }
+    .overlay:after {
         content:"";
         position:absolute;
         left:0;
