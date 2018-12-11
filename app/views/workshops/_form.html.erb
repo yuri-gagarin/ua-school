@@ -26,10 +26,21 @@
     <%= f.text_field :instructor, class: 'form-control', placeholder: "...instructor" %>
   <% end %>
 
+  <%= form_group_tag(@workshop.errors[:instructor]) do %>
+    <%= f.label :time %>
+    <%= f.text_field :time, class: 'form-control', placeholder: "...time" %>
+  <% end %>
+
+  <%= form_group_tag(@workshop.errors[:instructor]) do %>
+    <%= f.label :room %>
+    <%= f.text_field :room, class: 'form-control', placeholder: "...room" %>
+  <% end %>
+
   <%= form_group_tag(@workshop.errors[:details]) do %>
     <%= f.label :details %>
     <%= f.cktext_area :details, rows: 20, class: 'form-control', placeholder: "...short detail" %>
   <% end %>
+
   <%= form_group_tag(@workshop.errors[:description]) do %>
     <%= f.label :description %>
     <%= f.cktext_area :description, rows: 60, class: 'form-control', placeholder: "...description of a new workshop" %>

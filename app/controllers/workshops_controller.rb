@@ -102,6 +102,6 @@ class WorkshopsController < ApplicationController
   private   
     # Only allow a trusted parameter "white list" through.
     def workshop_params
-      params.require(:workshop).permit(:name, :price, :instructor, :details, :description, workshop_images_attributes: [:image, :workshop_id])
+      params.require(:workshop).permit(:name, :price, :instructor, :time, :room, :details, :description, workshop_images_attributes: [:image, :workshop_id])
     end
 end

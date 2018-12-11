@@ -7,5 +7,5 @@ class Workshop < ApplicationRecord
     validates :instructor, length: {minimum: 1}, presence: true
     validates :details, length: {minimum: 1}, presence: true
     validates :description , length: {minimum: 1}, presence: true
-
+    validates :time, presence: true
 end

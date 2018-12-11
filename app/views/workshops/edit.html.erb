@@ -1,6 +1,8 @@
-<h1>Editing Workshop</h1>
+<div class="container">
+    <h1><%=@workshop.name %></h1>
 
-<%= render 'form', workshop: @workshop %>
+    <%= render 'form', workshop: @workshop %>
 
-<%= link_to 'Show', @workshop %> |
-<%= link_to 'Back', workshops_path %>
+    <%= link_to 'Show', @workshop %> |
+    <%= link_to 'Back', workshops_path %>
+</div>
