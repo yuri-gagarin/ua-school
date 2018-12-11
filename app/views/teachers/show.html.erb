@@ -27,6 +27,31 @@
         </div>
      </div>
   </div>
+<% if @teachers_courses.length > 0 %>
+  <div class="row">
+    <div class="mx-auto">
+        <h3>Courses Taught</h3>
+    </div>
+  </div>
+  <div class="row" id="teacher-class-row">
+   
+    <% @teacher.courses.each do |course| %>
+      <div class="col-md-6 col-sm-6 col-xs-6">
+        <div class="course">
+          <a href="#" class="course-img">
+            <img src="/assets/stock/workshop_stock_photo.jpg" alt="course image">
+            <i class="course-link-icon fa fa-link"></i>
+          </a>
+          <a class="course-title" href="courses">Beginner to Pro in Excel: Financial Modeling and Valuation</a>
+          <div class="course-details">
+            <span class="course-category">Business</span>
+            <span class="course-price course-free">Free</span>
+          </div>
+        </div>
+      </div>
+    <% end %> 
+  </div>
+<% end %>  
 </div>
 <footer class="navbar nav-footer navbar-expand">
   <ul class="navbar-nav mr-auto">
