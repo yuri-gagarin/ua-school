@@ -1,0 +1,27 @@
+<%= form_for @gallery_image do |f| %>
+
+<% if @gallery_image.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gallery_image.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+      <% @gallery_image.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_group_tag(@gallery_image.errors[:gallery_image]) do %>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  <% end %>
+  <%= form_group_tag(@gallery_image.errors[:description]) do %>
+    <%= f.label :description %>
+    <%= f.text_field :description, rows: 2, class: 'form-control', placeholder: "description of an image" %>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.button "Save Image", class: "btn btn-success", name: 'gallery_id', value: @gallery.id %>
+  </div>
+<% end %>

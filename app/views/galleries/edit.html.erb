@@ -1,6 +1,26 @@
-<h1>Editing Gallery</h1>
+<div class="container gallery-edit-container">
 
-<%= render 'form', gallery: @gallery %>
+    <h1>Editing "<%=@gallery.title%>"</h1>
 
-<%= link_to 'Show', @gallery %> |
-<%= link_to 'Back', galleries_path %>
+    <div class="row text-center">
+        <%= render 'form', gallery: @gallery %>
+    </div>
+
+    <% if @gallery.id != nil %>
+
+    <div class="row text-center">
+        <div class="col-md-4 ">
+            <h3>Image Uploader</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 ">
+            <%= render 'image_form', image: @image %>
+        </div>
+    </div>
+
+    <% end %>
+
+    <%= link_to 'Show', @gallery %> |
+    <%= link_to 'Back', galleries_path %>
+</div>

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   #routes for image deletion
   resources :course_images,  only: [:destroy]
   resources :index_post_images, only: [:destroy]
-  resources :gallery_images, only: [:destroy]
+  resources :gallery_images, only: [:create, :destroy]
   resources :workshop_images, only: [:destroy]
 
   resources :topics, only: [:index, :show]

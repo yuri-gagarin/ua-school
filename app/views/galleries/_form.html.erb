@@ -1,4 +1,4 @@
-<%= form_for(@gallery, html: {multipart: true}) do |f| %>
+<%= form_for @gallery do |f| %>
   <% if @gallery.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(course.errors.count, "error") %> prohibited this course from being saved:</h2>
@@ -11,13 +11,13 @@
     </div>
   <% end %>
 
-  <%= form_group_tag(gallery.errors[:name]) do %>
+  <%= form_group_tag(@gallery.errors[:name]) do %>
     <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control', placeholder: "Name of a new class" %>
+    <%= f.text_field :title, class: 'form-control', placeholder: "Name of a new gallery" %>
   <% end %>
-  <%= form_group_tag(gallery.errors[:description]) do %>
+  <%= form_group_tag(@gallery.errors[:description]) do %>
     <%= f.label :description %>
-    <%= f.cktext_area :description, rows: 10, class: 'form-control', placeholder: "description of a new class" %>
+    <%= f.cktext_area :description, rows: 10, class: 'form-control', placeholder: "description of a new gallery" %>
   <% end %>
 
 <% if @gallery.gallery_images.length > 0 %>
@@ -29,17 +29,8 @@
 <%   end %>
 <% end %>
 
-
-  
- <%= f.fields_for :image do |ff| %>
-    <div class="field">
-      <%= ff.label :image %><br>
-      <%= ff.file_field :image, multiple: true, name: "gallery_images[]" %>
-    </div>
-  <% end %>
-
   <div class="form-group">
-    <%= f.submit "Save", class: 'btn btn-success' %>
+    <%= f.submit "Save Gallery", class: 'btn btn-success save-gallery-btn' %>
   </div>
 
 <% end %>

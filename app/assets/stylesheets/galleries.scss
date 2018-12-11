@@ -191,6 +191,15 @@
     }
   }
   
+//galeries#edit
+.gallery-edit-container {
+    position: relative;
+    .save-gallery-btn {
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+    }
+}
 
 
 

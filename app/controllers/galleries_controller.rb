@@ -20,6 +20,7 @@ class GalleriesController < ApplicationController
   # GET /galleries/1/edit
   def edit
     @gallery = Gallery.find(params[:id])
+    @gallery_image = GalleryImage.new
   end
 
   # POST /galleries
@@ -27,7 +28,7 @@ class GalleriesController < ApplicationController
     @gallery = Gallery.new(gallery_params)
 
     respond_to do |format|
-
+  
       if @gallery.save
         if params[:gallery_images]
           params[:gallery_images].each do |image|
@@ -50,6 +51,9 @@ class GalleriesController < ApplicationController
           render json: @gallery.errors, status: :unprocessable_entity
         end
       end  
+    end
+    params.each do |par|
+      puts par 
     end
 
   end
@@ -102,6 +106,6 @@ class GalleriesController < ApplicationController
   private
 
     def gallery_params
-      params.require(:gallery).permit(:title, :description, gallery_images_attributes: [:image, :gallery_id])
+      params.require(:gallery).permit(:title, :description, {gallery_images_attributes: [:image, :gallery_id]})
     end
 end
