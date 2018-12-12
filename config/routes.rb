@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  get 'topic_images/create'
-
-  get 'topic_images/destroy'
-
+  
   get 'about/home'
 
   get 'about/news'
@@ -41,7 +38,14 @@ Rails.application.routes.draw do
     post '/down-vote' => 'votes#down_vote', as: :down_vote
   end
 
-  get "admin" => "admin#index"
+  get "/admin", to: "admin#index"
+  get "/admin/courses", to: "admin#courses"
+  get "/admin/galleries", to: "admin#galleries"
+  get "/admin/index_pages", to: "admin#index_pages"
+  get "/admin/news_topics", to: "admin#news_topics"
+  get "/admin/workshops", to: "admin#workshops"
+  get "/admin/users", to: "admin#users"
+
   post "admin/confirm_user" => "admin#confirm_user"
   
   get 'about' => 'welcome#about'
