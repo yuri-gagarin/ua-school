@@ -1,4 +1,16 @@
 uk:
+  toolbar:
+    news: Новини
+    all_news: Всі Новини
+    teachers: Вчителі
+    workshops: Гуртки
+    courses: Навчання
+    cost: Фінансування
+    location: Приміщення
+    contact: Контакт
+    galleries: Фотогалереї
+    our_approach: Наш Підхід
+    
   activerecord:
     errors:
       messages:
