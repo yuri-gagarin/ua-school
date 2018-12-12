@@ -13,7 +13,8 @@ class TopicsController < ApplicationController
     @topic.user_id = current_user.id
 
     if @topic.save
-      redirect_to action: :news, controller: :about, notice: "Topic was saved succesfully."
+      flash[:notice] = "Topic was saved succesfully."
+      redirect_to action: :news, controller: :about
     else
       flash.now[:alert] = "Error creating a topic. Please try again."
       render :new
