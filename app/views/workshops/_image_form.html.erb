@@ -1,0 +1,22 @@
+<%= form_for @workshop_image do |f| %>
+
+<% if @workshop_image.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@workshop_image.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+      <% @workshop_image.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_group_tag(@workshop_image.errors[:workshop_image]) do %>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  <% end %>
+  <div class="form-group">
+    <%= f.button "Save Image", class: "btn btn-success", name: 'workshop_id', value: @workshop.id %>
+  </div>
+<% end %>

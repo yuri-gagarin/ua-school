@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   resources :index_post_images, only: [:destroy]
   resources :gallery_images, only: [:create, :destroy]
   resources :topic_images, only: [:create, :destroy]
-  resources :workshop_images, only: [:destroy]
+  resources :workshop_images, only: [:create, :destroy]
 
   resources :teachers, only: [:index, :show]
 

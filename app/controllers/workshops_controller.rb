@@ -22,6 +22,7 @@ class WorkshopsController < ApplicationController
   # GET /workshops/1/edit
   def edit
     @workshop = Workshop.find(params[:id])
+    @workshop_image = WorkshopImage.new
   end
 
   # POST /workshops
