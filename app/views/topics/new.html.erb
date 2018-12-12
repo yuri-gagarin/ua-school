@@ -1,15 +1,9 @@
-<h1>New Topic</h1>
-
-<div class="row">
-  <div class="col-md-4">
-    <p>Guidelines for topics:</p>
-    <ul>
-      <li>Make sure the topic is appropriate.</li>
-      <li>Never insult dogs.</li>
-      <li>Smile when you type.</li>
-    </ul>
-  </div>
-  <div class="col-md-8">
-    <%= render partial: 'form', locals: {topic: @topic} %>
+<div class="container">
+  <h1 class="text-center">New "News" Topic</h1>
+      <%= render partial: 'form', locals: {topic: @topic} %>
+  <div class="row text-center">
+    <div class="col">
+      <%= link_to "Back", url_for(:back) %>
+    </div>
   </div>
 </div>

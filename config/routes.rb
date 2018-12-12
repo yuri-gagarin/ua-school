@@ -24,13 +24,10 @@ Rails.application.routes.draw do
   resources :gallery_images, only: [:create, :destroy]
   resources :workshop_images, only: [:destroy]
 
-  resources :topics, only: [:index, :show]
   resources :teachers, only: [:index, :show]
 
-  resources :topics do
-    resources :posts, except: [:index]
-    resources :sponsored_posts, except: [:index]
-  end
+  #blog post topics
+  resources :topics, only: [:new, :create, :edit, :update, :destroy]
 
   resources :posts, only: [] do
     resources :comments, only: [:create, :destroy]

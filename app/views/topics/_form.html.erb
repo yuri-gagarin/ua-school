@@ -11,11 +11,15 @@
   <% end  %>
   <%= form_group_tag(topic.errors[:name]) do %>
     <%= f.label :name %>
-    <%= f.text_field :name, class: 'form-control', placeholder: "Enter topic title" %>
+    <%= f.text_field :name, class: 'form-control', placeholder: "...title" %>
+  <% end %>
+  <%= form_group_tag(topic.errors[:category]) do %>
+    <%= f.label :category %>
+    <%= f.text_field :category, class: 'form-control', placeholder: "...category" %>
   <% end %>
   <%= form_group_tag(topic.errors[:description]) do %>
     <%= f.label :description %>
-    <%= f.text_area :description, rows: 8, class: 'form-control', placeholder: "Enter a topic description" %>
+    <%= f.cktext_area :description, rows: 8, class: 'form-control', placeholder: "..." %>
   <% end %>
   <div class="form-group">
    <%= f.submit "Save", class: 'btn btn-success' %>
