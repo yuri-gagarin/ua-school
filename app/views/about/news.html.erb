@@ -4,7 +4,7 @@
     <h3>News</h3>
 </div>
 </div>
-  <div id="all-blogs" class="section">
+<div id="all-blogs" class="section">
 <div id="blog" class="section">
 
     <div class="container">
@@ -19,7 +19,7 @@
                             <div class="col-md-10">
                                 <div class="single-blog">
                                     <div class="blog-img">
-                                        <a href="blog-post.html">
+                                        <a href="/topics/<%=topic.id %>">
                                             <% if topic.topic_images.length > 0 %>
                                                 <img src="<%= topic.topic_images[0].image %>" alt="topic image">
                                             <% else %>
@@ -29,7 +29,7 @@
                                     </div>
                                     <div class="blog-info">
                                         <h5><%=topic.name%></h5>
-                                        <h3><a href="blog-post.html"><%=raw topic.description.truncate(100)%></a></h3>
+                                        <h3><a href="/topics/<%=topic.id %>"><%=raw topic.description.truncate(100)%></a></h3>
                                         <div class="blog-meta pull-right">
                                             <span class="blog-meta-author">By: <a href="#"><%= User.find_by_id(topic.user_id).name %></a></span>
                                             <div class="pull-right">
@@ -68,16 +68,16 @@
                         <% @recent_topics.each do |topic| %>
                         <div class="single-post">
                             <%if topic.topic_images.length > 0 %>
-                                <a class="single-post-img" href="blog-post.html">
+                                <a class="single-post-img" href="/topics/<%=topic.id %>">
                                     <img src="<%= topic.topic_images[0].image%>" alt="">
                                 </a>
                             <% else %>
-                                <a class="single-post-img" href="blog-post.html">
+                                <a class="single-post-img" href="/topics/<%=topic.id %>">
                                     <img src="/assets/stock/new_topic.jpg" alt="">
                                 </a>
                             
                             <% end %>
-                            <a href="blog-post.html"><%=raw topic.description.truncate(20)%></a>
+                            <a href="/topics/<%=topic.id %>"><%=raw topic.description.truncate(20)%></a>
                             <p><small>By : <%= User.find_by_id(topic.user_id).name%></small></p>
                         </div>
                         <!-- /single posts -->

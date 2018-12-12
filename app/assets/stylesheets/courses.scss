@@ -169,8 +169,8 @@
 	outline: none;
 }
 .gal-item a:after{
-	content:"\e003";
-	font-family: 'Glyphicons Halflings';
+	content: "+";
+	//font-family: 'Glyphicons Halflings';
 	opacity: 0;
 	background-color: rgba(0, 0, 0, 0.75);
 	position: absolute;

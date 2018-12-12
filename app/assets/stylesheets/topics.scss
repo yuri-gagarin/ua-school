@@ -28,3 +28,148 @@
         display: inline-block;
     }
 }
+
+//topics#show
+
+#blog {
+	margin-top: 50px;
+}
+
+#topics-show {
+	width: 100%;
+    height: 400px;
+    position: relative;
+	#topic-title {
+		position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        h3{
+            color: white;
+            font-size: 30px;
+            font-family: cursive;
+            font-weight: bold;
+            letter-spacing: 5px;
+		}
+		p {
+			color: white;
+			text-decoration: underline;
+		}
+		h5 {
+			color: yellow;
+			text-emphasis: bold;
+		}
+	}
+	.topic-bg-image {
+        background-image: url("/assets/stock/new_topic.jpg");
+        position:absolute;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        background-position:center;
+        background-size:cover;
+    }
+    .bg-parallax {
+        background-attachment:fixed;
+    }
+    .overlay:after {
+        content:"";
+        position:absolute;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#374050), to(#798696));
+        background-image: linear-gradient(to bottom, #374050 0%, #798696 100%);
+        opacity: 0.7;
+    }
+}
+
+
+
+
+
+
+
+/*------------------------------------*\
+	Single Post Page
+\*------------------------------------*/
+/* --- Blog Post Meta --- */
+.blog-post-meta {
+	margin-top:40px;
+}
+
+.blog-post-meta li {
+	display:inline-block;
+}
+
+.blog-post-meta li + li {
+	margin-left:15px;
+}
+
+.blog-post-meta li , .blog-post-meta li > a {
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.blog-post-meta .blog-meta-author > a {
+	color: #FF6700;
+}
+
+
+
+/* --- Blog Comments --- */
+.blog-comments {
+	margin-top:40px;
+}
+
+.blog-comments .media {
+	margin-top:20px;
+	margin-bottom:20px;
+}
+
+.blog-comments .media .media {
+	margin-left:20px;
+}
+
+.blog-comments .media .media:nth-last-child(1) {
+	margin-bottom:0px;
+}
+
+.blog-comments .media .media-body {
+	padding:20px;
+	background-color:#EBEBEB;
+	border-radius:0px 4px 4px;
+}
+
+.blog-comments .media .media-left:before {
+	content:"";
+	position:absolute;
+	right:0;
+	top:0;
+	border-style: solid;
+	border-width: 0px 15px 15px;
+	border-color: transparent #EBEBEB transparent transparent;
+}
+
+.blog-comments .media-left {
+	position:relative;
+	padding-right:20px;
+}
+
+.blog-comments .media-left img {
+	width:80px;
+	height:80px;
+	background-color:#EBEBEB;
+	border-radius:50%;
+}
+
+.blog-comments .media .date-reply {
+	font-size:12px;
+	text-transform:uppercase;
+	color:#374050;
+}
+.blog-comments .media .date-reply .reply {
+	margin-left:15px;
+}
+

@@ -21,6 +21,11 @@ class TopicsController < ApplicationController
     end
   end
 
+  def show
+    @topic = Topic.find(params[:id])
+    @recent_topics = Topic.all.order(created_at: :desc).limit(3)
+  end
+
   def edit
     @topic = Topic.find(params[:id])
     @topic_image = TopicImage.new

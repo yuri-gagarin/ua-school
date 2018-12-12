@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   resources :teachers, only: [:index, :show]
 
   #blog post topics
-  resources :topics, only: [:new, :create, :edit, :update, :destroy]
+  resources :topics 
 
   resources :posts, only: [] do
     resources :comments, only: [:create, :destroy]
