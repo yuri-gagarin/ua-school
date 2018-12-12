@@ -1,41 +1,53 @@
 //about#news
-.section {
+
+#blogs-index-intro {
+	width: 100%;
+    height: 400px;
+    position: relative;
+	#blogs-index-title {
+		position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        h3{
+            color: white;
+            font-size: 75px;
+            font-family: cursive;
+            font-weight: bold;
+            letter-spacing: 5px;
+        }
+	}
+	.bg-image {
+        background-image: url("/assets/stock/workshop_stock_photo.jpg");
+        position:absolute;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        background-position:center;
+        background-size:cover;
+    }
+    .bg-parallax {
+        background-attachment:fixed;
+    }
+    .overlay:after {
+        content:"";
+        position:absolute;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#374050), to(#798696));
+        background-image: linear-gradient(to bottom, #374050 0%, #798696 100%);
+        opacity: 0.7;
+    }
+}
+#all-blogs {
 	position:relative;
 	padding-top:80px;
 	padding-bottom:80px;
 }
 
-.section-hr {
-	margin-top:80px;
-	margin-bottom:80px;
-	border-color: #EBEBEB;
-}
-
-.section-header {
-	margin-bottom:40px;
-}
-
-.hero-area {
-	position:relative;
-	padding-top: 80px;
-	padding-bottom: 80px;
-}
-
-#home.hero-area {
-	height:calc(100vh - 80px);
-	padding-top: 0px;
-	padding-bottom: 0px;
-}
-
-.home-wrapper {
-	position:absolute;
-	top:50%;
-	-webkit-transform:translateY(-50%);
-	    -ms-transform:translateY(-50%);
-	        transform:translateY(-50%);
-	left:0;
-	right:0;
-}
 
 /* --- Background Image --- */
 .bg-image {
@@ -63,49 +75,51 @@
 	background-image: linear-gradient(to bottom, #374050 0%, #798696 100%);
 	opacity: 0.7;
 }
-/* -- Single Blog -- */
+
+//blog display
 .single-blog {
+	display: flex;
 	margin-bottom:40px;
+	.blog-img{
+		height: 100%;
+		width: 40%;
+		position: relative;
+		display:inline-block;
+		overflow:hidden;
+	}
+	a:hover:after {
+		opacity:0.2;
+	}
+	
+	.blog-info{
+		margin-left: 5%;
+		width: 60%;
+		display: inline-block;
+	}
 }
-
-.single-blog .blog-img > a {
-	position:relative;
-	display:block;
-	border-radius:4px;
-	overflow:hidden;
-}
-
-.single-blog .blog-img img {
-	width:100%;
-}
-
-.single-blog .blog-img > a:after {
+.blog-img a::after {
 	content:"";
-	position:absolute;
-	left:0;
-	top:0;
-	bottom:0;
-	right:0;
-	background-color:#FF6700;
-	opacity:0;
+	background: rgb(96, 162, 206);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	opacity: 0;
 	-webkit-transition:0.2s opacity;
 	transition:0.2s opacity;
 }
-
-.single-blog .blog-img > a:hover:after {
-	opacity:0.7;
+.single-blog .blog-img img {
+	width:100%;
 }
-
 .single-blog .blog-meta {
 	margin-top: 20px;
 	padding-top: 10px;
 	border-top: 1px solid #EBEBEB;
 }
-
 .single-blog .blog-meta .blog-meta-author > a {
 	color: #FF6700;
 }
-
 .single-blog .blog-meta .blog-meta-comments {
 	margin-left:10px;
 }
@@ -114,14 +128,19 @@
 	color: #798696;
 }
 
+
+
+
+
 /* -- Pagination -- */
 .post-pagination {
 	margin-top:40px;
 	text-align:center;
-}
-
-.post-pagination .pages {
-	display:inline-block;
+	.pages {
+		display:inline-block;
+		margin-top: 15px;
+		
+	}	
 }
 
 .post-pagination .pages li {
@@ -150,7 +169,7 @@
 }
 
 .post-pagination .pages li:hover  , .post-pagination .pages li.active {
-	background-color: #FF6700;
+	background-color:rgb(96, 162, 206);
 	color:#FFF;
 }
 
@@ -172,20 +191,9 @@
 
 .pagination-next:hover  , .pagination-back:hover  {
 	color:#FFF;
-	background-color:#FF6700;
+	background-color:rgb(96, 162, 206);
 }
 
-.pagination-next:after {
-	content:"\f178";
-	font-family:FontAwesome;
-	margin-left:15px;
-}
-
-.pagination-back:before {
-	content:"\f177";
-	font-family:FontAwesome;
-	margin-right:15px;
-}
 
 /*------------------------------------*\
 	Blog Page Sidebar
@@ -304,7 +312,7 @@
 }
 
 .tags-widget .tag:hover {
-	background-color:#FF6700;
+	background-color:rgb(96, 162, 206);
 	border-color:#FF6700;
 	color:#FFF;
 }
