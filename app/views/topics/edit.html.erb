@@ -1,9 +1,23 @@
-<div class="container">
-  <h1 class="text-center">Editing <%=@topic.name%> Topic</h1>
-     <%= render partial: 'form', locals: {topic: @topic} %>
-  <div class="row text-center">
-    <div class="col">
+<div class="container topic-container">
+  <h1 class>Editing  "<%=@topic.name%>"</h1>
+
+  <div class="row">
+    <%= render partial: 'form', locals: {topic: @topic} %>
+  </div>
+
+  <% if @topic.id != nil %>
+    <div class="row">
+      <h5 class=>Image Uploader</h3>
+    </div>
+    <div class="row">
+      <%= render 'image_form', image: @image %>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="topic-back-btn">
       <%= link_to "Back", url_for(:back) %>
     </div>
   </div>
 </div>
+<br>

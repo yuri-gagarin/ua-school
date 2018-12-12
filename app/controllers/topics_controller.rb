@@ -5,6 +5,7 @@ class TopicsController < ApplicationController
 
   def new
     @topic = Topic.new
+
   end
 
   def create
@@ -21,6 +22,7 @@ class TopicsController < ApplicationController
 
   def edit
     @topic = Topic.find(params[:id])
+    @topic_image = TopicImage.new
   end
 
   def update

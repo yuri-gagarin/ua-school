@@ -21,12 +21,16 @@
   <% end %>
 
 <% if @gallery.gallery_images.length > 0 %>
-<%   @gallery.gallery_images.each do |img_row| %>
-     <%= link_to "Delete", gallery_image_path(img_row.id), method: :delete %>
-     <div class="img-preview-control">
-       <img src="<%=img_row.image%>" alt="course image"/>
-     </div>
-<%   end %>
+  <div class="row">
+  <% @gallery.gallery_images.each do |img_row| %>
+    <div class="edit-form-img-thumb">
+      <%= link_to "Delete", gallery_image_path(img_row.id), method: :delete %>
+      <div class="img-preview-control">
+        <img src="<%=img_row.image%>" alt="course image"/>
+      </div>
+    </div>
+    <% end %>
+  </div>
 <% end %>
 
   <div class="form-group">

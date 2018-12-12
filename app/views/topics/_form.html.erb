@@ -1,27 +1,40 @@
-<%= form_for topic do |f| %>
-   <% if topic.errors.any? %>
+<%= form_for @topic do |f| %>
+   <% if @topic.errors.any? %>
     <div class="alert alert-danger">
-      <h4><%= pluralize(topic.errors.count, "error") %>.</h4>
+      <h4><%= pluralize(@topic.errors.count, "error") %>.</h4>
       <ul>
-        <% topic.errors.full_messages.each do |msg| %>
+        <% @topic.errors.full_messages.each do |msg| %>
           <li><%= msg %></li>
         <% end %>
       </ul>
     </div>
   <% end  %>
-  <%= form_group_tag(topic.errors[:name]) do %>
+  <%= form_group_tag(@topic.errors[:name]) do %>
     <%= f.label :name %>
     <%= f.text_field :name, class: 'form-control', placeholder: "...title" %>
   <% end %>
-  <%= form_group_tag(topic.errors[:category]) do %>
+  <%= form_group_tag(@topic.errors[:category]) do %>
     <%= f.label :category %>
     <%= f.text_field :category, class: 'form-control', placeholder: "...category" %>
   <% end %>
-  <%= form_group_tag(topic.errors[:description]) do %>
+  <%= form_group_tag(@topic.errors[:description]) do %>
     <%= f.label :description %>
     <%= f.cktext_area :description, rows: 8, class: 'form-control', placeholder: "..." %>
   <% end %>
+
+  <% if @topic.topic_images.length > 0 %>
+    <div class="row">
+    <% @topic.topic_images.each do |img_row| %>
+        <div class="edit-form-img-thumb">
+          <%= link_to "Delete", topic_image_path(img_row.id), method: :delete, data: {confirm: "Are you Sure?"}%>
+          <div class="img-preview-control">
+            <img src="<%=img_row.image%>" alt="course image"/>
+          </div>
+        </div>
+    <%   end %>
+    </div>
+   <% end %>
   <div class="form-group">
-   <%= f.submit "Save", class: 'btn btn-success' %>
+   <%= f.submit "Save Topic", class: 'btn btn-success save-topic-btn' %>
   </div>
 <% end %>

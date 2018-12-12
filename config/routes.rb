@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'topic_images/create'
+
+  get 'topic_images/destroy'
+
   get 'about/home'
 
   get 'about/news'
@@ -22,6 +26,7 @@ Rails.application.routes.draw do
   resources :course_images,  only: [:destroy]
   resources :index_post_images, only: [:destroy]
   resources :gallery_images, only: [:create, :destroy]
+  resources :topic_images, only: [:create, :destroy]
   resources :workshop_images, only: [:destroy]
 
   resources :teachers, only: [:index, :show]
