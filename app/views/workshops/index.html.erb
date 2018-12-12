@@ -24,7 +24,11 @@
         <div class="col-md-4 d-flex align-items-stretch">
 
           <div class="card">
-            <img class="card-img-top" src="<%=workshop.workshop_images[0].image %>" alt="Card image cap">
+            <% if workshop.workshop_images.length > 0 %>
+              <img class="card-img-top" src="<%=workshop.workshop_images[0].image %>" alt="Card image cap">
+            <% else %>
+              <img class="card-img-top" src="/assets/stock/workshop_stock_photo.jpg" alt="Card image cap">
+            <% end %>
             <div class="card-body">
               <h5 class="card-title"><%=workshop.name%></h5>
               <p class="card-text"><%=raw(workshop.description.truncate(110))%></p>
