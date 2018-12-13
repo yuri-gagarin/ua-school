@@ -10,7 +10,10 @@ class IndexPostsController < ApplicationController
 
   # GET /index_posts/1
   def show
+    @index_post_images = IndexPostImage.where(index_post_id: @index_post.id)
+    puts @index_post_images.length;
   end
+
 
   # GET /index_posts/new
   def new
