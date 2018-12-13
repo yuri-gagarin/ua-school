@@ -46,13 +46,17 @@
           <ul class="navbar-nav  ml-auto text-center">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Навчання
+                <%=t('toolbar.information')%>
               </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown"> 
+                <a class="dropdown-item" href="/<%=locale%>/index_posts/all_classes"><%=t('toolbar.school_classes')%></a>
+                <a class="dropdown-item" href="/<%=locale%>/index_posts/class_schedule"><%=t('toolbar.class_schedule')%></a>
+                <a class="dropdown-item" href="/<%=locale%>/index_posts/workshop_schedule%>"><%=t('toolbar.workshop_schedule')%></a>
+                <a class="dropdown-item" href="/<%=locale%>/index_posts/preschool"><%=t('toolbar.preschool')%></a>
+                <a class="dropdown-item" href="/<%=locale%>/index_posts/babygroup"><%=t('toolbar.babygroup')%></a>
+
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item" href="/<%=locale%>/index_posts/cost"><%=t('toolbar.cost')%></a>
               </div>
             </li>
             <li class="nav-item dropdown">

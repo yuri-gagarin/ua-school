@@ -6,6 +6,9 @@ class ApplicationController < ActionController::Base
 
   before_action :set_locale
   before_action :set_workshops
+  before_action :set_index_posts
+
+  private
 
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
@@ -14,6 +17,10 @@ class ApplicationController < ActionController::Base
 
   def set_workshops
     @all_workshops = Workshop.all
+  end
+
+  def set_index_posts
+    @index_posts = IndexPost.all
   end
 
   def default_url_options
