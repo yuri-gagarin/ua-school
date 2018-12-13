@@ -5,7 +5,7 @@
     </div>
 </div>
 <div class="container">
-    <% if @index_post_images.length == 1%>
+    <% if @index_post_images.length > 0%>
     <% img_url = @index_post_images[0].image %>
     <h3 class="text-center">Schedule</h3>
     <div class="row">
@@ -32,6 +32,32 @@
         <div class="col">
         <%=raw(@index_post.description)%>
         </div>
+    </div>
+
+    <div class="row">
+        <% if @index_post_images.length > 1%>
+            <% @index_post_images.drop(1).each_with_index do |data, index| %>
+                <% data_id = "pic" + (index+1).to_s %>
+                <% data_target = "#" + data_id %>
+                <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
+                    <div class="box">
+                        <a href="#" data-toggle="modal" data-target="<%=data_target%>">
+                            <img src="<%= data.image %>">
+                        </a>
+                        <div class="modal fade" id="<%= data_id%>" tabindex="-1" role="dialog">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                    <div class="modal-body">
+                                        <img src="<%= data.image %>">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+        <% end %>
     </div>
     <div class="row">
         <div class="col">
