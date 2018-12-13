@@ -4,10 +4,10 @@
       <h3><%=@index_post.title%></h3>
     </div>
 </div>
-<div class="container">
+<div class="container index-post-container">
     <% if @index_post_images.length > 0%>
     <% img_url = @index_post_images[0].image %>
-    <h3 class="text-center">Schedule</h3>
+    <h3 class="text-center"><%= t('index_page.schedule')%></h3>
     <div class="row">
         <div class="col-md-6 col-sm-12 co-xs-12 gal-item offset-md-3">
             <div class="box">
@@ -34,35 +34,36 @@
         </div>
     </div>
 
-    <div class="row">
-        <% if @index_post_images.length > 1%>
-            <% @index_post_images.drop(1).each_with_index do |data, index| %>
-                <% data_id = "pic" + (index+1).to_s %>
-                <% data_target = "#" + data_id %>
-                <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
-                    <div class="box">
-                        <a href="#" data-toggle="modal" data-target="<%=data_target%>">
-                            <img src="<%= data.image %>">
-                        </a>
-                        <div class="modal fade" id="<%= data_id%>" tabindex="-1" role="dialog">
-                            <div class="modal-dialog modal-lg" role="document">
-                                <div class="modal-content">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                    <div class="modal-body">
-                                        <img src="<%= data.image %>">
-                                    </div>
+    <% if @index_post_images.length > 1%>
+    <div class="row index-post-gal-row">
+        <% @index_post_images.drop(1).each_with_index do |data, index| %>
+            <% data_id = "pic" + (index+1).to_s %>
+            <% data_target = "#" + data_id %>
+            <div class="col-md-4 col-sm-6 co-xs-12 gal-item">
+                <div class="box">
+                    <a href="#" data-toggle="modal" data-target="<%=data_target%>">
+                        <img src="<%= data.image %>">
+                    </a>
+                    <div class="modal fade" id="<%= data_id%>" tabindex="-1" role="dialog">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                <div class="modal-body">
+                                    <img src="<%= data.image %>">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            <% end %>
+            </div>
         <% end %>
     </div>
-    <div class="row">
+    <% end %>
+
+    <div class="row index-post-form-row">
         <div class="col">
             <div class="blog-reply-form">
-                <h3>Contact Us</h3>
+                <h3 class="text-center"><i class="fas fa-envelope"></i>   <%=t('index_page.contact')%></h3>
                 <form>
                     <div class="form-group">
                         <input class="form-control" type="text" name="name" placeholder="Name">
@@ -73,9 +74,16 @@
                     <div class="form-group">
                         <textarea class="form-control" placeholder="Enter your Message"></textarea>
                     </div>
-                        <button type="submit" class="btn btn-primary"><%=t('news.submit')%></button>
+                        <button type="submit" class="btn btn-primary"><%=t('index_page.write_us')%></button>
                 </form>
             </div>
         </div>
     </div>
 </div>
+<footer class="navbar nav-footer navbar-expand">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item"><a class="nav-link social-btn" href="#"><i class="fab fa-facebook-square"></i><span class="sr-only">(current)</span></a></li>
+    <li class="nav-item"><a class="nav-link social-btn" href="#"><i class="fab fa-twitter-square"></i><span class="sr-only">(current)</span></a></li>
+    <li class="nav-item"><a class="nav-link social-btn" href="#"><i class="fab fa-instagram"></i><span class="sr-only">(current)</span></a></li>
+  </ul>
+</footer>

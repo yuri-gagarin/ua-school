@@ -19,6 +19,7 @@ uk:
     our_approach: Наш Підхід
   index_page:
     category: Категорія
+    schedule: Розклад
     class_schedule: Розклад Уроків
     workshop_schedule: Розклад Гуртків
     1-11_classes: 1-11 Класи
@@ -26,6 +27,8 @@ uk:
     babygroup: Дитяча Група
     cost: Фінансування
     about_us: Про Нас
+    contact: Контакт
+    write_us: Напишіть Нам
   courses:
     all_courses:
   

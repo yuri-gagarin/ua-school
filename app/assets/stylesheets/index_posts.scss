@@ -20,6 +20,8 @@
             font-weight: bold;
             letter-spacing: 5px;
             text-align: center;
+            text-decoration: underline;
+            text-underline-position: under;
         }
     }
 
@@ -46,5 +48,33 @@
         background-image: -webkit-gradient(linear, left top, left bottom, from(#374050), to(#798696));
         background-image: linear-gradient(to bottom, #374050 0%, #798696 100%);
         opacity: 0.7;
+    }
+}
+
+.index-post-container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    h3 {
+        border-bottom: 1px solid rgb(70, 70, 231);
+        padding-bottom: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        color: rgb(39, 39, 177);
+    }
+    .index-post-gal-row {
+        margin-top: 30px;
+        border-top: 1px solid rgb(70, 70, 231);
+    }
+    .index-post-form-row {
+        margin-top: 50px;
+        border-top: 1px solid rgb(70, 70, 231);
+        .blog-reply-form {
+            padding-top: 20px;
+        }
+    }
+    form {
+        background-color: rgb(209, 209, 209);
+        padding: 50px;
+        border-radius: 10px;
     }
 }
