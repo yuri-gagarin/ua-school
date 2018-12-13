@@ -52,7 +52,7 @@
         <th>Description</th>
         <th>Price</th>
         <th>Instructor</th>
-        <th>Creted At</th>
+        <th>Created At</th>
         <th>Updated At</th>
         <th></th>
         <th>Edit Workshop</th>
@@ -116,39 +116,39 @@
     <% end %>
   </table>
 </div>
-<div class="row">
-  <div class="text-center mx-auto">
-    <h3>Index Pages</h3>
-    <%= button_to "NEW", {controller: "index_posts", action: "new"}, method: :get, class: "btn btn-success" %>
-  </div>
-  <table class="table">
-    <thead class="thead-inverse">
-      <tr>
-        <th>#</th>
-        <th>Site Section</th>
-        <th>Title</th>
-        <th>Created</th>
-        <th>Updated</th>
-        <th>Edit</th>
-        <th>Delete</th>
-
-      </tr>
-    </thead>
-    <% @index_posts.each_with_index do |post, index|%>
-    <tbody>
-      <tr>
-        <th scope="row"><%= (index + 1).to_s %></th>
-        <td><%= post.page_type %></td>
-        <td><%= post.title %></td>
-        <td><%= post.created_at %></td>
-        <td><%= post.updated_at %></td>
-        <td><%= button_to "EDIT", {controller: "index_posts", action: "edit", id: post.slug}, method: :get, class: "btn btn-warning" %></td>
-        <td><%= button_to "DELETE", {controller: "index_posts", action: "destroy", id: post.slug}, method: :delete, class: "btn btn-danger", data: {confirm: "ARE YOU SURE?"} %></td>
-      </tr>
-    </tbody>
-    <% end %>
-  </table>
 </div>
 
+<div class="container admin-control-container">
+  <div class="row">
+    <div class="col">
+      <h3 class="text-center">Welcome <%=current_user.name%></h3>
+    <div>
+  </div>
+  <div class="row">
+    <div class="col-md-4 col-sm-6 text-center">
+      <h5 class="text-center">Go to All Classes</h5>
+      <%= button_to "Classes", admin_courses_path, class: "btn btn-success", method: :get %>
+    </div>
 
+    <div class="col-md-4 col-sm-6 text-center">
+      <h5 class="text-center">Go to All Workshops</h5>
+      <%= button_to "Workshops", admin_workshops_path, class: "btn btn-success", method: :get %>
+    </div>
+
+    <div class="col-md-4 col-sm-6 text-center">
+      <h5 class="text-center">Go to All News</h5>
+      <%= button_to "News", admin_news_topics_path, class: "btn btn-success mx-auto", method: :get%>
+    </div>
+
+    <div class="col-md-4 col-sm-6 text-center">
+      <h5 class="text-center">Go to All Teachers</h5>
+      <%= button_to "Teachers", admin_teachers_path, class: "btn btn-success", method: :get %>
+    </div>
+
+\    <div class="col-md-4 col-sm-6 text-center">
+      <h5>Go to All Students</h5>
+      <%= button_to "Students", admin_students_path, class: "btn btn-success", method: :get %>
+    </div>
+  </div>
+  
 </div>

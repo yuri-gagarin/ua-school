@@ -16,8 +16,8 @@ class AdminController < ApplicationController
         @galleries = Gallery.all
     end
 
-    def index_pages
-        @index_pages = IndexPost.all
+    def index_posts
+        @index_posts = IndexPost.all
     end
 
     def news_topics
@@ -25,14 +25,19 @@ class AdminController < ApplicationController
     end
 
     def workshops
-        @workshops. Workshop.all
+        @workshops = Workshop.all
     end
 
-    def users
-        @users = User.all
-        @teachers = User.where(role: 'teacher')
+    def parents
+        @parents = User.where(role: 'member')
+    end
+
+    def students
         @students = User.where(role: 'student')
-        @parents = User.where(role: 'parent')
+    end
+
+    def teachers
+        @teachers = User.where(role: 'teacher')
     end
 
 

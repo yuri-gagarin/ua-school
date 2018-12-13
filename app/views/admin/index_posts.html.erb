@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <h3>Index Post Controls</h3>
+    </div>
+    
+    <div class="row">
+        <div class="text-center mx-auto">
+            <h3>Index Posts</h3>
+            <%= button_to "NEW", {controller: "index_posts", action: "new"}, method: :get, class: "btn btn-success" %>
+        </div>
+        <table class="table">
+            <thead class="thead-inverse">
+            <tr>
+                <th>#</th>
+                <th>Site Section</th>
+                <th>Title</th>
+                <th>Created</th>
+                <th>Updated</th>
+                <th>Edit</th>
+                <th>Delete</th>
+
+            </tr>
+            </thead>
+            <% @index_posts.each_with_index do |post, index|%>
+            <tbody>
+            <tr>
+                <th scope="row"><%= (index + 1).to_s %></th>
+                <td><%= post.page_type %></td>
+                <td><%= post.title %></td>
+                <td><%= post.created_at %></td>
+                <td><%= post.updated_at %></td>
+                <td><%= button_to "EDIT", {controller: "index_posts", action: "edit", id: post.slug}, method: :get, class: "btn btn-warning" %></td>
+                <td><%= button_to "DELETE", {controller: "index_posts", action: "destroy", id: post.slug}, method: :delete, class: "btn btn-danger", data: {confirm: "ARE YOU SURE?"} %></td>
+            </tr>
+            </tbody>
+            <% end %>
+        </table>
+    </div>
+
+
+</div>
