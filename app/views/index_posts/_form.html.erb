@@ -13,19 +13,21 @@
 
   <%= form_group_tag(@index_post.errors[:title]) do %>
     <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control', placeholder: "Name of a new class" %>
+    <%= f.text_field :title, class: 'form-control', placeholder: "...title" %>
   <% end %>
   <%= form_group_tag(@index_post.errors[:description]) do %>
     <%= f.label :description %>
-    <%= f.cktext_area :description, rows: 20, class: 'form-control', placeholder: "description of a new class" %>
+    <%= f.cktext_area :description, rows: 20, class: 'form-control', placeholder: "...description" %>
   <% end %>
   <select name="index_post[page_type]" class="form-control">
-      <option value="">Please select</option>
-      <option value=0 selected="selected">Education</option>
-      <option value=1>Teachers</option>
-      <option value=2>Workshops</option>
-      <option value=3>School</option>
-      <option value=4>About</option>
+      <option value=""><%=t('index_page.category')%></option>
+      <option value=0><%=t('index_page.class_schedule')%></option>
+      <option value=1><%=t('index_page.workshop_schedule')%></option>
+      <option value=2><%=t('index_page.1-11_classes')%></option>
+      <option value=3><%=t('index_page.preschool')%></option>
+      <option value=4><%=t('index_page.babygroup')%></option>
+      <option value=5><%=t('index_page.cost')%></option>
+      <option value=6><%=t('index_page.about_us')%></option>
  </select>
 
  <% if @index_post.index_post_images.length > 0 %>

@@ -1,16 +1,47 @@
 uk:
   toolbar:
+    information: Інформація 
+    class_schedule: Розклад Уроків
+    workshop_schedule: Розклад Гуртків
+    preschool: Підготовча Група
+    babygroup: Дитяча Група
+    1-11_classes: 1-11 Класи
+    cost: Фінансування
     news: Новини
     all_news: Всі Новини
     teachers: Вчителі
     workshops: Гуртки
     all_workshops: Всі Гуртки
     courses: Навчання
-    cost: Фінансування
     location: Приміщення
     contact: Контакт
     galleries: Фотогалереї
     our_approach: Наш Підхід
+  index_page:
+    category: Категорія
+    class_schedule: Розклад Уроків
+    workshop_schedule: Розклад Гуртків
+    1-11_classes: 1-11 Класи
+    preschool: Підготовча Група
+    babygroup: Дитяча Група
+    cost: Фінансування
+    about_us: Про Нас
+  courses:
+    all_courses:
+  
+  wokshops:      
+  news:
+    our_news: Наші Новини
+    recent_news: Актуальні Новини
+    author: Автор
+    back: Назад
+    forward: Вперед
+    tags: Теми
+    comments: Коментарі
+    submit: Коментувати
+
+  education:
+  
     
   activerecord:
     errors:

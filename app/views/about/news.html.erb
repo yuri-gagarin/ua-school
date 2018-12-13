@@ -1,7 +1,7 @@
 <div id="blogs-index-intro">
     <div class="bg-image bg-parallax overlay"></div>
     <div id="blogs-index-title">
-    <h3>News</h3>
+    <h3><%=t('news.our_news')%></h3>
 </div>
 </div>
 <div id="all-blogs" class="section">
@@ -19,7 +19,7 @@
                             <div class="col-md-10">
                                 <div class="single-blog">
                                     <div class="blog-img">
-                                        <a href="/topics/<%=topic.id %>">
+                                        <a href="/<%=locale%>/topics/<%=topic.id %>">
                                             <% if topic.topic_images.length > 0 %>
                                                 <img src="<%= topic.topic_images[0].image %>" alt="topic image">
                                             <% else %>
@@ -29,9 +29,9 @@
                                     </div>
                                     <div class="blog-info">
                                         <h5><%=topic.name%></h5>
-                                        <h3><a href="/topics/<%=topic.id %>"><%=raw topic.description.truncate(100)%></a></h3>
+                                        <h3><a href="/<%=locale%>/topics/<%=topic.id %>"><%=raw topic.description.truncate(100)%></a></h3>
                                         <div class="blog-meta pull-right">
-                                            <span class="blog-meta-author">By: <a href="#"><%= User.find_by_id(topic.user_id).name %></a></span>
+                                            <span class="blog-meta-author"><%=t('news.author')%>: <a href="#"><%= User.find_by_id(topic.user_id).name %></a></span>
                                             <div class="pull-right">
                                                 <span><%=time_tag(topic.created_at)%></span>
                                                 <span class="blog-meta-comments"><a href="#"><i class="fa fa-comments"></i> 35</a></span>
@@ -61,14 +61,14 @@
 
                 <!-- posts widget -->
                 <div class="widget posts-widget">
-                    <h3>Recents News</h3>
+                    <h3><%=t('news.recent_news')%></h3>
 
                     <!-- single posts -->
                     <%if @recent_topics %>
                         <% @recent_topics.each do |topic| %>
                         <div class="single-post">
                             <%if topic.topic_images.length > 0 %>
-                                <a class="single-post-img" href="/topics/<%=topic.id %>">
+                                <a class="single-post-img" href="/<%=locale%>/topics/<%=topic.id %>">
                                     <img src="<%= topic.topic_images[0].image%>" alt="">
                                 </a>
                             <% else %>
@@ -77,8 +77,8 @@
                                 </a>
                             
                             <% end %>
-                            <a href="/topics/<%=topic.id %>"><%=raw topic.description.truncate(20)%></a>
-                            <p><small>By : <%= User.find_by_id(topic.user_id).name%></small></p>
+                            <a href="/<%=locale%>/topics/<%=topic.id %>"><%=raw topic.description.truncate(20)%></a>
+                            <p><small><%=t('news.author')%>: <%= User.find_by_id(topic.user_id).name%></small></p>
                         </div>
                         <!-- /single posts -->
                         <% end %>
@@ -89,7 +89,7 @@
 
                 <!-- tags widget -->
                 <div class="widget tags-widget">
-                    <h3>Tags</h3>
+                    <h3><%=t('news.tags')%></h3>
                     <a class="tag" href="#">Web</a>
                     <a class="tag" href="#">Photography</a>
                     <a class="tag" href="#">Css</a>
@@ -113,14 +113,14 @@
             <!-- pagination -->
             <div class="col-md-12">
                 <div class="post-pagination">
-                    <a href="#" class="pagination-back pull-left"><i class="fas fa-angle-double-left"></i>  Back</a>
+                    <a href="#" class="pagination-back pull-left"><i class="fas fa-angle-double-left"></i>  <%=t('news.back')%></a>
                     <ul class="pages">
                         <li class="active">1</li>
                         <li><a href="#">2</a></li>
                         <li><a href="#">3</a></li>
                         <li><a href="#">4</a></li>
                     </ul>
-                    <a href="#" class="pagination-next pull-right">Next  <i class="fas fa-angle-double-right"></i></a>
+                    <a href="#" class="pagination-next pull-right"><%=t('news.forward')%> <i class="fas fa-angle-double-right"></i></a>
                 </div>
             </div>
             <!-- pagination -->

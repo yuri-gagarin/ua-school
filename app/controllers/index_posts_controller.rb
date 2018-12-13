@@ -1,6 +1,8 @@
 class IndexPostsController < ApplicationController
   include AuthorizationsHelper
   before_action :authorize_admin
+  before_filter :find_index_post, only: [:show, :edit, :update, :destroy]
+
   # GET /index_posts
   def index
     @index_posts = IndexPost.all
@@ -8,7 +10,6 @@ class IndexPostsController < ApplicationController
 
   # GET /index_posts/1
   def show
-    @index_post = IndexPost.find(params[:id])
   end
 
   # GET /index_posts/new
@@ -18,7 +19,6 @@ class IndexPostsController < ApplicationController
 
   # GET /index_posts/1/edit
   def edit
-    @index_post = IndexPost.find(params[:id])
   end
 
 
@@ -52,7 +52,6 @@ class IndexPostsController < ApplicationController
 
   # PATCH/PUT /index_posts/1
   def update
-    @index_post = IndexPost.find(params[:id])
     @index_post.title = index_post_params[:title]
     @index_post.description = index_post_params[:description]
     respond_to do |format|
@@ -93,5 +92,9 @@ class IndexPostsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def index_post_params
       params.require(:index_post).permit(:title, :description, :page_type, index_post_images_attributes: [:image, :index_post_id])
+    end
+
+    def find_index_post
+      @index_post = IndexPost.find_by_slug!(params[:id].split("/").last)
     end
 end

@@ -21,7 +21,11 @@ Rails.application.routes.draw do
     resources :workshops
     #blog post topics
     resources :topics 
-    resources :index_posts
+
+    resources :index_posts, only: [:index, :new, :create]
+    resources :index_posts, except: [:index, :new, :create]
+    #get '*id', to: 'index_posts#show'
+
 
     resources :teachers, only: [:index, :show]
 
