@@ -57,19 +57,16 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Гурти і Курси
+                <%=t('toolbar.workshops')%>
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/<%=locale%>/courses">All Courses</a>
+                <a class="dropdown-item" href="/<%=locale%>/workshops"><%=t('toolbar.all_workshops')%></a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/englishclass">English</a>
-                <a class="dropdown-item" href="#">Deutsch</a>
-                <a class="dropdown-item" href="#">Ukainian</a>
-                <a class="dropdown-item" href="#">History</a>
-
-
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <% if @all_workshops.length > 0 %>
+                  <% @all_workshops.each do |workshop| %>
+                    <a class="dropdown-item" href="/<%=locale%>/workshops/<%=workshop.id%>"><%=workshop.name%></a>
+                  <% end %>
+                <% end %>
               </div>
             </li>
             <li class="nav-item dropdown">
