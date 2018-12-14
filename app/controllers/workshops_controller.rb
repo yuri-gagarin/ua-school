@@ -12,6 +12,7 @@ class WorkshopsController < ApplicationController
   # GET /workshops/1
   def show
     @workshop = Workshop.find(params[:id])
+    @workshop_images = @workshop.workshop_images;
   end
 
   # GET /workshops/new

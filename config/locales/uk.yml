@@ -29,10 +29,16 @@ uk:
     about_us: Про Нас
     contact: Контакт
     write_us: Напишіть Нам
-  courses:
-    all_courses:
   
-  wokshops:      
+  workshops_t:   
+    instructor: Інструктор
+    details: Деталі
+    description: Описання
+    contact: Контакт
+    write_us: Напишіть Нам
+    price: Ціна
+    workshops: Наші Гуртки
+
   news:
     our_news: Наші Новини
     recent_news: Актуальні Новини
@@ -42,6 +48,8 @@ uk:
     tags: Теми
     comments: Коментарі
     submit: Коментувати
+
+    
 
   education:
   
