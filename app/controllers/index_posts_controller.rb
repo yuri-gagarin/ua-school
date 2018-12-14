@@ -1,6 +1,6 @@
 class IndexPostsController < ApplicationController
   include AuthorizationsHelper
-  before_action :authorize_admin
+  before_action :authorize_admin, except: [:show]
   before_filter :find_index_post, only: [:show, :edit, :update, :destroy]
 
   # GET /index_posts

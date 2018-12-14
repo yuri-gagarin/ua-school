@@ -5,7 +5,7 @@ module AuthorizationsHelper
         if current_user && current_user.admin?
             true
         else 
-            redirect_to(new_user_session_path)
+            redirect_to(root_path)
         end
     end
 

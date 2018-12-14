@@ -2,12 +2,12 @@ Rails.application.routes.draw do
   
   
 
-  devise_for :users, :controllers => { registrations: "registrations", sessions: "sessions"}
-
+  
   mount Ckeditor::Engine => '/ckeditor'
 
   scope "(:locale)", locale: /en|uk/ do
 
+    devise_for :users, :controllers => { registrations: "registrations", sessions: "sessions"}
 
     #routes for image deletion
     resources :course_images,  only: [:destroy]
@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     #get '*id', to: 'index_posts#show'
 
 
-    resources :teachers, only: [:index, :show]
+    resources :teachers
 
 
     get 'about/home'
