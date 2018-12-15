@@ -36,7 +36,7 @@ class IndexPostsController < ApplicationController
       if @index_post.save
         format.html do 
           flash[:notice] = "index_post Was Saved"
-          redirect_to admin_path;
+          redirect_to admin_index_posts_path
         end
         format.json do 
           render action: 'index', status: 'created', location: @index_post
@@ -57,6 +57,8 @@ class IndexPostsController < ApplicationController
   def update
     @index_post.title = index_post_params[:title]
     @index_post.description = index_post_params[:description]
+    @index_post.page_type = index_post_params[:page_type].to_i
+
     respond_to do |format|
       if @index_post.save
         if params[:index_post_images]
@@ -66,7 +68,7 @@ class IndexPostsController < ApplicationController
         end
         format.html do 
           flash[:notice] = "Post was Updated Successfully"
-          redirect_to admin_path
+          redirect_to admin_index_posts_path
         end
         format.json do 
           render action: 'index', status: 'updated', location: @course

@@ -11,7 +11,7 @@
     <div class="row">
       <% @workshops.each do |workshop| %>
       <!-- single workshop -->
-      <div class="col-md-6 col-sm-6 col-xs-6">
+      <div class="col-md-6 col-sm-12 col-xs-12">
         <div class="workshop">
           <a href="/<%=locale%>/workshops/<%=workshop.id%>" class="workshop-img">
             <% if workshop.workshop_images.length > 0 %>

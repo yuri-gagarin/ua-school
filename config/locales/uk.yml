@@ -5,11 +5,13 @@ uk:
     workshop_schedule: Розклад Гуртків
     preschool: Підготовча Група
     babygroup: Дитяча Група
-    school_classes: Шкільні Класи
+    school_info: Шкільна Програма
     cost: Фінансування
     news: Новини
     all_news: Всі Новини
     teachers: Вчителі
+    about_teachers: Про Вчителів
+    our_teachers: Наші Вчителі
     workshops: Гуртки
     all_workshops: Всі Гуртки
     courses: Навчання
@@ -17,6 +19,20 @@ uk:
     contact: Контакт
     galleries: Фотогалереї
     our_approach: Наш Підхід
+    all_classes: Всі Класи
+    about_us: Про Нас
+  welcome:
+    welcomes: Вітає
+    workshops: Гуртки
+    schedule: Розклад
+    our_friends: Наші Спонсори
+    more: Більше
+    fresh_announcements: Нові Анонси
+    author: Автор
+    ukrainian_school: Українська Школа
+    you: Вас
+    
+
   index_page:
     category: Категорія
     schedule: Розклад

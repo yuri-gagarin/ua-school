@@ -1,5 +1,5 @@
 <div class="container-fluid main-container">
-<div id="frontCarousel" class="carousel slide  carousel-fade" data-ride="carousel" data-interval="4000">
+<div id="frontCarousel" class="carousel slide  carousel-fade" data-ride="carousel" data-interval="0">
   
   <ul class="carousel-indicators">
     <li data-target="#frontCarousel" data-slide-to="0" class="active"></li>
@@ -12,8 +12,10 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
         <img class="d-block w-100 title-image" src="/assets/frontpage/1.jedyna.jpg" alt="First slide">
-        <div class="carousel-caption">
-          <h3>Welcome</h3>
+        <div class="carousel-caption-1">
+          <p class="car-heading-top"><%=t('welcome.ukrainian_school')%></p>
+          <h3 class="car-heading-middle"><%=t('welcome.welcomes')%></h3>
+          <p class="car-heading-bottom"><%=t('welcome.you')%></p>
         </div>
     </div>
     <div class="carousel-item">
@@ -36,70 +38,62 @@
 
 </div>
 
+<div class="row announcements-header">
+  <div class="col col-md-4 offset-md-4">
+    <h3 class="text-center"><%=t('welcome.fresh_announcements')%></h3>
+  </div>
+</div>
 <div class="row announcements-row">
-  <div class="card-group">
+  <% @recent_news.each do |topic_item| %>
+  <div class="col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch">
     <div class="card">
-      <img class="card-img-top" src="#" alt="Card image cap">
+      <div class="card-img-top">
+        <%if topic_item.topic_images.length > 0 %>
+          <% topic_image = topic_item.topic_images[0] %>
+          <a href="/<%=locale%>/topics/<%=topic_item.id%>">
+            <img class="card-img" src="<%=topic_image.image%>" alt="Card image cap">
+          </a>
+        <% else %>
+          <a href="/<%=locale%>/topics/<%=topic_item.id%>">
+            <img class="card-img" src="/assets/stock/new_topic.jpg" alt="Card image cap">
+          </a>
+        <% end %>
+      </div>
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <div class="card-title">
+          <a href="/<%=locale%>/topics/<%=topic_item.id %>"><%=topic_item.name%></a>
+          <p class="card-text"><%=raw topic_item.description.truncate(50) %>
+          <%= link_to "More...", topic_path(topic_item.id) %>
+          </p>
+          
+        </div>
       </div>
       <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top" src="#" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
-      </div>
-    </div>
-  </div>
-  <div class="card-group">
-    <div class="card">
-      <img class="card-img-top" src="#" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top" src="#" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
+        <small class="card-time"><%=time_tag(topic_item.created_at)%></small>
+        <small class="card-author">By: <%=User.find(topic_item.user_id).name%></small>
       </div>
     </div>
   </div>
+  <% end %>
 </div>
 
 <div class="row">
   <div class="col-md-4 friend-column" id="schedule">
   <div>
     <i class="fas fa-calendar cal"></i> 
-    <p>Class Schedule</p>
+    <p><%=t('welcome.schedule')%></p>
   </div>
   </div>
   <div class="col-md-4 friend-column" id="workshops">
     <div>
     <i class="fas fa-theater-masks workshop"></i>
-    <p>Workshops</p>
+    <p><%=t('welcome.workshops')%></p>
     </div>
   </div>
   <div class="col-md-4 friend-column" id="friends">
     <div>
       <i class="fas fa-user-friends friend-icon"></i>
-      <p>Our Friends</p>
+      <p><%=t('welcome.our_friends')%></p>
     </div>
   </div>
 </div>
