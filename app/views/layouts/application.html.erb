@@ -26,8 +26,16 @@
         </ul>
          
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><%= link_to 'EN', index_path(locale: :en) %><li>
-          <li class="nav-item"><%= link_to 'UA', index_path(locale: :uk) %></li>
+          <li class="nav-item">
+            <%= link_to index_path(locale: :en), class: 'en-lang' do %>
+              <img src="/assets/stock/us_flag.jpeg" alt="HTML tutorial" style="width:30px;height:20px;border:0;">
+            <% end %>
+          <li>
+          <li class="nav-item">
+            <%= link_to index_path(locale: :uk), class: 'ua-lang' do %>
+              <img src="/assets/stock/ua_flag.jpeg" alt="HTML tutorial" style="width:30px;height:20px;border:0;">
+            <% end %>
+          </li>
 
           <% if current_user %>
             <li class="nav-item"><%= current_user.name %> - <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'login-control' %></li>
