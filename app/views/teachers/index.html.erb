@@ -33,7 +33,11 @@
             <div class="col-md-4 teacher-card">
                 <div class="card">
                     <div class="teacher-index-img">
-                        <img class="card-img-top" src="/assets/stock/stock_man.jpg" alt="Card image cap">
+                        <% if teacher.user_image != nil %>
+                            <img class="card-img-top" src="<%=teacher.user_image.image%>" alt="Card image cap">
+                        <% else %>
+                            <img class="card-img-top" src="/assets/images/stock_man.jpg" alt="Card image cap">
+                        <% end %> 
                     </div>
                     <div class="card-body">
                         <h5 class="card-title"><%=teacher.name + " " + teacher.last_name %></h5>

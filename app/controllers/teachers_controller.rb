@@ -4,13 +4,10 @@ class TeachersController < ApplicationController
 
   def index
     @teachers = User.where(role: 'teacher')
-    puts @teachers
   end
 
   def new 
     @teacher = User.new
-    @teacher_avatar= @teacher.avatar
-
   end
 
   def create
@@ -22,8 +19,11 @@ class TeachersController < ApplicationController
     @teacher.role = 2
     @teacher.confirmed_at = Time.now.utc
     if (@teacher.save) 
+      if params[:user_image]
+        @teacher.create_user_image(image: params[:user_image])
+      end
       flash[:notice] = "Teacher Was Created"
-      redirect_to admin_path
+      redirect_to admin_teachers_path
     else
       flash.now[:alert] = "Error Saving a Teacher"
       render :new
@@ -40,6 +40,6 @@ class TeachersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :last_name, :email, :password, :description,  :password_confirmation, :grade, :avatar)
+    params.require(:user).permit(:name, :last_name, :email, :password, :description,  :password_confirmation, :grade, :user_image)
   end
 end
