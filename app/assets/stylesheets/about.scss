@@ -12,9 +12,10 @@
         h3{
             color: white;
             font-size: 75px;
-            font-family: cursive;
+            font-family: Lobster;
             font-weight: bold;
-            letter-spacing: 5px;
+			letter-spacing: 5px;
+			text-decoration: underline;
 		}
 		
 	}
@@ -87,6 +88,8 @@
 		position: relative;
 		display:inline-block;
 		overflow:hidden;
+		border: 0.5px solid rgb(96, 162, 206);
+		border-radius: 4px;
 	}
 	a:hover:after {
 		opacity:0.2;
@@ -96,6 +99,15 @@
 		margin-left: 5%;
 		width: 60%;
 		display: inline-block;
+		h5 {
+			font-family: Georgia, 'Times New Roman', Times, serif;
+			font-weight: bold;
+			letter-spacing: 1px;
+		}
+		h3 {
+			font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+			font-size: 18px;
+		}
 	}
 }
 .blog-img a::after {
@@ -199,6 +211,11 @@
 /*------------------------------------*\
 	Blog Page Sidebar
 \*------------------------------------*/
+.widget {
+	h3 {
+		font-family: Georgia, 'Times New Roman', Times, serif;
+	}
+}
 .widget + .widget {
 	margin-top:40px;
 }

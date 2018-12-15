@@ -21,6 +21,10 @@ uk:
     our_approach: Наш Підхід
     all_classes: Всі Класи
     about_us: Про Нас
+    log_in: Логін
+    sign_up: Реєструватись
+    sign_out: Вийти
+    
   welcome:
     welcomes: Вітає
     workshops: Гуртки

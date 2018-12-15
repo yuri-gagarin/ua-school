@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   include AuthorizationsHelper
-  before_action :authorize_admin
+  before_action :authorize_admin, except: [:show]
 
 
   def new

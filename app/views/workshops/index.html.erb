@@ -11,7 +11,7 @@
     <div class="row">
       <% @workshops.each do |workshop| %>
       <!-- single workshop -->
-      <div class="col-md-6 col-sm-12 col-xs-12">
+      <div class="col-lg-6 col-md-10 col-sm-12 col-xs-12">
         <div class="workshop">
           <a href="/<%=locale%>/workshops/<%=workshop.id%>" class="workshop-img">
             <% if workshop.workshop_images.length > 0 %>
@@ -23,8 +23,8 @@
           </a>
           <a class="workshop-title text-center" href="/<%=locale%>/workshops/<%=workshop.id%>"><%=workshop.name%></a>
           <div class="workshop-details">
-            <span class="workshop-category"><span><%=t('workshops_t.instructor')%>: </span><%=workshop.instructor%></span>
-            <span class="workshop-price workshop-free"><span><%=t('workshops_t.price')%>: </span><%=workshop.price%></span>
+            <p class="workshop-category"><span><%=t('workshops_t.instructor')%>: </span><%=workshop.instructor%></p>
+            <p class="workshop-price"><span><%=t('workshops_t.price')%>: </span><%=workshop.price%></p>
           </div>
         </div>
       </div>

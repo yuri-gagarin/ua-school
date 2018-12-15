@@ -16,8 +16,9 @@
         h3{
             color: white;
             font-size: 75px;
-            font-family: cursive;
+            font-family: Lobster;
             font-weight: bold;
+            text-align: center;
             letter-spacing: 5px;
             text-decoration: underline;
             text-underline-position: below;
@@ -105,6 +106,9 @@
     }
     .workshop-title {
         display:block;
+        font-family: Lobster;
+        font-weight: bold;
+        letter-spacing: 2px;
         height:22px;
         font-size: 25px;
     }
@@ -112,14 +116,15 @@
         margin-top: 20px;
         padding-top: 10px;
         border-top: 1px solid rgb(92, 138, 207);
+        .workshop-category {
+            float: left;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: orange;
+        }
         .workshop-price {
             float: right;
-        }
-        .workshop-price.workshop-free {
+            font-family: Georgia, 'Times New Roman', Times, serif;
             color: green;
-        }
-        .workshop-price.workshop-premium {
-            color: #FF6700;
         }
     }  
 }
@@ -172,7 +177,7 @@
         h2{
             color: white;
             font-size: 50px;
-            font-family: cursive;
+            font-family: Georgia, 'Times New Roman', Times, serif;
             font-weight: bold;
             letter-spacing: 5px;
             text-align: center;
@@ -180,9 +185,9 @@
             text-underline-position: under;
         }
         h5 {
-            color: white;
+            color: yellow;
             font-size: 15px;
-            font-family: cursive;
+            font-family: Lobster;
             font-weight: bold;
             letter-spacing: 5px;
             text-align: center;
@@ -222,7 +227,7 @@
     h3 {
         border-bottom: 1px solid rgb(92, 138, 207);
         padding-bottom: 10px;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: Georgia, 'Times New Roman', Times, serif;
         font-weight: bold;
         color: rgb(92, 138, 207);
     }
@@ -242,4 +247,5 @@
         padding: 50px;
         border-radius: 10px;
     }
+    
 }
