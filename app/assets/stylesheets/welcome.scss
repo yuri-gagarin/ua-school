@@ -22,6 +22,39 @@
 
 .carousel-item {
   position: relative;
+  .carousel-title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    .carousel-caption-1 {
+      position: relative;
+      padding: 10px 20px;
+      .car-heading-top {
+        font-family: Lobster;
+        font-size: 25px;
+        color: white;
+        position: absolute;
+        left: 20px;
+      }
+      .car-heading-middle {
+        font-size: 125px;
+        font-family: Georgia;
+        color: #d6b81e;
+        letter-spacing: 1px;
+        font-weight: bold;
+      }
+      .car-heading-bottom {
+        font-family: Lobster;
+        font-size: 25px;
+        color: white;
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+      }
+    }
+  }
 }
 .carousel-item:after {
   content:"";
@@ -33,41 +66,6 @@
   right:0;
   background:rgba(68, 56, 3, 0.527);
   z-index: 1;
-}
-.carousel-caption-1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  padding: 0;
-  transform: translate(-50%, -50%);
-  .car-heading-top {
-    display: block;
-    color: white;
-    margin-bottom: -13%;
-    font-size: 3vw;
-    font-family: Lobster;
-  }
-  .car-heading-middle {
-    display: block;
-    font-size: 20vw; 
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-weight: bold;
-    letter-spacing: 5px;
-    color: #f9cf00;
-    -webkit-text-stroke: 0.5px;
-    -webkit-text-stroke-color: rgb(224, 224, 213);
-  }
-  .car-heading-bottom {
-    display: block;
-    color: white;
-    font-size: 3vw;
-    font-family: Lobster;
-    margin-top: -13%;
-    margin-right: 10px;
-    float: right;
-  }
-  z-index: 2;
-
 }
 
 
