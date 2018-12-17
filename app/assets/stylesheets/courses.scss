@@ -63,6 +63,25 @@
 #courses {
     margin-top: 30px;
     .container {
+        .welcome-row {
+            position: relative;
+            width: 100%;
+            .section-header{
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index:10;
+                background-color: white;
+                padding: 0 5px;
+            }
+            #class-strike-through{
+                position: absolute;
+                border-top: 4px solid blue;
+                top: 65%;
+                width: 100%;
+                z-index: 5;
+            }
+        }
         .grade-select-row {
             position: relative;
             min-height: 150px;
@@ -190,6 +209,9 @@
         }
         .course-price.course-premium {
             color: #FF6700;
+        }
+        .course-time {
+            color: #FF6700;;
         }
     }  
 }

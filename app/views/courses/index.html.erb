@@ -11,10 +11,12 @@
     <div class="container">
 
       <!-- row -->
-      <div class="row">
-        <div class="section-header mx-auto">
+      <div class="row welcome-row">
+        <div class="section-header">
           <h2 class="text-center"><%=t('courses.welcome')%></h2>
           <p class="lead"><%=t('courses.course_instructions')%></p>
+        </div>
+        <div id="class-strike-through">
         </div>
       </div>
       <!-- /row -->
@@ -24,7 +26,8 @@
           <form action="/<%=locale%>/courses" method="get">
               <label for="grade"><%=t('courses.select_grade_level')%></label>
               <div class="styled-select blue semi-square">
-                <select class="form-selector" id="sel1" name="grade">
+                <select class="form-selector" id="sel1" name="grade" onchange="this.form.submit()">
+                  <option value="">Please choose an option</option>
                   <option value=1><%=t('courses.first_grade')%></option>
                   <option value=2><%=t('courses.second_grade')%></option>
                   <option value=3><%=t('courses.third_grade')%></option>
@@ -49,18 +52,24 @@
 
         <!-- row -->
         <div class="row">
-          <% 6.times do  %>
+          <% @courses.each do |course|  %>
           <!-- single course -->
+          <% course_teacher = User.find(course.user_id) %>
+          <% course_image = course.course_images[0] %>
           <div class="col-md-4 col-sm-6 col-xs-6">
             <div class="course">
-              <a href="#" class="course-img">
-                <img src="/assets/stock/workshop_stock_photo.jpg" alt="course image">
+              <a href="/<%=locale%>/workshops/<%=course.id%>" class="course-img">
+                <% if course_image == nil %>
+                  <img src="/assets/stock/workshop_stock_photo.jpg" alt="course image">
+                <% else %>
+                  <img src="<%=course_image.image%>" alt="course image">
+                <% end %>
                 <i class="course-link-icon fa fa-link"></i>
               </a>
-              <a class="course-title" href="courses">Beginner to Pro in Excel: Financial Modeling and Valuation</a>
+              <a class="course-title text-center" href="/<%=locale%>/courses/<%=course.id%>"><%= course.name %></a>
               <div class="course-details">
-                <span class="course-category">Business</span>
-                <span class="course-price course-free">Free</span>
+                <span class="course-category"><a href="/<%=locale%>/teachers/<%=course_teacher.id%>"><i class="fas fa-user-graduate"></i> <%= course_teacher.full_name %></a></span>
+                <span class="course-price course-free"><span class="course-time"><i class="far fa-clock"></i>: </span><%= course.time %></span>
               </div>
             </div>
           </div>

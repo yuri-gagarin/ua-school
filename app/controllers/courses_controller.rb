@@ -11,7 +11,7 @@ class CoursesController < ApplicationController
     if (params[:grade])
       @grade = Grade.where(level: params[:grade])
 
-      @courses = @grade[0].courses.limit(3)
+      @courses = @grade[0].courses.order(time: "ASC")
 
     else 
       @courses = Course.order("RANDOM()").limit(3)
