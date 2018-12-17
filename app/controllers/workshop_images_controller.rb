@@ -8,7 +8,8 @@ class WorkshopImagesController < ApplicationController
         @workshop_image = WorkshopImage.new(permitted_params)
         @workshop_image.workshop_id = @workshop_id
 
-        @workshop = Workshop.find(params[:workshop_id])
+        puts @workshop_image.valid?
+        @workshop_image.errors.messages
         if @workshop_image.save
             flash[:notice] = "Image succesffuly added"
             redirect_to edit_workshop_path(@workshop_id)
@@ -30,6 +31,6 @@ class WorkshopImagesController < ApplicationController
     private 
     
     def permitted_params
-        params.require(:workshop_image).permit(:image)
+        params.require(:workshop_image).permit(:workshop_id, :image)
     end
 end

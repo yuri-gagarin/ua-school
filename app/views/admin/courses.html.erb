@@ -14,6 +14,7 @@
                 <th>Grade</th>
                 <th>Period</th> 
                 <th>Time</th>
+                <th>Images</th>
                 <th>Created At</th>
                 <th>Updated At</th>
                 <th>Edit</th>
@@ -25,10 +26,11 @@
             <tr>
                 <td scope="row"><%= (index + 1).to_s %></td>
                 <td><%= course.name %></td>
-                <td><%= User.find(course.user_id).name %></td>
-                <td><%= course.grade || "" %></td>
+                <td><%= User.find(course.user_id).full_name %></td>
+                <td><%= course.grade.level.ordinalize || "" %></td>
                 <td><%= course.period || "" %></td>
                 <td><%= course.time || "" %></td>
+                <td><%= course.course_images.count %></td>
                 <td><%= course.created_at %></td>
                 <td><%= course.updated_at %></td>
                 <td><%= button_to "EDIT", {controller: "courses", action: "edit", id: course.id}, method: :get, class: "btn btn-warning" %></td>

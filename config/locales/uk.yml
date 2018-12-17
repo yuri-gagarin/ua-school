@@ -75,6 +75,25 @@ uk:
     more: Дивитися
     back: Назад
   
+  courses:
+    all_courses: Наші Уроки
+    select_grade_level: Виберіть Клас
+    select: Вибрати
+    first_grade: Перший Клас
+    second_grade: Другий Клас
+    third_grade: Третій Клас
+    fourth_grade: Четвертий Клас
+    fifth_grade: П'ятий Клас
+    sixth_grade: Шостий Клас
+    seventh_grade: Сьомий Клас
+    eighth_grade: Восьмий Клас
+    ninth_grade: Дев'ятий Клас
+    tenth_grade: Десятий Клас
+    eleventh_grade: Одиннадцятий Клас
+    welcome: Вітаємо
+    course_instructions: Щоб розглядати наші предмети будь ласка виберіть рівень класу нижче.
+
+
     
   activerecord:
     errors:

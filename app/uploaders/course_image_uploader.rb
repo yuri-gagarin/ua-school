@@ -7,7 +7,7 @@ class CourseImageUploader < CarrierWave::Uploader::Base
     include Cloudinary::CarrierWave
 
     def extension_whitelist 
-      [/'j?peg'/, 'jpg', 'gif', 'png']
+      [/'j?peg'/, 'jpg', 'gif', 'png', 'jpeg']
     end
 
   else 
@@ -18,7 +18,7 @@ class CourseImageUploader < CarrierWave::Uploader::Base
     end
 
     def extension_whitelist 
-      [/'j?peg'/, 'jpg', 'gif', 'png']
+      [/'j?peg'/, 'jpg', 'gif', 'png', 'jpeg']
     end
   end
 

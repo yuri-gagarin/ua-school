@@ -22,11 +22,6 @@
   <% end %>
 
   <%= form_group_tag(course.errors[:name]) do %>
-    <%= f.label :grade %>
-    <%= f.number_field :grade, placeholder: 0 %>
-  <% end %>
-
-  <%= form_group_tag(course.errors[:name]) do %>
     <%= f.label :period %>
     <%= f.number_field :period, placeholder: 0 %>
   <% end %>
@@ -38,7 +33,12 @@
   
   <div class="form-group">
     <%= f.label :teacher, class: 'w-100' %>
-    <%= collection_select(:course_instructor, :user_id, @teachers, :id, :full_name, prompt: true, class: 'dropdown') %>
+    <%= collection_select(:course_instructor, :user_id, @teachers, :id, :full_name, prompt: true, class: 'dropdown', selected: course.user_id) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :grade, class: 'w-100' %>
+    <%= collection_select(:grade, :grade_id, @grades, :id, :id, prompt: true, class: 'dropdown', selected: course.grade_id) %>
   </div>
 
 

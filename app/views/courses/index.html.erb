@@ -2,7 +2,7 @@
   <div id="course-index-intro">
       <div class="bg-image bg-parallax overlay"></div>
       <div id="course-index-title">
-        <h3>Our Courses</h3>
+        <h3><%=t('courses.all_courses')%></h3>
       </div>
   </div>
   <div id="courses" class="section">
@@ -13,26 +13,34 @@
       <!-- row -->
       <div class="row">
         <div class="section-header mx-auto">
-          <h2 class="text-center">Explore Courses</h2>
-          <p class="lead">Libris vivendo eloquentiam ex ius, nec id splendide abhorreant.</p>
+          <h2 class="text-center"><%=t('courses.welcome')%></h2>
+          <p class="lead"><%=t('courses.course_instructions')%></p>
         </div>
       </div>
       <!-- /row -->
 
-      <div class="row">
-        <form action="/courses" method="get">
-          <div class="form-group">
-            <label for="grade">Select Grade</label>
-            <select class="form-selector" id="sel1" name="grade">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-            </select>
-            <button type="submit" class="btn btn-primary">Submit</button>
-
-          </div>
-        </form>
+      <div class="row grade-select-row">
+        <div class="grade-select">
+          <form action="/<%=locale%>/courses" method="get">
+              <label for="grade"><%=t('courses.select_grade_level')%></label>
+              <div class="styled-select blue semi-square">
+                <select class="form-selector" id="sel1" name="grade">
+                  <option value=1><%=t('courses.first_grade')%></option>
+                  <option value=2><%=t('courses.second_grade')%></option>
+                  <option value=3><%=t('courses.third_grade')%></option>
+                  <option value=4><%=t('courses.fourth_grade')%></option>
+                  <option value=5><%=t('courses.fifth_grade')%></option>
+                  <option value=6><%=t('courses.sixth_grade')%></option>
+                  <option value=7><%=t('courses.seventh_grade')%></option>
+                  <option value=8><%=t('courses.eighth_grade')%></option>
+                  <option value=9><%=t('courses.ninth_grade')%></option>
+                  <option value=10><%=t('courses.tenth_grade')%></option>
+                  <option value=11><%=t('courses.eleventh_grade')%></option>
+                </select>
+              </div>
+              <button type="submit"><%=t('courses.select')%></button>
+          </form>
+        </div>
       </div>
 
 

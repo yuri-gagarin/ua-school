@@ -1,5 +1,6 @@
 class Course < ApplicationRecord
     belongs_to :user
+    belongs_to :grade 
 
     has_many :course_images, dependent: :destroy
     accepts_nested_attributes_for :course_images, allow_destroy: true 
