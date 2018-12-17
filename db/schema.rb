@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181214202354) do
+ActiveRecord::Schema.define(version: 20181217145646) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +85,20 @@ ActiveRecord::Schema.define(version: 20181214202354) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.string   "description", default: ""
+  end
+
+  create_table "grade_images", force: :cascade do |t|
+    t.string   "image"
+    t.integer  "grade_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "grades", force: :cascade do |t|
+    t.integer  "level"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "index_post_images", force: :cascade do |t|

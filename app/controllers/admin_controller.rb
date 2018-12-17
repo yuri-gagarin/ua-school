@@ -16,6 +16,10 @@ class AdminController < ApplicationController
         @galleries = Gallery.all
     end
 
+    def grades
+        @grades = Grade.order(level: "ASC")
+    end
+
     def index_posts
         @index_posts = IndexPost.all
     end

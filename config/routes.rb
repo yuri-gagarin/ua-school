@@ -13,12 +13,16 @@ Rails.application.routes.draw do
     resources :course_images,  only: [:destroy]
     resources :index_post_images, only: [:destroy]
     resources :gallery_images, only: [:create, :destroy]
+    resources :grade_images, only: [:create, :destroy]
     resources :topic_images, only: [:create, :destroy]
     resources :workshop_images, only: [:create, :destroy]
 
+
+    resources :grades
     resources :courses 
     resources :galleries
     resources :workshops
+
     #blog post topics
     resources :topics 
 
@@ -38,6 +42,7 @@ Rails.application.routes.draw do
     get "/admin", to: "admin#index"
     get "/admin/courses", to: "admin#courses"
     get "/admin/galleries", to: "admin#galleries"
+    get "/admin/grades", to: "admin#grades"
     get "/admin/index_posts", to: "admin#index_posts"
     get "/admin/news_topics", to: "admin#news_topics"
     get "/admin/workshops", to: "admin#workshops"

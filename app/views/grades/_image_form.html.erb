@@ -1,0 +1,23 @@
+<%= form_for @grade_image do |f| %>
+
+<% if @grade_image.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@grade_image.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+      <% @grade_image.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_group_tag(@grade_image.errors[:grade_image]) do %>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.button "Save Image", class: "btn btn-success", name: 'grade_id', value: @grade.id %>
+  </div>
+<% end %>

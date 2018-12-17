@@ -1,0 +1,51 @@
+<%= form_for(@grade, html: {multipart: true}) do |f| %>
+  <% if @grade.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(grade.errors.count, "error") %> prohibited this grade from being saved:</h2>
+      <ul>
+      <% @grade.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <%= form_group_tag(grade.errors[:level]) do %>
+    <%= f.label :level %>
+    <%= select_tag(:level, options_for_select((1..11).step(1).map{|n| [n.ordinalize + " Grade", n.to_i]} ), class: "form-control") %>
+  <% end %>
+
+  <%= form_group_tag(grade.errors[:description]) do %>
+    <%= f.label :description %>
+    <%= f.cktext_area :description, rows: 20, class: 'form-control', placeholder: "description of a new class" %>
+  <% end %>
+
+  <% if @grade.grade_images.length > 0 %>
+  <div class="row">
+    <% @grade.grade_images.each do |img_row| %>
+      <div class="edit-form-img-thumb">
+        <%= link_to "Delete", grade_image_path(img_row.id), method: :delete %>
+        <div class="img-preview-control">
+          <img src="<%=img_row.image%>" alt="course image"/>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  <% end %>
+
+
+  
+ <%= f.fields_for :image do |ff| %>
+    <div class="field">
+      <%= ff.label :image %><br>
+      <%= ff.file_field :image, multiple: true, name: "grade_images[]" %>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.submit "Save Grade", class: 'btn btn-success save-grade-btn'%>
+  </div>
+
+<% end %>
