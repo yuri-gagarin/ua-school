@@ -52,10 +52,12 @@
 }
 
 .index-post-container {
+    position: relative;
     margin-top: 50px;
-    margin-bottom: 50px;
+    padding-bottom: 60px;
+    border-bottom: 4px solid rgb(92, 138, 207);
     h3 {
-        border-bottom: 1px solid rgb(92, 138, 207);
+        border-bottom: 4px solid rgb(92, 138, 207);
         padding-bottom: 10px;
         font-family: Georgia, 'Times New Roman', Times, serif;
         font-weight: bold;
@@ -65,16 +67,30 @@
         margin-top: 30px;
         border-top: 1px rgb(92, 138, 207);
     }
+    .gen-back-btn {
+        position: absolute;
+        left: 50%;
+        bottom: -13px;
+        transform: translate(-50%, 0);
+    }
+    
+}
+.form-container {
+    margin-bottom: 10px;
     .index-post-form-row {
-        margin-top: 50px;
+        margin-top: 30px;
         border-top: 1px rgb(92, 138, 207);
-        .blog-reply-form {
-            padding-top: 20px;
-        }
+        .col {
+            .blog-reply-form {
+                padding-top: 20px;
+                color: green;
+                form {
+                    background-color: rgb(233, 233, 233);
+                    padding: 50px;
+                    border-radius: 10px;
+                }
+            }
+        }  
     }
-    form {
-        background-color: rgb(233, 233, 233);
-        padding: 50px;
-        border-radius: 10px;
-    }
+    
 }
