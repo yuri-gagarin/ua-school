@@ -69,9 +69,10 @@ uk:
     comments: Коментарі
     submit: Коментувати
 
-    
-
-  education:
+  galleries: 
+    galleries: Форо Галереї
+    pictures: Фотографій
+    more: Дивитися
   
     
   activerecord:
