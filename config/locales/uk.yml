@@ -73,6 +73,7 @@ uk:
     galleries: Форо Галереї
     pictures: Фотографій
     more: Дивитися
+    back: Назад
   
     
   activerecord:

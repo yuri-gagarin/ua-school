@@ -5,7 +5,8 @@
     </div>
   </div>
 </div>
-
+<div class="gal-index-spacer">
+</div>
 <div class="gallery-index-container">
 
 <% @galleries.each do |gallery| %>
@@ -35,10 +36,9 @@
 
         </div>
     </div>
-  </div>
-  <div class="row gal-controls-row">
+    <div class="row gal-controls-row">
     <div class="gal-pic-count">
-      <span><%=image_count%>  <%=t('galleries.pictures')%></span>
+      <span><i class="far fa-image"></i> : <%=image_count%> <%=t('galleries.pictures')%></span>
     </div>
     <div class="gallery-more-link">
       <%= link_to gallery_path(gallery.id), class: 'gal-more'  do %>
@@ -46,10 +46,9 @@
       <% end %>
     </div>
   </div>
+  </div>
 
 <% end %>
-</div>
-<div class="gal-index-spacer">
 </div>
 <footer class="navbar nav-footer navbar-expand">
   <ul class="navbar-nav mr-auto">

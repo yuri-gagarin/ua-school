@@ -2,13 +2,13 @@
     <div class="galleries-bg-image bg-parallax overlay"></div>
     <div id="gal-index-title">
       <h3><%=@gallery.title%></h3>
-      <h5 class=text-center><%=time_tag(@gallery.created_at)%></h5>
     </div>
   </div>
 </div>
 <div class="container gal-description-container">
+    <h5 class="text-center gal-time"><i class="far fa-clock"></i> <%=time_tag(@gallery.created_at)%> <i class="far fa-clock"></i></h5>
     <div class="row gal-description-row">
-        <div class="col">
+        <div class="col gal-description-col">
             <%=raw(@gallery.description)%>
         </div>
     </div>
@@ -52,5 +52,18 @@
                 <% end %>
             <% end %>
         </div>
+         <div class="gen-back-btn">
+            <%= link_to :back,  class: 'gen-back'  do %>
+            <%=t('galleries.back')%>...
+         <% end %>
+    </div>
     </div>
 </section>
+
+<footer class="navbar nav-footer navbar-expand">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item"><a class="nav-link social-btn" href="#"><i class="fab fa-facebook-square"></i><span class="sr-only">(current)</span></a></li>
+    <li class="nav-item"><a class="nav-link social-btn" href="#"><i class="fab fa-twitter-square"></i><span class="sr-only">(current)</span></a></li>
+    <li class="nav-item"><a class="nav-link social-btn" href="#"><i class="fab fa-instagram"></i><span class="sr-only">(current)</span></a></li>
+  </ul>
+</footer>
