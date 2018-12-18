@@ -13,5 +13,9 @@ module ApplicationHelper
   def autorize_teacher
     current_user.teacher?
   end
+
+  def paginate(collection, params= {})
+    will_paginate collection, params.merge(:renderer => RemoteLinkPaginationHelper::LinkRenderer)
+  end
   
 end

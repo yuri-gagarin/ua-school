@@ -199,9 +199,30 @@
     }
 }
 
+.teacher-pag-index {
+    position: relative;
+    height: 50px;
+  
+    .teachers-paginate-links {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0px;
+        font-size: 20px;
+    }
+}
+
 .teachers-index-back {
     position: relative;
     height: 100px;
+    .strikethrough {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 10px;
+        border: 2px solid  rgb(95, 95, 231);
+        width: 100%;
+    }
     .row {
         position: relative;
         .gen-back-btn {
@@ -211,6 +232,8 @@
         }
     }
 }
+
+
 
 //teachers#show
 .teacher-container {

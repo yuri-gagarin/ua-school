@@ -20,4 +20,8 @@ class User < ApplicationRecord
   def full_name 
     "#{self.name}  #{self.last_name}"
   end
+
+
+  self.per_page = 3
+
 end

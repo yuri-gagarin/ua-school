@@ -1,4 +1,9 @@
 uk:
+
+  will_paginate:
+    previous_label: <i class="fa fa-angle-left" style="color:black"></i> Назад
+    next_label: Дальше <i class="fa fa-angle-right" style="color:black"></i>
+
   toolbar:
     information: Інформація 
     class_schedule: Розклад Уроків

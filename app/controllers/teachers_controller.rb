@@ -3,8 +3,14 @@ class TeachersController < ApplicationController
   before_action :authorize_admin, except: [:show]
 
   def index
-    @teachers = User.where(role: 'teacher')
+    @teachers = User.where(role: 'teacher').paginate(:page => params[:page]).order('last_name ASC')
     @teacher_intro = IndexPost.find_by_slug('about_teachers')
+
+    respond_to do |format|
+      format.html 
+      format.json { render json: @teachers }
+      format.js
+    end
   end
 
   def new 

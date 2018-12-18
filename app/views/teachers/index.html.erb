@@ -1,3 +1,5 @@
+
+
 <div id="index-teachers-intro">
   <div class="teachers-bg-image bg-parallax overlay"></div>
     <div id="index-teachers-title">
@@ -45,50 +47,15 @@
     </div>
 
     <div class="row teacher-index-row">
-        <% @teachers.each do |teacher| %>
-            <div class="col-lg-4 col-md-6 teacher-card-column">
-                <div class="teacher-card">
-                    <a href="/<%=locale%>/teachers/<%=teacher.id%>">
-                        <div class="teacher-index-img-holder">
-                            <% if @teacher_intro.index_post_images.length > 0 %>
-                                <% image_url = teacher.user_image.image %>
-                                <img src="<%=image_url%>" class="teacher-index-img" alt="directors picture">
-                            <% else %>
-                                <img src="/assets/stock/stock_man.jpg" class="teacher-index-img" alt="directors picture">
-                            <% end %>
-                        </div>
-                    </a>
-                    <div class="teacher-card-name">
-                        <a href="/<%=locale%>/teachers/<%=teacher.id%>">
-                            <h5><%=teacher.full_name%></h3>
-                        </a>
-                    </div>
-                    <div class="teacher-card-email">
-                         <%= mail_to "#{teacher.email}"  do %>
-                            <span><i class="far fa-envelope"></i> <%=teacher.email%></span>
-                        <% end %>
-                    </div>
-                    <div class="teacher-card-description">
-                        <%=raw(teacher.description.truncate(50))%>
-                        <%=link_to teacher_path(teacher.id) do %>
-                            <%=t('teachers.more')%>...
-                        <% end %>
-                    </div>  
-                </div>
-            </div>
-        <% end %> 
+        <%= render "teachers/teachers" %>
     </div>
 
    
 </div>
 
-<div class="container teacher-index-pagination">
-    <div class="row">
-        <div class="col">
-        </div>
-    </div>
-</div>
+
 <div class="container teachers-index-back">
+    <div class="strikethrough"></div>
     <div class="row">
         <div class="gen-back-btn">
             <%= link_to "/#{locale}/index", class: 'gen-back'  do %>
