@@ -76,14 +76,33 @@
     }
 }
 .teacher-img {
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     overflow: hidden;
     margin: 10px auto 0;
     border-radius: 50%;
+    border: 1.5px solid rgba(95, 95, 231, 0.637);
+    text-align: center;
     img {
-        width: auto;
-        height: 100%;
-        margin-left: -50px;
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        //margin-left: -50px;
+    }
+}
+
+#teacher-class-row {
+    border-top: 4px solid rgb(95, 95, 231);
+    padding-top: 50px;
+    position: relative;
+    .teacher-courses-header {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -20px;
+        background: white;
+        padding: 0 7.5px;
+        font-family: Lobster;
+        letter-spacing: 1.5px;
     }
 }

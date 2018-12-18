@@ -68,16 +68,19 @@ class CoursesController < ApplicationController
 
   def edit
     @course = Course.find(params[:id])
+    @course_image = CourseImage.new
     @grades = Grade.order(level: "ASC")
     @teachers = User.where(role: 'teacher').order(last_name: "ASC")
   end
 
   def update 
     @teachers = User.where(role: 'teacher')
+    @grades = Grade.order(level: "ASC")
     @course = Course.find(params[:id])
     @course.user_id = params[:course_instructor][:user_id]
     @course.grade_id = params[:grade][:grade_id]
     @course.assign_attributes(course_params)
+    puts course_params
     respond_to do |format|
       if @course.save
         if params[:course_images]
@@ -122,7 +125,7 @@ class CoursesController < ApplicationController
   private
 
   def course_params 
-    params.require(:course).permit(:name, :description, :period, :time, course_images_attributes: [:image, :course_id] )
+    params.require(:course).permit(:name, :description, :room, :time, course_images_attributes: [:image, :course_id] )
   end
 
   def authorize_teacher

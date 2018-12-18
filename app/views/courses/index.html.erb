@@ -27,7 +27,7 @@
               <label for="grade"><%=t('courses.select_grade_level')%></label>
               <div class="styled-select blue semi-square">
                 <select class="form-selector" id="sel1" name="grade" onchange="this.form.submit()">
-                  <option value="">Please choose an option</option>
+                  <option value="">--------</option>
                   <option value=1><%=t('courses.first_grade')%></option>
                   <option value=2><%=t('courses.second_grade')%></option>
                   <option value=3><%=t('courses.third_grade')%></option>
@@ -41,7 +41,6 @@
                   <option value=11><%=t('courses.eleventh_grade')%></option>
                 </select>
               </div>
-              <button type="submit"><%=t('courses.select')%></button>
           </form>
         </div>
       </div>
@@ -67,6 +66,8 @@
                 <i class="course-link-icon fa fa-link"></i>
               </a>
               <a class="course-title text-center" href="/<%=locale%>/courses/<%=course.id%>"><%= course.name %></a>
+              <p class="course-grade"><%=t('courses.grade')%>: <span><%=course.grade.level.ordinalize%></span></p>
+              <p class="course-room"><%=t('courses.room')%>: <span><%=course.room%></span></p>
               <div class="course-details">
                 <span class="course-category"><a href="/<%=locale%>/teachers/<%=course_teacher.id%>"><i class="fas fa-user-graduate"></i> <%= course_teacher.full_name %></a></span>
                 <span class="course-price course-free"><span class="course-time"><i class="far fa-clock"></i>: </span><%= course.time %></span>

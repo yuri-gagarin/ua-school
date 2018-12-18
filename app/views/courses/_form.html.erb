@@ -22,8 +22,8 @@
   <% end %>
 
   <%= form_group_tag(course.errors[:name]) do %>
-    <%= f.label :period %>
-    <%= f.number_field :period, placeholder: 0 %>
+    <%= f.label :room %>
+    <%= f.text_field :room, class: 'form-control', placeholder: "" %>
   <% end %>
 
   <%= form_group_tag(course.errors[:name]) do %>
@@ -49,15 +49,6 @@
         <img src="<%=img_row.image%>" alt="course image"/>
       </div>
   <%   end %>
-  <% end %>
-
-
-  
- <%= f.fields_for :image do |ff| %>
-    <div class="field">
-      <%= ff.label :image %><br>
-      <%= ff.file_field :image, multiple: true, name: "course_images[]" %>
-    </div>
   <% end %>
 
   <div class="form-group">

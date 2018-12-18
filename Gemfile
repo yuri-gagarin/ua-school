@@ -53,4 +53,7 @@ group :production do
  #text editor
  gem 'ckeditor'
 
+ gem 'will_paginate', '~> 3.1.0'
+
+
 

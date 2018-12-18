@@ -8,7 +8,7 @@ class Course < ApplicationRecord
     validates :name, length: {minimum: 1}, presence: true
     validates :description, length: {minimum: 1}, presence: true
     validates :grade, presence: true
-    validates :period, presence: true 
+    validates :room, presence: true 
     validates :time, presence: true
 
 end

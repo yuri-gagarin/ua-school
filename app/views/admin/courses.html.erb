@@ -12,7 +12,7 @@
                 <th>Title</th>
                 <th>Teacher</th>
                 <th>Grade</th>
-                <th>Period</th> 
+                <th>Room</th> 
                 <th>Time</th>
                 <th>Images</th>
                 <th>Created At</th>
@@ -28,7 +28,7 @@
                 <td><%= course.name %></td>
                 <td><%= User.find(course.user_id).full_name %></td>
                 <td><%= course.grade.level.ordinalize || "" %></td>
-                <td><%= course.period || "" %></td>
+                <td><%= course.room || "" %></td>
                 <td><%= course.time || "" %></td>
                 <td><%= course.course_images.count %></td>
                 <td><%= course.created_at %></td>

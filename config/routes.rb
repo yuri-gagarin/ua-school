@@ -9,9 +9,9 @@ Rails.application.routes.draw do
 
     devise_for :users, :controllers => { registrations: "registrations", sessions: "sessions"}
 
-    #routes for image deletion
-    resources :course_images,  only: [:destroy]
-    resources :index_post_images, only: [:destroy]
+    #routes for image creation and deletion
+    resources :course_images,  only: [:create, :destroy]
+    resources :index_post_images, only: [:create, :destroy]
     resources :gallery_images, only: [:create, :destroy]
     resources :grade_images, only: [:create, :destroy]
     resources :topic_images, only: [:create, :destroy]

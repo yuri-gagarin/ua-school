@@ -92,6 +92,13 @@ uk:
     eleventh_grade: Одиннадцятий Клас
     welcome: Вітаємо
     course_instructions: Щоб розглядати детально наші предмети, будь ласка виберіть рівень класу нижче.
+    room: Кабінет
+    grade: Клас
+  
+  teachers:
+    courses: Предмети
+    grade_level: Клас
+
 
 
     

@@ -120,27 +120,6 @@
                             text-align-last: center;
                         }
                     }
-                    button {
-                        margin-top: 10px;
-                        display: block;
-                        position: relative;
-                        width: 120px;
-                        height: 45px;
-                        left: 50%;
-                        font-weight: bold;
-                        transform: translateX(-50%);
-                        text-transform: uppercase;
-                        border: 3px solid orange;
-                        color:rgb(115, 156, 218);
-                        border-radius: 6px;
-                        outline: none;
-                    }:hover{
-                        cursor: pointer;
-                        border-color:rgb(92, 138, 207);
-                        border-radius: 20px;
-                        transition: all 0.5s ease 0s;
-
-                    }
                 }  
             }
         }
@@ -149,6 +128,7 @@
 .course {
 	margin-top:20px;
     margin-bottom:20px;
+    position: relative;
     .course-img {
         position: relative;
         display:block;
@@ -197,10 +177,30 @@
         display:block;
         height:42px;
     }
+    .course-grade {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        float: left;
+        color: #FF6700;
+        span{
+            color: black;
+            font-weight: bold;
+        }
+    }
+    .course-room {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        float: right;
+        color: #FF6700;
+        span {
+            color:green;
+            font-weight: bold;
+        }
+    }
     .course-details {
         margin-top: 20px;
         padding-top: 10px;
-        border-top: 1px solid #EBEBEB;
+        border-top: 1.5px solid rgb(182, 181, 181);
         .course-price {
             float: right;
         }
