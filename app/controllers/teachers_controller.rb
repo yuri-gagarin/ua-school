@@ -4,6 +4,7 @@ class TeachersController < ApplicationController
 
   def index
     @teachers = User.where(role: 'teacher')
+    @teacher_intro = IndexPost.find_by_slug('about_teachers')
   end
 
   def new 

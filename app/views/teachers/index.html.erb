@@ -1,57 +1,101 @@
+<div id="index-teachers-intro">
+  <div class="teachers-bg-image bg-parallax overlay"></div>
+    <div id="index-teachers-title">
+      <h3><%=@teacher_intro.title%></h3>
+    </div>
+</div>
+
 <div class="container teacher-index-container">
     <div class="row">
-        <div class="col-md-4 offset-md-4">
-            <div class="directors-image-container">
-                <h3 class="text-center">Our Director</h3>
-                <div class="director-picture">
-                    <img src="/assets/stock/stock_man.jpg" class="director-img" alt="directors picture">
-                </div>
-               
+        <div class="col directors-message-profile">
+            <div class="strikethrough"></div>
+            <div class="directors-message-heading">
+                <h3><%=t('teachers.directors_message')%></h3>
             </div>
+            <div class="directors-img">
+                <% if @teacher_intro.index_post_images.length > 0 %>
+                    <% image_url = @teacher_intro.index_post_images[0].image %>
+                    <img src="<%=image_url%>" class="img" alt="directors picture">
+                <% else %>
+                    <img src="/assets/stock/stock_man.jpg" class="img" alt="directors picture">
+                <% end %>
+            </div>  
+            <div class="directors-email">
+                <%= mail_to "director@ukrschule.org" do %>
+                    <i class="far fa-envelope"></i> <span>director@ukrschule.com</span>
+                <% end %>
+            </div>  
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6 offset-md-3">
+        <div class="col-md-12">
             <div class="directors-message">
-                <p>
-                The primary sort of the declarations is by weight and origin: 
-                for normal declarations, author style sheets override user style sheets which override the default style sheet. For "!important" declarations, user style sheets override author 
-                style sheets which override the default style sheet. "!important" declaration override normal declarations. An imported style sheet has the same origin as the 
-                style sheet that imported it.
-                </p>
+                <%= raw(@teacher_intro.description) %>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="teacher-index-center-row">
-            <i class="fas fa-user-graduate"></i>
-            <h4 class="text-center">Our Teachers</h4>
+    <div class="row teacher-index-center-row">
+        <div class="col">
+            <div class="strikethrough"></div>
+            <div class="teacher-logo">
+                <i class="fas fa-user-graduate"></i>
+            </div>
+            <h4 class="text-center"><%=t("teachers.our_teachers")%></h4>
         </div>
     </div>
+
     <div class="row teacher-index-row">
         <% @teachers.each do |teacher| %>
-            <div class="col-md-4 teacher-card">
-                <div class="card">
-                    <div class="teacher-index-img">
-                        <% if teacher.user_image != nil %>
-                            <img class="card-img-top" src="<%=teacher.user_image.image%>" alt="Card image cap">
-                        <% else %>
-                            <img class="card-img-top" src="/assets/images/stock_man.jpg" alt="Card image cap">
-                        <% end %> 
+            <div class="col-lg-4 col-md-6 teacher-card-column">
+                <div class="teacher-card">
+                    <a href="/<%=locale%>/teachers/<%=teacher.id%>">
+                        <div class="teacher-index-img-holder">
+                            <% if @teacher_intro.index_post_images.length > 0 %>
+                                <% image_url = teacher.user_image.image %>
+                                <img src="<%=image_url%>" class="teacher-index-img" alt="directors picture">
+                            <% else %>
+                                <img src="/assets/stock/stock_man.jpg" class="teacher-index-img" alt="directors picture">
+                            <% end %>
+                        </div>
+                    </a>
+                    <div class="teacher-card-name">
+                        <a href="/<%=locale%>/teachers/<%=teacher.id%>">
+                            <h5><%=teacher.full_name%></h3>
+                        </a>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title"><%=teacher.name + " " + teacher.last_name %></h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <%= link_to teacher_path(teacher) do %>
-                            <span>More...   <i class="fas fa-book-reader"></i></span>
+                    <div class="teacher-card-email">
+                         <%= mail_to "#{teacher.email}"  do %>
+                            <span><i class="far fa-envelope"></i> <%=teacher.email%></span>
                         <% end %>
                     </div>
+                    <div class="teacher-card-description">
+                        <%=raw(teacher.description.truncate(50))%>
+                        <%=link_to teacher_path(teacher.id) do %>
+                            <%=t('teachers.more')%>...
+                        <% end %>
+                    </div>  
                 </div>
             </div>
         <% end %> 
     </div>
 
    
+</div>
+
+<div class="container teacher-index-pagination">
+    <div class="row">
+        <div class="col">
+        </div>
+    </div>
+</div>
+<div class="container teachers-index-back">
+    <div class="row">
+        <div class="gen-back-btn">
+            <%= link_to "/#{locale}/index", class: 'gen-back'  do %>
+                <%=t('teachers.home')%>...
+            <% end %>
+        </div>
+    </div>
 </div>
  <footer class="navbar nav-footer navbar-expand">
     <ul class="navbar-nav mr-auto">

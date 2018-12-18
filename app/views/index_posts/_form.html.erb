@@ -20,7 +20,7 @@
     <%= f.cktext_area :description, rows: 20, class: 'form-control', placeholder: "...description" %>
   <% end %>
   <select name="index_post[page_type]" class="form-control">
-      <option value=""><%=t('index_page.category')%></option>
+      <option selected="selected" value=<%=@index_post.read_attribute_before_type_cast(:page_type)%>><%=t("index_page.#{@index_post.slug}")%></option>
       <option value=0><%=t('index_page.class_schedule')%></option>
       <option value=1><%=t('index_page.workshop_schedule')%></option>
       <option value=2><%=t('index_page.1-11_classes')%></option>
