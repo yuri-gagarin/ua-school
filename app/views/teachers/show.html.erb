@@ -28,37 +28,17 @@
      </div>
   </div>
 <% if @teachers_courses.length > 0 %>
-  <div class="row">
-   
-  </div>
-  <div class="row" id="teacher-class-row">
+  <div class="row show-teacher-course">
     <div class="mx-auto teacher-courses-header">
       <h3><%=t('teachers.courses')%></h3>
     </div>
-   
-    <% @teacher.courses.limit(6).each do |course| %>
-      <% course_image = course.course_images[0] %>
-      <% grade_level = course.grade.level.ordinalize %>
-      <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6">
-        <div class="course">
-          <a href="/<%=locale%>/workshops/<%=course.id%>" class="course-img">
-            <% if course_image == nil %>
-              <img src="/assets/stock/workshop_stock_photo.jpg" alt="course image">
-            <% else %>
-              <img src="<%=course_image.image%>" alt="course image">
-            <% end %>
-            <i class="course-link-icon fa fa-link"></i>
-          </a>
-          <a class="course-title text-center" href="/<%=locale%>/courses/<%=course.id%>"><%= course.name %></a>
-          <div class="course-details">
-            <span class="course-category"><a href="/<%=locale%>/courses/?grade=<%=grade_level%>"><i class="fas fa-chalkboard-teacher"></i> <%=t('teachers.grade_level')%>: <%=grade_level%></a></span>
-            <span class="course-price course-free"><span class="course-time"><i class="far fa-clock"></i>: </span><%= course.time %></span>
-          </div>
-        </div>
-      </div>
-    <% end %> 
   </div>
+  <div class="row" id="teacher-class-row">
+   
+    <%= render 'teachers/teacher_courses' %>
+    
 <% end %>  
+</div>
 </div>
 <footer class="navbar nav-footer navbar-expand">
   <ul class="navbar-nav mr-auto">

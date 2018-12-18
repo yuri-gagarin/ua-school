@@ -41,7 +41,12 @@ class TeachersController < ApplicationController
 
   def show
     @teacher = User.find(params[:id])
-    @teachers_courses = @teacher.courses
+    @teachers_courses = @teacher.courses.reorder("time ASC").page(params[:page]).per_page(3)
+    respond_to do |format|
+      format.html 
+      format.json { render json: @teachers_courses }
+      format.js
+    end
   end
 
 
