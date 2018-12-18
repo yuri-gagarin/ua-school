@@ -1,25 +1,60 @@
-<div class="container-fluid course-description-container">
-    <div class="row">
-        <div class="col-md-8">
-            <div class="row class-header">
-                <h3><%= @course.name %></h3>
-            </div>
-            <div class="row course-description">
-                <h5><%= raw(@course.description)%></h5>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="row course-instructor">
-                <h3>Teacher: Mike</h3>
-                <% puts @course_teacher.avatar %>
-                <img src="<%= @course_teacher.avatar %>" alt="teacher image" class="img-thumbnail">
-            </div>
-        </div>
+<div id="index-post-intro">
+  <div class="index-post-bg-image bg-parallax overlay"></div>
+    <div id="index-post-title">
+      <h3><%=@course.name%></h3>
     </div>
 </div>
 
-<div class="container-fluid gal-container">
-    <div class="row">
+<div class="container course-show-container">
+    <div class="row single-course-teacher">
+        <div class="teacher-strikethrough"></div>
+        <div class="col-md-4 mx-auto teacher-column">
+            <div class="course-teacher-name">
+                <h5><%=t('courses.teacher')%></h5>
+                <h3><%=@course_teacher.full_name%></h3>
+            </div>
+            <div class="teacher-img">
+                <% if @course_teacher.user_image != nil %>
+                    <a href="/<%=locale%>/teachers/<%=@course_teacher.id%>">
+                        <img src="<%=@course_teacher.user_image.image%>"  alt="" class="img-rounded">
+                    </a>
+                <% else %>
+                    <a href="<%=locale%>/teachers/<%=@course_teacher.id%>">
+                        <img src="/assets/stock/stock_man.jpg"  alt="" class="img-rounded">
+                    </a>
+                <% end %>
+            </div>
+            <div class="teacher-email">
+                 <%= mail_to "#{@course_teacher.email}"  do %>
+                    <span><i class="far fa-envelope"></i> <%=@course_teacher.email%></span>
+                 <% end %>
+            </div>
+        </div>
+    </div>
+
+    <div class="row single-course-details">
+        <div class="teacher-strikethrough"></div>
+        <div class = "about-course">
+            <p><%=t('courses.about_the_course')%></p>
+        </div>
+        <div class="col-md-12 course-details-column">
+            <div class="course-grade">
+                <a href="/<%=locale%>/courses/?grade=<%=@course.grade.level%>">
+                    <span><%=t('courses.grade')%>: <%=@course.grade.level.ordinalize %></span>
+                </a>
+            </div>
+            <div class="course-room">
+                <span><%=t('courses.room')%>: <%=@course.room%></span>
+            </div>
+            <div class="course-time">
+                <span><%=t('courses.time')%>: <%=@course.time%></span>
+            </div>
+            <div class="course-description">
+                <%= raw(@course.description)%>
+            </div>
+        </div>
+    </div>
+    <div class="row course-images">
         <% @course.course_images.each_with_index do |data, index| %>
             <% data_id = "pic" + (index+1).to_s %>
             <% data_target = "#" + data_id %>
@@ -29,18 +64,10 @@
                         <a href="#" data-toggle="modal" data-target="<%=data_target%>">
                             <img src="<%= data.image %>">
                         </a>
-                        <div class="modal fade" id="<%= data_id %>" tabindex="-1" role="dialog">
-                            <div class="modal-dialog modal-lg" role="document">
-                                <div class="modal-content">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                                    <div class="modal-body">
-                                        <img src="<%= data.image %>">
-                                    </div>
-                                    <div class="col-md-12 description">
-                                        <h4>This is the first one on my Gallery</h4>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="gal-main-modal" id="<%= data_id %>" tabindex="-1" role="dialog">
+                    `       <span class="gal-modal-close">&times;</span>
+                            <img class="gal-modal-content"src="<%= data.image %>">
+                            <div class="gal-modal-caption">Lorem ipsum dolor sit ame....</div>
                         </div>
                     </div>
                 </div>             
@@ -70,10 +97,19 @@
     </div>
 </div>
 
-
-<p id="notice"><%= notice %></p>
-<div class="container-fluid course-bottom-container">
-    <div class="course-back-link">
-      <%= link_to 'Back', courses_path %>
-    </div>  
+<div class="container course-page-back-container">
+    <div class="teacher-strikethrough"></div>
+    <div class="gen-back-btn">
+        <%= link_to :back,  class: 'gen-back'  do %>
+            <%=t('galleries.back')%>...
+        <% end %>
+    </div>
 </div>
+
+<footer class="navbar nav-footer navbar-expand">
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item"><a class="nav-link social-btn" href="#"><i class="fab fa-facebook-square"></i><span class="sr-only">(current)</span></a></li>
+    <li class="nav-item"><a class="nav-link social-btn" href="#"><i class="fab fa-twitter-square"></i><span class="sr-only">(current)</span></a></li>
+    <li class="nav-item"><a class="nav-link social-btn" href="#"><i class="fab fa-instagram"></i><span class="sr-only">(current)</span></a></li>
+  </ul>
+</footer>

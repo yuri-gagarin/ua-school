@@ -1,9 +1,7 @@
 $(document).ready(function() {
     
     $(".gal-modal-close").on("click", function() {
-        $(".gal-main-modal").hide();
-        $(".modal-backdrop").remove();
-        $("body").removeClass('modal-open');
+        $(this).parent().modal('toggle');
     });
 
 

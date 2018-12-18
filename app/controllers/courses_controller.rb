@@ -10,7 +10,6 @@ class CoursesController < ApplicationController
     @current_user = current_user || nil
     if (params[:grade])
       @grade = Grade.where(level: params[:grade])
-
       @courses = @grade[0].courses.order(time: "ASC")
 
     else 

@@ -2,7 +2,7 @@
   <div id="course-index-intro">
       <div class="bg-image bg-parallax overlay"></div>
       <div id="course-index-title">
-        <h3><%=t('courses.all_courses')%></h3>
+        <h3 class="text-center"><%=t('courses.all_courses')%></h3>
       </div>
   </div>
   <div id="courses" class="section">
@@ -11,14 +11,25 @@
     <div class="container">
 
       <!-- row -->
-      <div class="row welcome-row">
-        <div class="section-header">
-          <h2 class="text-center"><%=t('courses.welcome')%></h2>
-          <p class="lead"><%=t('courses.course_instructions')%></p>
+      <% if @grade %>
+        <div class="row welcome-row">
+          <div class="section-header">
+            <h2 class="text-center"><%=@grade[0].level.ordinalize%>   <%=t('courses.grade')%></h2>
+            <p class="lead"><%=t('courses.all_grade_classes')%></p>
+          </div>
+          <div id="class-strike-through">
+          </div>
         </div>
-        <div id="class-strike-through">
+      <% else %>
+        <div class="row welcome-row">
+          <div class="section-header">
+            <h2 class="text-center"><%=t('courses.welcome')%></h2>
+            <p class="lead"><%=t('courses.course_instructions')%></p>
+          </div>
+          <div id="class-strike-through">
+          </div>
         </div>
-      </div>
+      <% end %>
       <!-- /row -->
 
       <div class="row grade-select-row">
@@ -82,7 +93,7 @@
 
       <div class="row">
         <div class="center-btn mx-auto">
-          <a class="main-button icon-button" href="#">Home</a>
+          <a class="main-button icon-button" href="/<%=locale%>/index"><%=t('courses.home')%></a>
         </div>
       </div>
 

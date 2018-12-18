@@ -76,7 +76,7 @@ uk:
     back: Назад
   
   courses:
-    all_courses: Наші Уроки
+    all_courses: Наші Предмети
     select_grade_level: Виберіть Клас
     select: Вибрати
     first_grade: Перший Клас
@@ -92,8 +92,14 @@ uk:
     eleventh_grade: Одиннадцятий Клас
     welcome: Вітаємо
     course_instructions: Щоб розглядати детально наші предмети, будь ласка виберіть рівень класу нижче.
+    all_grade_classes: Всі Предмети Класу
     room: Кабінет
     grade: Клас
+    time: Час
+    teacher: Вчитель
+    about_the_course: Коротко про Предмет
+    home: Головна
+
   
   teachers:
     courses: Предмети
