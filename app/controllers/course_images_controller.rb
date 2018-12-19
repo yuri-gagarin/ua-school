@@ -14,7 +14,7 @@ class CourseImagesController < ApplicationController
         else   
             flash[:now] = "Image was not saved"   
         end
-    en
+    end
     def destroy
         @course_image = CourseImage.find(params[:id])
         @course_image.destroy 
