@@ -23,7 +23,7 @@
 
 .admin-users-container {
     margin-top: 25px;
-    border: 2px solid green;
+    border: 2px solid rgb(12, 102, 187);
     border-radius: 10px;
     padding: 0px 20px 10px 20px;
     .row {
@@ -63,7 +63,7 @@
 }
 .admin-courses-container {
     margin-top: 25px;
-    border: 2px solid green;
+    border: 2px solid rgb(12, 102, 187);
     border-radius: 10px;
     padding: 0px 20px 10px 20px;
     .row {
@@ -93,6 +93,7 @@
                 color: white;
                 width: 100%;
                 line-height: 100px;
+                text-decoration: none;
                 text-decoration: none;
                 &:hover{
                     background-color: rgb(12, 102, 187);
@@ -103,7 +104,7 @@
 }
 .admin-users-container {
     margin-top: 25px;
-    border: 2px solid green;
+    border: 2px solid rgb(12, 102, 187);
     border-radius: 10px;
     padding: 0px 20px 10px 20px;
     .row {
@@ -134,6 +135,7 @@
                 width: 100%;
                 line-height: 100px;
                 text-decoration: none;
+                text-decoration: none;
                 &:hover{
                     background-color: rgb(12, 102, 187);
                 }
@@ -143,7 +145,7 @@
 }
 .admin-news-container {
     margin-top: 25px;
-    border: 2px solid green;
+    border: 2px solid rgb(12, 102, 187);
     border-radius: 10px;
     padding: 0px 20px 10px 20px;
     .row {
@@ -184,9 +186,10 @@
 
 .admin-pages-container {
     margin-top: 25px;
-    border: 2px solid green;
+    border: 2px solid rgb(12, 102, 187);
     border-radius: 10px;
     padding: 0px 20px 10px 20px;
+    margin-bottom: 85px;
 
     .row {
         h3 {
@@ -215,6 +218,7 @@
                 color: white;
                 width: 100%;
                 line-height: 100px;
+                text-decoration: none;
                 &:hover{
                     background-color: rgb(12, 102, 187);
                 }

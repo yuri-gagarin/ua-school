@@ -21,6 +21,35 @@
 
 en:
   hello: "Hello world"
+
+  admin:
+    control:
+      name: First Name
+      last_name: Last Name
+      email: Email
+      confirmed: Confirmed?
+      last_sign_in: Last Sign In
+      sign_in_count: Sign In Count
+      confirm_user: Confirm User
+      delete_user: Delete User
+      title: Title
+      description: Desription
+      price: Price
+      instructor: Instructor
+      created_at: Created At
+      updated_at: Updated At
+      grade_level: Grade Level
+      pictures: Pictures
+      teacher: Teacher
+      room: Room
+      time: Time
+
+      new: New
+      confirm: Confirm
+      delete: Delete
+      edit: Edit
+      save: Save
+      update: Update
 will_paginate:
     previous_label: <i class="fa fa-angle-left" style="color:black"></i> Back
     next_label: Forward <i class="fa fa-angle-right" style="color:black"></i>

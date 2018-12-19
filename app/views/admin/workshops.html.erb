@@ -1,22 +1,22 @@
 <div class="container admin-container">
     <div class="row">
     <div class="text-center mx-auto">
-        <h3>Workshops</h3>
-        <%=button_to "NEW", new_workshop_path, class: "btn btn-success", method: :get%>
+        <h3><%=t('admin.edit_workshops')%></h3>
+        <%=button_to "#{t('admin.control.new')}", new_workshop_path, class: "btn btn-success", method: :get%>
     </div>
     <table class="table w-100">
         <thead class="thead-inverse">
         <tr>
             <th>#</th>
-            <th>Title</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Instructor</th>
-            <th>Created At</th>
-            <th>Updated At</th>
+            <th><%=t('admin.control.title')%></th>
+            <th><%=t('admin.control.description')%></th>
+            <th><%=t('admin.control.price')%></th>
+            <th><%=t('admin.control.instructor')%></th>
+            <th><%=t('admin.control.created_at')%></th>
+            <th><%=t('admin.control.updated_at')%></th>
             <th></th>
-            <th>Edit Workshop</th>
-            <th>Delete Workshop</th>
+            <th><%=t('admin.control.edit')%></th>
+            <th><%=t('admin.control.delete')%></th>
         </tr>
         </thead>
         <% @workshops.each_with_index do |workshop, index|%>
@@ -24,14 +24,14 @@
         <tr>
             <td scope="row"><%= (index + 1).to_s %></td>
             <td><%= workshop.name %></td>
-            <td><%= truncate(raw(workshop.description))%></td>
+            <td><%= raw workshop.description.truncate(30)%></td>
             <td><%= workshop.price %></td>
             <td><%= workshop.instructor %></td>
-            <td><%= workshop.created_at %></td>
-            <td><%= workshop.updated_at %></td>
+            <td><%= time_tag(workshop.created_at)%></td>
+            <td><%= time_tag(workshop.updated_at) %></td>
             <td></td>
-            <td><%= button_to "EDIT", {controller: "workshops", action: "edit", id: workshop.id}, method: :get, class: "btn btn-warning" %></td>
-            <td><%= button_to "DELETE", {controller: "workshops", action: "destroy", id: workshop.id}, method: :delete, class: "btn btn-danger", data: {confirm: "ARE YOU SURE?"} %></td>
+            <td><%= button_to "#{t('admin.control.edit')}", {controller: "workshops", action: "edit", id: workshop.id}, method: :get, class: "btn btn-warning" %></td>
+            <td><%= button_to "#{t('admin.control.delete')}", {controller: "workshops", action: "destroy", id: workshop.id}, method: :delete, class: "btn btn-danger", data: {confirm: "ARE YOU SURE?"} %></td>
         </tr>
         </tbody>
         <% end %>

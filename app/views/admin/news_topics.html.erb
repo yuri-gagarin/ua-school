@@ -1,0 +1,47 @@
+<div class="container admin-container">
+    <div class="row">
+        <div class="text-center mx-auto">
+            <h4><%= t('admin.edit_news')%></h4>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table w-100">
+            <thead class="thead-inverse">
+            <tr>
+                <th>#</th>
+                <th><%=t('admin.control.title')%></th>
+                <th><%=t('admin.control.author')%></th>
+                <th></th>
+                <th></th> 
+                <th><%=t('admin.control.description')%></th>
+                <th><%=t('admin.control.pictures')%></th>
+                <th><%=t('admin.control.created_at')%></th>
+                <th><%=t('admin.control.updated_at')%></th>
+                <th><%=t('admin.control.edit')%></th>
+                <th><%=t('admin.control.delete')%></th>
+            </tr>
+            </thead>
+            <% @topics.each_with_index do |topic, index|%>
+            <tbody>
+            <tr>
+                <td scope="row"><%= (index + 1).to_s %></td>
+                <td><%= topic.name %></td>
+                <td><%= User.find(topic.user_id).full_name %></td>
+                <td></td>
+                <td></td>
+                <td><%= raw topic.description.truncate(30) %></td>
+                <td><%= topic.topic_images.count %></td>
+                <td><%= time_tag(topic.created_at) %></td>
+                <td><%= time_tag(topic.updated_at) %></td>
+                <td><%= button_to "#{t('admin.control.edit')}", {controller: "topics", action: "edit", id: topic.id}, method: :get, class: "btn btn-warning" %></td>
+                <td><%= button_to "#{t('admin.control.delete')}", {controller: "topics", action: "destroy", id: topic.id}, method: :delete, class: "btn btn-danger", data: {confirm: "ARE YOU SURE?"} %></td>
+            </tr>
+            </tbody>
+            <% end %>
+        </table>
+    </div>
+     <div class="row">
+        <div class="text-center mx-auto">
+        <%=button_to "#{t('admin.control.new')}", new_topic_path, class: "btn btn-success", method: :get %>
+    </div>
+</div>

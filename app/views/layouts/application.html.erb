@@ -36,8 +36,8 @@
               УКР <img src="/assets/stock/ua_flag.jpeg" alt="HTML tutorial" style="width:30px;height:20px;border:0;">
             <% end %>
           </li>
-          <span><%= current_user.name %></span>
           <% if current_user %>
+            <span><%= current_user.name %></span>
             <li class="nav-item">
               <%=link_to destroy_user_session_path, class: 'login-control', method: :delete  do %>
                 <span><i class="fas fa-user"></i> <%=t('toolbar.sign_out')%></span>

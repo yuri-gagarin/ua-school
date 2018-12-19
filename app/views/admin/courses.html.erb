@@ -1,7 +1,7 @@
 <div class="container admin-container">
     <div class="row">
         <div class="text-center mx-auto">
-            <h4>Courses</h4>
+            <h4><%= t('admin.edit_courses')%></h4>
         </div>
     </div>
     <div class="row">
@@ -9,16 +9,16 @@
             <thead class="thead-inverse">
             <tr>
                 <th>#</th>
-                <th>Title</th>
-                <th>Teacher</th>
-                <th>Grade</th>
-                <th>Room</th> 
-                <th>Time</th>
-                <th>Images</th>
-                <th>Created At</th>
-                <th>Updated At</th>
-                <th>Edit</th>
-                <th>Delete</th>
+                <th><%=t('admin.control.title')%></th>
+                <th><%=t('admin.control.teacher')%>r</th>
+                <th><%=t('admin.control.grade_level')%></th>
+                <th><%=t('admin.control.room')%></th> 
+                <th><%=t('admin.control.time')%></th>
+                <th><%=t('admin.control.pictures')%></th>
+                <th><%=t('admin.control.created_at')%></th>
+                <th><%=t('admin.control.updated_at')%></th>
+                <th><%=t('admin.control.edit')%></th>
+                <th><%=t('admin.control.delete')%></th>
             </tr>
             </thead>
             <% @courses.each_with_index do |course, index|%>
@@ -31,10 +31,10 @@
                 <td><%= course.room || "" %></td>
                 <td><%= course.time || "" %></td>
                 <td><%= course.course_images.count %></td>
-                <td><%= course.created_at %></td>
-                <td><%= course.updated_at %></td>
-                <td><%= button_to "EDIT", {controller: "courses", action: "edit", id: course.id}, method: :get, class: "btn btn-warning" %></td>
-                <td><%= button_to "DELETE", {controller: "courses", action: "destroy", id: course.id}, method: :delete, class: "btn btn-danger", data: {confirm: "ARE YOU SURE?"} %></td>
+                <td><%= time_tag(course.created_at) %></td>
+                <td><%= time_tag(course.updated_at) %></td>
+                <td><%= button_to "#{t('admin.control.edit')}", {controller: "courses", action: "edit", id: course.id}, method: :get, class: "btn btn-warning" %></td>
+                <td><%= button_to "#{t('admin.control.delete')}", {controller: "courses", action: "destroy", id: course.id}, method: :delete, class: "btn btn-danger", data: {confirm: "ARE YOU SURE?"} %></td>
             </tr>
             </tbody>
             <% end %>
@@ -42,6 +42,6 @@
     </div>
      <div class="row">
         <div class="text-center mx-auto">
-        <%=button_to "NEW", new_course_path, class: "btn btn-success", method: :get %>
+        <%=button_to "#{t('admin.control.new')}", new_course_path, class: "btn btn-success", method: :get %>
     </div>
 </div>

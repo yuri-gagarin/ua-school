@@ -31,6 +31,37 @@ uk:
     sign_out: Вийти
 
   admin:
+    control:
+      name: Ім'я
+      last_name: Прізвище
+      email: Емайл
+      confirmed: Затверджено
+      last_sign_in: Послідній Логін
+      sign_in_count: Кількість Логінів
+      confirm_user: Затвердити Користувача
+      delete_user: Видалити Користувача
+      title: Назва
+      description: Описання
+      price: Ціна
+      instructor: Інструктор
+      created_at: Створено
+      updated_at: Редаговано
+      grade_level: Рівень Класу
+      pictures: Фотоґрафії
+      teacher: Викладач
+      room: Кабінет
+      time: Час
+      author: Автор
+
+
+
+      new: Новий
+      confirm: Затвердити
+      delete: Видалити
+      edit: Редагувати
+      save: Створити
+      update: Зберегти
+      
     admin_page: Сторінка Адміністратора
     users: Користувачі
     edit_administrators: Редагувати Адміністраторів
@@ -48,9 +79,8 @@ uk:
     edit_index_posts: Редагувати Головні Сторінки
     edit_general_school_info: Редагувати Сторінки про Школу
     edit_sponsored_posts: Редагувати Сторінки Спонсорів
-      
-    
 
+    
     
   welcome:
     welcomes: Вітає

@@ -5,15 +5,15 @@
         <thead class="thead-inverse">
         <tr>
             <th>#</th>
-            <th>Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
+            <th><%=t('admin.control.name')%></th>
+            <th><%=t('admin.control.last_name')%></th>
+            <th><%=t('admin.control.email')%></th>
             <th>Role</th>
-            <th>Confirmed</th>
-            <th>Last Sign In</th>
-            <th>Sign In Count</th>
-            <th>Confirm User</th>
-            <th>Delete User</th>
+            <th><%=t('admin.control.confirmed')%></th>
+            <th><%=t('admin.control.last_sign_in')%></th>
+            <th><%=t('admin.control.sign_in_count')%></th>
+            <th><%=t('admin.control.confirm_user')%></th>
+            <th><%=t('admin.control.delete_user')%></th>
         </tr>
         </thead>
         <% @students.each_with_index do |user, index|%>
@@ -27,8 +27,8 @@
             <td><%= user.confirmed_at %></td>
             <td><%= user.last_sign_in_at %></td>
             <td><%= user.sign_in_count %></td>
-            <td><%= button_to "CONFIRM", {controller: "admin", action: "confirm_user", user_id: user.id}, method: :post, class: "btn btn-warning" %></td>
-            <td><%= button_to "DELETE", {controller: "registrations", action: "destroy", user_id: user.id}, method: :delete, class: "btn btn-danger", data: {confirm: "ARE YOU SURE?"} %></td>
+            <td><%= button_to "#{t('admin.control.confirm')}", {controller: "admin", action: "confirm_user", user_id: user.id}, method: :post, class: "btn btn-warning" %></td>
+            <td><%= button_to "#{t('admin..control.delete')}", {controller: "registrations", action: "destroy", user_id: user.id}, method: :delete, class: "btn btn-danger", data: {confirm: "ARE YOU SURE?"} %></td>
         </tr>
         </tbody>
         <% end %>
