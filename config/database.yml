@@ -26,4 +26,4 @@ test:
 
 production:
   <<: *default
-  database: <%= ENV['POSTGREST_DEV_DB'] %>
+  database: <%= ENV['POSTGRES_DB'] %>
