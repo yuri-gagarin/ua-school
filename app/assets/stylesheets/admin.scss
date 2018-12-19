@@ -1,3 +1,224 @@
 // Place all the styles related to the admin controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.admin-index-container {
+    margin-top: 50px;
+    .row {
+        height: auto;
+        width: auto;
+        h3 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 25px;
+            font-weight: bold;
+            text-decoration: underline;
+            text-underline-position: below;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+.admin-users-container {
+    margin-top: 25px;
+    border: 2px solid green;
+    border-radius: 10px;
+    padding: 0px 20px 10px 20px;
+    .row {
+        h3 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 25px;
+            font-weight: bold;
+            text-decoration: underline;
+            text-underline-position: below;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        height: auto;
+        .col {
+            //border: 2px solid blue;
+            text-align: center;
+            width: auto;
+            height: 100px;
+            a {
+                border: 1px solid white;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                background-color: rgb(39, 144, 243);
+                color: white;
+                width: 100%;
+                line-height: 100px;
+                text-decoration: none;
+                &:hover{
+                    background-color: rgb(12, 102, 187);
+                }
+            }
+        }
+    }
+}
+.admin-courses-container {
+    margin-top: 25px;
+    border: 2px solid green;
+    border-radius: 10px;
+    padding: 0px 20px 10px 20px;
+    .row {
+        h3 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 25px;
+            font-weight: bold;
+            text-decoration: underline;
+            text-underline-position: below;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        height: auto;
+        .col {
+            //border: 2px solid blue;
+            text-align: center;
+            width: auto;
+            height: 100px;
+            a {
+                border: 1px solid white;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                background-color: rgb(39, 144, 243);
+                color: white;
+                width: 100%;
+                line-height: 100px;
+                text-decoration: none;
+                &:hover{
+                    background-color: rgb(12, 102, 187);
+                }
+            }
+        }
+    }
+}
+.admin-users-container {
+    margin-top: 25px;
+    border: 2px solid green;
+    border-radius: 10px;
+    padding: 0px 20px 10px 20px;
+    .row {
+        h3 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 25px;
+            font-weight: bold;
+            text-decoration: underline;
+            text-underline-position: below;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        height: auto;
+        .col {
+            //border: 2px solid blue;
+            text-align: center;
+            width: auto;
+            height: 100px;
+            a {
+                border: 1px solid white;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                background-color: rgb(39, 144, 243);
+                color: white;
+                width: 100%;
+                line-height: 100px;
+                text-decoration: none;
+                &:hover{
+                    background-color: rgb(12, 102, 187);
+                }
+            }        
+        }
+    }
+}
+.admin-news-container {
+    margin-top: 25px;
+    border: 2px solid green;
+    border-radius: 10px;
+    padding: 0px 20px 10px 20px;
+    .row {
+        h3 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 25px;
+            font-weight: bold;
+            text-decoration: underline;
+            text-underline-position: below;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        height: auto;
+        .col {
+            //border: 2px solid blue;
+            text-align: center;
+            width: auto;
+            height: 100px;
+            a {
+                border: 1px solid white;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                background-color: rgb(39, 144, 243);
+                color: white;
+                width: 100%;
+                line-height: 100px;
+                text-decoration: none;
+                &:hover{
+                    background-color: rgb(12, 102, 187);
+                }
+            }
+        }
+    }
+}
+
+.admin-pages-container {
+    margin-top: 25px;
+    border: 2px solid green;
+    border-radius: 10px;
+    padding: 0px 20px 10px 20px;
+
+    .row {
+        h3 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 25px;
+            font-weight: bold;
+            text-decoration: underline;
+            text-underline-position: below;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        height: auto;
+        .col {
+            //border: 2px solid blue;
+            text-align: center;
+            width: auto;
+            height: 100px;
+            a {
+                border: 1px solid white;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                background-color: rgb(39, 144, 243);
+                color: white;
+                width: 100%;
+                line-height: 100px;
+                &:hover{
+                    background-color: rgb(12, 102, 187);
+                }
+            }
+        }
+    }
+}

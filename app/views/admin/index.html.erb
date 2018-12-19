@@ -1,154 +1,110 @@
-<div class="container">
-<div class="row">
-  <h3 class="mx-auto">Admin Page</h1>
-</div>
-
-<div class="row">
-  <h3 class="mx-auto">Users</h3>
-  <table class="table w-100">
-    <thead class="thead-inverse">
-      <tr>
-        <th>#</th>
-        <th>Name</th>
-        <th>Last Name</th>
-        <th>Email</th>
-        <th>Role</th>
-        <th>Confirmed</th>
-        <th>Last Sign In</th>
-        <th>Sign In Count</th>
-        <th>Confirm User</th>
-        <th>Delete User</th>
-      </tr>
-    </thead>
-    <% @users.each_with_index do |user, index|%>
-    <tbody>
-      <tr>
-        <td scope="row"><%= (index + 1).to_s %></td>
-        <td><%= user.name %></td>
-        <td><%= user.last_name %></td>
-        <td><%= user.email %></td>
-        <td><%= user.role %></td>
-        <td><%= user.confirmed_at %></td>
-        <td><%= user.last_sign_in_at %></td>
-        <td><%= user.sign_in_count %></td>
-        <td><%= button_to "CONFIRM", {controller: "admin", action: "confirm_user", user_id: user.id}, method: :post, class: "btn btn-warning" %></td>
-        <td><%= button_to "DELETE", {controller: "registrations", action: "destroy", user_id: user.id}, method: :delete, class: "btn btn-danger", data: {confirm: "ARE YOU SURE?"} %></td>
-      </tr>
-    </tbody>
-    <% end %>
-  </table>
-</div>
-
-<div class="row">
-  <div class="text-center mx-auto">
-    <h3>Workshops</h3>
-    <%=button_to "NEW", new_workshop_path, class: "btn btn-success", method: :get%>
-  </div>
-  <table class="table w-100">
-    <thead class="thead-inverse">
-      <tr>
-        <th>#</th>
-        <th>Title</th>
-        <th>Description</th>
-        <th>Price</th>
-        <th>Instructor</th>
-        <th>Created At</th>
-        <th>Updated At</th>
-        <th></th>
-        <th>Edit Workshop</th>
-        <th>Delete Workshop</th>
-      </tr>
-    </thead>
-    <% @workshops.each_with_index do |workshop, index|%>
-    <tbody>
-      <tr>
-        <td scope="row"><%= (index + 1).to_s %></td>
-        <td><%= workshop.name %></td>
-        <td><%= truncate(raw(workshop.description))%></td>
-        <td><%= workshop.price %></td>
-        <td><%= workshop.instructor %></td>
-        <td><%= workshop.created_at %></td>
-        <td><%= workshop.updated_at %></td>
-        <td></td>
-        <td><%= button_to "EDIT", {controller: "workshops", action: "edit", id: workshop.id}, method: :get, class: "btn btn-warning" %></td>
-        <td><%= button_to "DELETE", {controller: "workshops", action: "destroy", id: workshop.id}, method: :delete, class: "btn btn-danger", data: {confirm: "ARE YOU SURE?"} %></td>
-      </tr>
-    </tbody>
-    <% end %>
-  </table>
-</div>
-
-<div class="row">
-  <div class="text-center mx-auto">
-    <h3>Courses</h3>
-    <%=button_to "NEW", new_course_path, class: "btn btn-success", method: :get %>
-  </div>
-  <table class="table w-100">
-    <thead class="thead-inverse">
-      <tr>
-        <th>#</th>
-        <th>Title</th>
-        <th>Teacher</th>
-        <th>Grade</th>
-        <th>Period</th> 
-        <th>Time</th>
-        <th>Created At</th>
-        <th>Updated At</th>
-        <th>Edit</th>
-        <th>Delete</th>
-      </tr>
-    </thead>
-    <% @courses.each_with_index do |course, index|%>
-    <tbody>
-      <tr>
-        <td scope="row"><%= (index + 1).to_s %></td>
-        <td><%= course.name %></td>
-        <td><%= User.find(course.user_id).name %></td>
-        <td><%= course.grade || "" %></td>
-        <td><%= course.period || "" %></td>
-        <td><%= course.time || "" %></td>
-        <td><%= course.created_at %></td>
-        <td><%= course.updated_at %></td>
-        <td><%= button_to "EDIT", {controller: "courses", action: "edit", id: course.id}, method: :get, class: "btn btn-warning" %></td>
-        <td><%= button_to "DELETE", {controller: "courses", action: "destroy", id: course.id}, method: :delete, class: "btn btn-danger", data: {confirm: "ARE YOU SURE?"} %></td>
-      </tr>
-    </tbody>
-    <% end %>
-  </table>
-</div>
-</div>
-
-<div class="container admin-control-container">
+<div class="container admin-index-container">
   <div class="row">
-    <div class="col">
-      <h3 class="text-center">Welcome <%=current_user.name%></h3>
-    <div>
+    <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <h3 class="text-center"><%=t('admin.admin_page')%></h3>
+    </div>
+  </div>
+</div>
+
+<div class="container admin-users-container">
+  <div class="row">
+    <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
+      <h3 class="text-center"><%=t('admin.users')%></h3>
+    </div>
   </div>
   <div class="row">
-    <div class="col-md-4 col-sm-6 text-center">
-      <h5 class="text-center">Go to All Classes</h5>
-      <%= button_to "Classes", admin_courses_path, class: "btn btn-success", method: :get %>
+    <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <%= link_to admin_administrators_path do %>
+        <%= t('admin.edit_administrators') %>
+      <% end %>
     </div>
-
-    <div class="col-md-4 col-sm-6 text-center">
-      <h5 class="text-center">Go to All Workshops</h5>
-      <%= button_to "Workshops", admin_workshops_path, class: "btn btn-success", method: :get %>
+    <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <%= link_to admin_teachers_path do %>
+        <%= t('admin.edit_teachers') %>
+      <% end %>
     </div>
-
-    <div class="col-md-4 col-sm-6 text-center">
-      <h5 class="text-center">Go to All News</h5>
-      <%= button_to "News", admin_news_topics_path, class: "btn btn-success mx-auto", method: :get%>
+    <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <%= link_to admin_students_path do %>
+        <%= t('admin.edit_students') %>
+      <% end %>
     </div>
-
-    <div class="col-md-4 col-sm-6 text-center">
-      <h5 class="text-center">Go to All Teachers</h5>
-      <%= button_to "Teachers", admin_teachers_path, class: "btn btn-success", method: :get %>
-    </div>
-
-\    <div class="col-md-4 col-sm-6 text-center">
-      <h5>Go to All Students</h5>
-      <%= button_to "Students", admin_students_path, class: "btn btn-success", method: :get %>
+    <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <%= link_to admin_parents_path do %>
+        <%= t('admin.edit_parents') %>
+      <% end %>
     </div>
   </div>
-  
+</div>
+
+<div class="container admin-courses-container">
+
+  <div class="row">
+    <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <h3 class="text-center"><%=t('admin.courses_classes_workshops')%></h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <%= link_to admin_workshops_path do %>
+        <%= t('admin.edit_workshops') %>
+      <% end %>
+    </div>
+    <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <%= link_to admin_grades_path do %>
+        <%= t('admin.edit_grades') %>
+      <% end %>
+    </div>
+    <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <%= link_to admin_courses_path do %>
+        <%= t('admin.edit_courses') %>
+      <% end %>
+    </div>
+    <div class="col col-lg-3 col-md-3 col-sm-6 col-xs-12">
+      <%= link_to admin_posts_path do %>
+        <%= t('admin.edit_posts') %>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+<div class="container admin-news-container">
+  <div class="row">
+    <div class="col col-lg-12 col-md-12 col-sm-12">
+      <h3 class="text-center"><%=t('admin.news')%></h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-lg-12 col-md-12 col-sm-12">
+      <%= link_to admin_news_topics_path do %>
+        <%= t('admin.edit_news') %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="container admin-pages-container">
+  <div class="row">
+    <div class="col col-lg-12 col-md-12 col-sm-12">
+      <h3 class="text-center"><%=t('admin.school_info_pages')%></h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col col-lg-4 col-md-4 col-sm-6">
+      <%= link_to admin_index_posts_path do %>
+        <%= t('admin.edit_index_posts') %>
+      <% end %>
+    </div>
+    <div class="col col-lg-4 col-md-4 col-sm-6">
+      <%= link_to admin_general_info_path do %>
+        <%= t('admin.edit_general_school_info') %>
+      <% end %>
+    </div>
+    <div class="col col-lg-4 col-md-4 col-sm-6">
+      <%= link_to admin_sponsored_posts_path do %>
+        <%= t('admin.edit_sponsored_posts') %>
+      <% end %>
+    </div>
+  </div>
 </div>

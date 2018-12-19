@@ -40,13 +40,17 @@ Rails.application.routes.draw do
     get 'about/history'
 
     get "/admin", to: "admin#index"
+    get "/admin/administrators", to: "admin#administrators"
     get "/admin/courses", to: "admin#courses"
     get "/admin/galleries", to: "admin#galleries"
+    get "/admin/general_info", to: "admin#general_info"
     get "/admin/grades", to: "admin#grades"
     get "/admin/index_posts", to: "admin#index_posts"
     get "/admin/news_topics", to: "admin#news_topics"
     get "/admin/workshops", to: "admin#workshops"
     get "/admin/parents", to: "admin#parents"
+    get "/admin/posts", to: "admin#posts"
+    get "/admin/sponsored_posts", to: "admin#sponsored_posts"
     get "/admin/students", to: "admin#students"
     get "/admin/teachers", to: "admin#teachers"
 

@@ -29,6 +29,28 @@ uk:
     log_in: Логін
     sign_up: Реєструватись
     sign_out: Вийти
+
+  admin:
+    admin_page: Сторінка Адміністратора
+    users: Користувачі
+    edit_administrators: Редагувати Адміністраторів
+    edit_teachers: Редагувати Вчителів
+    edit_students: Редагувати Учнів
+    edit_parents: Редагувати Батьків
+    courses_classes_workshops: Класи, Предмети, Гуртки
+    edit_workshops: Редагувати Гуртки
+    edit_grades: Редагувати Класи
+    edit_courses: Редагувати Предмети
+    edit_posts: Редагувати Завдання
+    news: Новини
+    edit_news: Редагувати Новини
+    school_info_pages: Шкільні Сторінки
+    edit_index_posts: Редагувати Головні Сторінки
+    edit_general_school_info: Редагувати Сторінки про Школу
+    edit_sponsored_posts: Редагувати Сторінки Спонсорів
+      
+    
+
     
   welcome:
     welcomes: Вітає

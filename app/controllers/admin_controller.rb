@@ -20,6 +20,9 @@ class AdminController < ApplicationController
         @grades = Grade.order(level: "ASC")
     end
 
+    def general_info
+    end
+
     def index_posts
         @index_posts = IndexPost.all
     end
@@ -32,12 +35,24 @@ class AdminController < ApplicationController
         @workshops = Workshop.all
     end
 
+    def administrators
+        @administrators = User.where(role: 'admin')
+    end
+
     def parents
         @parents = User.where(role: 'member')
     end
 
+    def posts 
+        @posts = Post.all
+    end
+
     def students
         @students = User.where(role: 'student')
+    end
+
+    def sponsored_posts
+        @sponsored_posts = SponsoredPost.all
     end
 
     def teachers
