@@ -171,6 +171,33 @@
   opacity: 0.9;
 }
 
+.welcome-news-pagination {
+  width: 100%;
+  height: 50px;
+  position: relative;
+  .welcome-paginate-links {
+    background-color: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-family: Georgia;
+    font-weight: bold;
+    padding: 0px 10px;
+    z-index: 10;
+  }
+  .strikethrough {
+    width: 100%;
+    border: 2px solid rgb(92, 138, 207);
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+  }
+}
+
 
 #schedule {
   height: 200px;

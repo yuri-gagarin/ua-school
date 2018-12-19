@@ -1,0 +1,38 @@
+<% @news_topics.each do |topic_item| %>
+  <div class="col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch">
+    <div class="card">
+      <div class="card-img-top">
+        <%if topic_item.topic_images.length > 0 %>
+          <% topic_image = topic_item.topic_images[0] %>
+          <a href="/<%=locale%>/topics/<%=topic_item.id%>">
+            <img class="card-img" src="<%=topic_image.image%>" alt="Card image cap">
+          </a>
+        <% else %>
+          <a href="/<%=locale%>/topics/<%=topic_item.id%>">
+            <img class="card-img" src="/assets/stock/new_topic.jpg" alt="Card image cap">
+          </a>
+        <% end %>
+      </div>
+      <div class="card-body">
+        <div class="card-title">
+          <a href="/<%=locale%>/topics/<%=topic_item.id %>"><%=topic_item.name%></a>
+          <p class="card-text"><%=raw topic_item.description.truncate(50) %>
+          <%= link_to topic_path(topic_item.id) do %>
+            <%= t('welcome.more')%>...
+          <% end %>
+          </p>
+          
+        </div>
+      </div>
+      <div class="card-footer">
+        <small class="card-time"><%=time_tag(topic_item.created_at)%></small>
+        <small class="card-author"><%=(t'welcome.author')%>: <%=User.find(topic_item.user_id).name%></small>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+  <div class="container welcome-news-pagination">
+    <%= paginate @news_topics, class: "welcome-paginate-links" %>
+    <div class="strikethrough"></div>
+</div>

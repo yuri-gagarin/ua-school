@@ -27,13 +27,13 @@
          
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <%= link_to index_path(locale: :en), class: 'en-lang' do %>
-              <img src="/assets/stock/us_flag.jpeg" alt="HTML tutorial" style="width:30px;height:20px;border:0;">
+            <%= link_to params.permit!().merge(locale: :en), class: 'en-lang' do %>
+              EN <img src="/assets/stock/us_flag.jpeg" alt="HTML tutorial" style="width:30px;height:20px;border:0;">
             <% end %>
           <li>
           <li class="nav-item">
-            <%= link_to index_path(locale: :uk), class: 'ua-lang' do %>
-              <img src="/assets/stock/ua_flag.jpeg" alt="HTML tutorial" style="width:30px;height:20px;border:0;">
+            <%= link_to params.permit!().merge(locale: :uk), class: 'ua-lang' do %>
+              УКР <img src="/assets/stock/ua_flag.jpeg" alt="HTML tutorial" style="width:30px;height:20px;border:0;">
             <% end %>
           </li>
           <span><%= current_user.name %></span>
@@ -109,7 +109,7 @@
         </div>
 
         <div class="mx-auto my-2 order-0 order-md-1 position-relative">
-          <a class="mx-auto" id="school-logo" href="/index">
+          <a class="mx-auto" id="school-logo" href="/<%=locale%>/index">
               <img src="//placehold.it/120/ccff00" class="rounded-circle">
           </a>
           <button class="navbar-toggler mx-auto" type="button" data-toggle="collapse" data-target=".navbarSupportedContent" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
