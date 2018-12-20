@@ -2,7 +2,7 @@ class UserAvatarUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   #cinclude CarrierWave::MiniMagick
-  if Rails.env.production?
+  if Rails.env.test?
 
     include Cloudinary::CarrierWave
 
