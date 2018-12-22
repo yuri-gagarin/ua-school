@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container admin-table-container">
     <div class="row">
         <h3 class="mx-auto"><%=t('admin.edit_teachers')%></h3>
     </div>
@@ -39,5 +39,15 @@
         </tbody>
         <% end %>
     </table>
+    <div class="row">
+        <div class="col back-btn-col">
+            <div class="admin-pag-links">
+                <%= will_paginate @teachers %>
+            </div>
+            <div class="admin-back-link">
+                <%= link_to "#{t('admin.control.main_admin')}", admin_path %>
+            </div>
+        </div>
     </div>
 </div>
+    

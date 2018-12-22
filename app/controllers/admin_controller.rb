@@ -9,11 +9,11 @@ class AdminController < ApplicationController
     end
 
     def courses
-        @courses = Course.all 
+        @courses = Course.paginate(page: params[:page], per_page: 10)
     end
 
     def galleries
-        @galleries = Gallery.all
+        @galleries = Gallery.paginate(page: params[:page], per_page: 10)
     end
 
     def grades
@@ -29,35 +29,35 @@ class AdminController < ApplicationController
     end
 
     def news_topics
-        @topics = Topic.all
+        @topics = Topic.paginate(page: params[:page], per_page: 10)
     end
 
     def workshops
-        @workshops = Workshop.all
+        @workshops = Workshop.paginate(page: params[:page], per_page: 10)
     end
 
     def administrators
-        @administrators = User.where(role: 'admin')
+        @administrators = User.where(role: 'admin').paginate(page: params[:page], per_page: 10)
     end
 
     def parents
-        @parents = User.where(role: 'member')
+        @parents = User.paginate(page: params[:page], per_page: 10)
     end
 
     def posts 
-        @posts = Post.all
+        @posts = Post.paginate(page: params[:page], per_page: 10)
     end
 
     def students
-        @students = User.where(role: 'student')
+        @students = User.where(role: 'student').paginate(page: params[:page], per_page: 10)
     end
 
     def sponsored_posts
-        @sponsored_posts = SponsoredPost.all
+        @sponsored_posts = SponsoredPost.paginate(page: params[:page], per_page: 10)
     end
 
     def teachers
-        @teachers = User.where(role: 'teacher')
+        @teachers = User.where(role: 'teacher').paginate(page: params[:page], per_page: 10)
     end
 
 

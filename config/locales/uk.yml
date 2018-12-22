@@ -29,6 +29,10 @@ uk:
     log_in: Логін
     sign_up: Реєструватись
     sign_out: Вийти
+    our_building: Наше Приміщення
+    our_history: Наша Історія
+    our_finances: Наші Фінанси
+    our_organization: Укр Організація
 
   admin:
     control:
@@ -52,6 +56,7 @@ uk:
       room: Кабінет
       time: Час
       author: Автор
+      main_admin: Головна Адмін Сторінка
 
 
 

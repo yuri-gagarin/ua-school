@@ -48,9 +48,10 @@ class SchoolInfosController < ApplicationController
   end
 
   def update
-
-    @school_info.asssign_attributes(school_info_params)
-    @school_info.page_type = params[:page_type].to_i
+    page_params = school_info_params
+    @school_info.title = page_params[:title]
+    @school_info.description = page_params[:description]
+    @school_info.page_type = page_params[:page_type].to_i
 
     respond_to do |format|
       if @school_info.save

@@ -1,4 +1,4 @@
-<%= form_for @school_info_image do |f| %>
+<%= form_for @school_info_image , url: school_info_images_path do |f| %>
 <% if @school_info_image.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@school_info_image.errors.count, "error") %> prohibited this image from being saved:</h2>

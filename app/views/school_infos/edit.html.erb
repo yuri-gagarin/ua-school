@@ -1,6 +1,12 @@
-<h1>Editing School Info</h1>
+<div class="container info-edit-container">
+    
+    <%= render 'form', school_info: @school_info %>
 
-<%= render 'form', school_info: @school_info %>
+    <% if @school_info.id %>
+        <%= render 'image_form', school_info_image: @school_info_image %>
+    <% end %>
 
-<%= link_to 'Show', @school_info %> |
-<%= link_to 'Back', school_infos_path %>
+
+
+    <%= link_to 'Back', school_infos_path %>
+</div>

@@ -43,6 +43,7 @@ en:
       teacher: Teacher
       room: Room
       time: Time
+      main_admin: "Main Admin Page"
 
       new: New
       confirm: Confirm

@@ -1,37 +1,47 @@
-<div class="container">
+<div class="container admin-table-container">
     <div class="row">
     <h3 class="mx-auto">Students</h3>
-    <table class="table w-100">
-        <thead class="thead-inverse">
-        <tr>
-            <th>#</th>
-            <th><%=t('admin.control.name')%></th>
-            <th><%=t('admin.control.last_name')%></th>
-            <th><%=t('admin.control.email')%></th>
-            <th>Role</th>
-            <th><%=t('admin.control.confirmed')%></th>
-            <th><%=t('admin.control.last_sign_in')%></th>
-            <th><%=t('admin.control.sign_in_count')%></th>
-            <th><%=t('admin.control.confirm_user')%></th>
-            <th><%=t('admin.control.delete_user')%></th>
-        </tr>
-        </thead>
-        <% @students.each_with_index do |user, index|%>
-        <tbody>
-        <tr>
-            <td scope="row"><%= (index + 1).to_s %></td>
-            <td><%= user.name %></td>
-            <td><%= user.last_name %></td>
-            <td><%= user.email %></td>
-            <td><%= user.role %></td>
-            <td><%= user.confirmed_at %></td>
-            <td><%= user.last_sign_in_at %></td>
-            <td><%= user.sign_in_count %></td>
-            <td><%= button_to "#{t('admin.control.confirm')}", {controller: "admin", action: "confirm_user", user_id: user.id}, method: :post, class: "btn btn-warning" %></td>
-            <td><%= button_to "#{t('admin..control.delete')}", {controller: "registrations", action: "destroy", user_id: user.id}, method: :delete, class: "btn btn-danger", data: {confirm: "ARE YOU SURE?"} %></td>
-        </tr>
-        </tbody>
-        <% end %>
-    </table>
+        <table class="table w-100">
+            <thead class="thead-inverse">
+            <tr>
+                <th>#</th>
+                <th><%=t('admin.control.name')%></th>
+                <th><%=t('admin.control.last_name')%></th>
+                <th><%=t('admin.control.email')%></th>
+                <th>Role</th>
+                <th><%=t('admin.control.confirmed')%></th>
+                <th><%=t('admin.control.last_sign_in')%></th>
+                <th><%=t('admin.control.sign_in_count')%></th>
+                <th><%=t('admin.control.confirm_user')%></th>
+                <th><%=t('admin.control.delete_user')%></th>
+            </tr>
+            </thead>
+            <% @students.each_with_index do |user, index|%>
+            <tbody>
+            <tr>
+                <td scope="row"><%= (index + 1).to_s %></td>
+                <td><%= user.name %></td>
+                <td><%= user.last_name %></td>
+                <td><%= user.email %></td>
+                <td><%= user.role %></td>
+                <td><%= user.confirmed_at %></td>
+                <td><%= user.last_sign_in_at %></td>
+                <td><%= user.sign_in_count %></td>
+                <td><%= button_to "#{t('admin.control.confirm')}", {controller: "admin", action: "confirm_user", user_id: user.id}, method: :post, class: "btn btn-warning" %></td>
+                <td><%= button_to "#{t('admin..control.delete')}", {controller: "registrations", action: "destroy", user_id: user.id}, method: :delete, class: "btn btn-danger", data: {confirm: "ARE YOU SURE?"} %></td>
+            </tr>
+            </tbody>
+            <% end %>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col back-btn-col">
+            <div class="admin-pag-links">
+                <%= will_paginate @students %>
+            </div>
+            <div class="admin-back-link">
+                <%= link_to "#{t('admin.control.main_admin')}", admin_path %>
+            </div>
+        </div>
     </div>
 </div>

@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="text-center mx-auto">
-            <h3><%=t('admin.edit_index_pages')%></h3>
+            <h3><%=t('admin.edit_informational_pages')%></h3>
             <%= button_to "#{t('admin.control.new')}", {controller: "school_infos", action: "new"}, method: :get, class: "btn btn-success" %>
         </div>
         <table class="table">
@@ -12,6 +12,7 @@
                 <th><%=t('admin.control.title')%></th>
                 <th><%=t('admin.control.created_at')%></th>
                 <th><%=t('admin.control.updated_at')%></th>
+                <th><%=t('admin.control.pictures')%></th>
                 <th><%=t('admin.control.edit')%></th>
                 <th><%=t('admin.control.delete')%></th>
 
@@ -25,6 +26,7 @@
                 <td><%= page.title %></td>
                 <td><%= time_tag(page.created_at) %></td>
                 <td><%= time_tag(page.updated_at) %></td>
+                <td><%= page.school_info_images.length %></td>
                 <td><%= button_to "#{t('admin.control.edit')}", {controller: "school_infos", action: "edit", id: page.slug}, method: :get, class: "btn btn-warning" %></td>
                 <td><%= button_to "#{t('admin.control.delete')}", {controller: "school_infos", action: "destroy", id: page.slug}, method: :delete, class: "btn btn-danger", data: {confirm: "ARE YOU SURE?"} %></td>
             </tr>

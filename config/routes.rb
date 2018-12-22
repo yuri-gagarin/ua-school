@@ -1,11 +1,4 @@
 Rails.application.routes.draw do
-  
-  
-
-  
-  get 'school_info_image/create'
-
-  get 'school_info_image/destroy'
 
   mount Ckeditor::Engine => '/ckeditor'
 
@@ -19,7 +12,9 @@ Rails.application.routes.draw do
     resources :gallery_images, only: [:create, :destroy]
     resources :grade_images, only: [:create, :destroy]
     resources :topic_images, only: [:create, :destroy]
+    resources :school_info_images, only: [:create, :destroy]
     resources :workshop_images, only: [:create, :destroy]
+    
 
 
     resources :grades

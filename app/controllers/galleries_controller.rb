@@ -52,7 +52,6 @@ class GalleriesController < ApplicationController
         end
       end  
     end
-
   end
 
   # PATCH/PUT /galleries/1

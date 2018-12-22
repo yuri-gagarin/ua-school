@@ -226,3 +226,41 @@
         }
     }
 }
+
+.admin-table-container {
+    border: 2px solid rgb(39, 144, 243);
+    border-radius: 20px;
+    margin-top: 50px;
+    .back-btn-col {
+        border-top: 1px solid rgb(39, 144, 243);
+        position: relative;
+        height: 100px;
+        .admin-pag-links {
+            position: absolute;
+            height: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 5%;
+
+        }
+        .admin-back-link {
+            position: absolute;
+            height: 50px;
+            left: 50%;
+            bottom: 5%;
+            transform: translateX(-50%);
+            a {
+                background-color: rgb(39, 144, 243);
+                color: white;
+                line-height: 50px;
+                padding: 10px 20px;
+                //border: 2px solid red;
+                border: 1px solid white;
+                border-radius: 5px;
+                text-decoration: none;
+            }:hover{
+                background-color:  rgb(7, 84, 156);
+            }
+        }
+    }
+}

@@ -2,10 +2,9 @@ $(function () {
     
     $('.friend-column').on('click', function() {
         let current = window.location.href.split('/');
-        window.location.href = current[0] + "/" + this.id;
+        window.location.href = current[0] + "/" + current[3]+ "/" + this.id;
     });
 
-    console.log('here');
     var stickyToggle = function(sticky, stickyWrapper, scrollElement) {
         var stickyHeight = sticky.outerHeight();
         var stickyTop = stickyWrapper.offset().top;

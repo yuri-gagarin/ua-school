@@ -33,15 +33,9 @@
                 <a href="#" data-toggle="modal" data-target="<%=data_target%>">
                   <img src="<%= data.image %>">
                 </a>
-                <div class="modal fade" id="<%= data_id %>" tabindex="-1" role="dialog">
-                  <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                      <div class="modal-body">
-                        <img src="<%= data.image %>">
-                      </div>
-                    </div>
-                  </div>
+                <div class="gal-main-modal" id="<%= data_id %>" tabindex="-1" role="dialog">
+                ` <span class="gal-modal-close">&times;</span>
+                    <img class="gal-modal-content"src="<%= data.image %>">
                 </div>
             </div>
           </div>             
@@ -51,18 +45,12 @@
               <a href="#" data-toggle="modal" data-target="<%=data_target%>">
                 <img src="<%= data.image %>">
               </a>
-                <div class="modal fade" id="<%= data_id%>" tabindex="-1" role="dialog">
-                  <div class="modal-dialog modal-lg" role="document">
-                    <div class="modal-content">
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                      <div class="modal-body">
-                          <img src="<%= data.image %>">
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div class="gal-main-modal" id="<%= data_id %>" tabindex="-1" role="dialog">
+              ` <span class="gal-modal-close">&times;</span>
+                  <img class="gal-modal-content"src="<%= data.image %>">
               </div>
             </div>
+          </div>
           <% end %>
         <% end %>  
         </div>

@@ -1,3 +1,94 @@
 // Place all the styles related to the school_infos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#school-page-intro {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    #school-page-title {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        h3{
+            color: white;
+            font-size: 35px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-align: center;
+            text-decoration: underline;
+            text-underline-position: under;
+        }
+    }
+
+    .school-page-bg-image {
+        background-image: url("/assets/stock/index_post_stock.jpg");
+        position:absolute;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        background-position:center;
+        background-size: cover;
+    }
+    .bg-parallax {
+        background-attachment:fixed;
+    }
+    .overlay:after {
+        content:"";
+        position:absolute;
+        left:0;
+        right:0;
+        top:0;
+        bottom:0;
+        background-image: -webkit-gradient(linear, left top, left bottom, from(#374050), to(#798696));
+        background-image: linear-gradient(to bottom, #374050 0%, #798696 100%);
+        opacity: 0.7;
+    }
+}
+
+.school-page-container {
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 35px;
+    padding-bottom: 60px;
+    border-bottom: 4px solid rgb(92, 138, 207);
+    h3 {
+        border-bottom: 4px solid rgb(92, 138, 207);
+        padding-bottom: 10px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: bold;
+        color: rgb(92, 138, 207);
+    }
+    .index-post-gal-row {
+        margin-top: 30px;
+        border-top: 1px rgb(92, 138, 207);
+    }
+    .gen-back-btn {
+        position: absolute;
+        left: 50%;
+        bottom: -13px;
+        transform: translate(-50%, 0);
+    }
+    
+}
+.form-container {
+    margin-bottom: 10px;
+    .index-post-form-row {
+        margin-top: 30px;
+        border-top: 1px rgb(92, 138, 207);
+        .col {
+            .blog-reply-form {
+                padding-top: 20px;
+                color: green;
+                form {
+                    background-color: rgb(233, 233, 233);
+                    padding: 50px;
+                    border-radius: 10px;
+                }
+            }
+        }  
+    }
+    
+}
