@@ -21,6 +21,7 @@ class AdminController < ApplicationController
     end
 
     def general_info
+        @school_info_pages = SchoolInfo.all
     end
 
     def index_posts

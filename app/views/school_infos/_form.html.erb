@@ -1,0 +1,53 @@
+<%= form_for(@school_info, html: {multipart: true}) do |f| %>
+  <% if @school_info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@school_info.errors.count, "error") %> prohibited this school_info from being saved:</h2>
+
+      <ul>
+      <% @school_info.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_group_tag(@school_info.errors[:title]) do %>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control', placeholder: "...title" %>
+  <% end %>
+  <%= form_group_tag(@school_info.errors[:description]) do %>
+    <%= f.label :description %>
+    <%= f.cktext_area :description, rows: 20, class: 'form-control', placeholder: "...description" %>
+  <% end %>
+  <% if @school_info.slug %>
+    <select name="school_info[page_type]" class="form-control">
+      <option selected="selected" value="<%=@school_info.read_attribute_before_type_cast(:page_type)%>"><%=t("info_page.#{@school_info.slug}")%></option>
+      <option value=0><%=t('info_page.building')%></option>
+      <option value=1><%=t('info_page.finance')%></option>
+      <option value=2><%=t('info_page.organization')%></option>
+      <option value=3><%=t('info_page.history')%></option>
+   </select>
+<% else %>
+  <select name="school_info[page_type]" class="form-control">
+    <option value=0><%=t('info_page.building')%></option>
+    <option value=1><%=t('info_page.finance')%></option>
+    <option value=2><%=t('info_page.organization')%></option>
+    <option value=3><%=t('info_page.history')%></option>
+  </select>
+
+ <% end %>
+
+ <% if @school_info.school_info_images.length > 0 %>
+  <% @school_info.school_info_images.each do |img_row| %>
+      <%= link_to "Delete", school_info_image_path(img_row.id), method: :delete %>
+      <div class="img-preview-control">
+        <img src="<%=img_row.image%>" alt="course image"/>
+      </div>
+  <% end %>
+<% end %>
+
+
+  <div class="form-group">
+    <%= f.submit "Save", class: "btn btn-success"%>
+  </div>
+<% end %>

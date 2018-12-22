@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   
 
   
+  get 'school_info_image/create'
+
+  get 'school_info_image/destroy'
+
   mount Ckeditor::Engine => '/ckeditor'
 
   scope "(:locale)", locale: /en|uk/ do
@@ -22,6 +26,8 @@ Rails.application.routes.draw do
     resources :courses 
     resources :galleries
     resources :workshops
+    resources :school_infos
+
 
     #blog post topics
     resources :topics 

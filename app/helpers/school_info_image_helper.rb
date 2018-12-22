@@ -1,0 +1,2 @@
+module SchoolInfoImageHelper
+end

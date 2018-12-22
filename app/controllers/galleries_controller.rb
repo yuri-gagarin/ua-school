@@ -52,9 +52,6 @@ class GalleriesController < ApplicationController
         end
       end  
     end
-    params.each do |par|
-      puts par 
-    end
 
   end
 

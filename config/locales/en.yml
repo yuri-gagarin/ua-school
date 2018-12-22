@@ -50,6 +50,14 @@ en:
       edit: Edit
       save: Save
       update: Update
+
+  info_page:
+    building: Our Building
+    finance: Finances
+    organization: Organization
+    history: History
+    
+
 will_paginate:
     previous_label: <i class="fa fa-angle-left" style="color:black"></i> Back
     next_label: Forward <i class="fa fa-angle-right" style="color:black"></i>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181218094341) do
+ActiveRecord::Schema.define(version: 20181221161109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -128,6 +128,22 @@ ActiveRecord::Schema.define(version: 20181218094341) do
     t.float    "rank"
     t.index ["topic_id"], name: "index_posts_on_topic_id", using: :btree
     t.index ["user_id"], name: "index_posts_on_user_id", using: :btree
+  end
+
+  create_table "school_info_images", force: :cascade do |t|
+    t.integer  "school_info_id", null: false
+    t.string   "image",          null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "school_infos", force: :cascade do |t|
+    t.string   "title",       null: false
+    t.string   "description", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "page_type",   null: false
+    t.string   "slug"
   end
 
   create_table "sponsored_posts", force: :cascade do |t|

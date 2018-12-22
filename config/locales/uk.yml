@@ -106,7 +106,13 @@ uk:
     about_us: Про Нас
     contact: Контакт
     write_us: Напишіть Нам
-  
+   
+  info_page:
+    building: Наше Приміщення
+    finance: Фінанси
+    organization: Організація
+    history: Історія
+   
   workshops_t:   
     instructor: Інструктор
     details: Деталі

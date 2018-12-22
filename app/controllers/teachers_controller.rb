@@ -1,6 +1,6 @@
 class TeachersController < ApplicationController
   include AuthorizationsHelper
-  before_action :authorize_admin, except: [:show]
+  before_action :authorize_admin, except: [:index, :show]
 
   def index
     @teachers = User.where(role: 'teacher').paginate(:page => params[:page]).order('last_name ASC')
