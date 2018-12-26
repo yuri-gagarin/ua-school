@@ -14,7 +14,7 @@ class TopicsController < ApplicationController
 
     if @topic.save
       flash[:notice] = "Topic was saved succesfully."
-      redirect_to action: :news, controller: :about
+      redirect_to admin_news_topics_path
     else
       flash.now[:alert] = "Error creating a topic. Please try again."
       render :new
@@ -38,7 +38,7 @@ class TopicsController < ApplicationController
 
     if @topic.save
       flash[:notice] = "Topic was updated."
-      redirect_to action: :news, controller: :about
+      redirect_to admin_news_topics_path
     else
       flash.now[:alert] = "Error saving topic. Please try again."
       render :edit
@@ -50,7 +50,7 @@ class TopicsController < ApplicationController
 
     if @topic.destroy
       flash[:notice] = "\"#{@topic.name}\" was deleted succesfully."
-      redirect_to action: :index, controller: :admin
+      redirect_to admin_news_topics_path
     else
       flash.now[:alert] = "There was an error deleting the topic."
       render :show

@@ -40,7 +40,7 @@ class WorkshopsController < ApplicationController
 
         format.html do 
           flash[:notice] = "Workshop was saved"
-          redirect_to admin_path
+          redirect_to admin_workshops_path
         end
         format.json do 
           render json: @workshop 
@@ -61,6 +61,7 @@ class WorkshopsController < ApplicationController
   # PATCH/PUT /workshops/1
   def update
     @workshop = Workshop.find(params[:id])
+    @workshop_image = WorkshopImage.new
     @workshop.assign_attributes(workshop_params)
     respond_to do |format|
       if @workshop.save
@@ -71,7 +72,7 @@ class WorkshopsController < ApplicationController
         end
         format.html do
           flash[:notice] = "Workshop was successfully updated"
-          redirect_to admin_path
+          redirect_to admin_workshops_path
         end
         format.json do 
           render json: @workshop

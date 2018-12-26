@@ -1,7 +1,10 @@
-<div class="container admin-container">
+<div class="container admin-table-container">
     <div class="row">
-        <div class="text-center mx-auto">
-            <h4><%= t('admin.edit_news')%></h4>
+        <h3 class="mx-auto"><%= t('admin.edit_news')%></h3>
+    </div>
+    <div class="row text-center">
+        <div class="col">
+            <%= button_to "#{t('admin.control.new')}", {controller: "topics", action: "new"}, class: "btn btn-success", method: :get %>
         </div>
     </div>
     <div class="row">
@@ -41,7 +44,13 @@
         </table>
     </div>
      <div class="row">
-        <div class="text-center mx-auto">
-        <%=button_to "#{t('admin.control.new')}", new_topic_path, class: "btn btn-success", method: :get %>
+        <div class="col back-btn-col">
+            <div class="admin-pag-links">
+                <%= will_paginate @topics %>
+            </div>
+            <div class="admin-back-link">
+                <%= link_to "#{t('admin.control.main_admin')}", admin_path %>
+            </div>
+        </div>
     </div>
 </div>

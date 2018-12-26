@@ -12,45 +12,45 @@
   <% end %>
 
   <%= form_group_tag(@workshop.errors[:name]) do %>
-    <%= f.label :name %>
-    <%= f.text_field :name, class: 'form-control', placeholder:"...name" %>
+    <%= f.label t('forms.title') %>
+    <%= f.text_field :name, class: 'form-control', placeholder:"...name", value: "#{@workshop.name}" %>
   <% end %>
 
   <%= form_group_tag(@workshop.errors[:price]) do %>
-    <%= f.label :price %>
-    <%= f.text_field :price, class: 'form-control', placeholder: "...price" %>
+    <%= f.label t('forms.price') %>
+    <%= f.text_field :price, class: 'form-control', placeholder: "...price", value: "#{@workshop.price}" %>
   <% end %>
 
   <%= form_group_tag(@workshop.errors[:instructor]) do %>
-    <%= f.label :instructor %>
-    <%= f.text_field :instructor, class: 'form-control', placeholder: "...instructor" %>
+    <%= f.label t('forms.instructor') %>
+    <%= f.text_field :instructor, class: 'form-control', placeholder: "...instructor", value: "#{@workshop.instructor}" %>
   <% end %>
 
   <%= form_group_tag(@workshop.errors[:instructor]) do %>
-    <%= f.label :time %>
-    <%= f.text_field :time, class: 'form-control', placeholder: "...time" %>
+    <%= f.label t('forms.time') %>
+    <%= f.text_field :time, class: 'form-control', value: "#{@workshop.time}" %>
   <% end %>
 
   <%= form_group_tag(@workshop.errors[:instructor]) do %>
-    <%= f.label :room %>
-    <%= f.text_field :room, class: 'form-control', placeholder: "...room" %>
+    <%= f.label t('forms.room') %>
+    <%= f.text_field :room, class: 'form-control', placeholder: "...room" , value: "#{@workshop.room}" %>
   <% end %>
 
   <%= form_group_tag(@workshop.errors[:details]) do %>
-    <%= f.label :details %>
-    <%= f.cktext_area :details, rows: 20, class: 'form-control', placeholder: "...short detail" %>
+    <%= f.label t('forms.details') %>
+    <%= f.cktext_area :details, rows: 20, class: 'form-control', value: "#{@workshop.details}" %>
   <% end %>
 
   <%= form_group_tag(@workshop.errors[:description]) do %>
-    <%= f.label :description %>
-    <%= f.cktext_area :description, rows: 60, class: 'form-control', placeholder: "...description of a new workshop" %>
+    <%= f.label t('forms.description') %>
+    <%= f.cktext_area :description, rows: 60, class: 'form-control', value: "#{@workshop.description}" %>
   <% end %>
 
 <% if @workshop.workshop_images.length > 0 %>
   <div class="row">
   <% @workshop.workshop_images.each do |img_row| %>
     <div class="edit-form-img-thumb">
-      <%= link_to "Delete", workshop_image_path(img_row.id), method: :delete %>
+      <%= link_to "#{t('forms.delete_image')}", workshop_image_path(img_row.id), method: :delete %>
       <div class="img-preview-control">
         <img src="<%=img_row.image%>" alt="workshop_image"/>
       </div>
@@ -60,7 +60,7 @@
 <% end %>
 
 <div class="form-group">
-  <%= f.submit "Save Workshop", class: 'btn btn-success save-workshop-btn' %>
+  <%= f.submit "#{t('forms.save_workshop')}", class: 'btn btn-success save-workshop-btn' %>
 </div>
 
 <% end %>

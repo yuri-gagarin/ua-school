@@ -13,12 +13,12 @@
 
 
   <%= form_group_tag(grade.errors[:level]) do %>
-    <%= f.label :level %>
+    <%= f.label t('forms.grade_level') %>
     <%= select_tag(:level, options_for_select((1..11).step(1).map{|n| [n.ordinalize + " Grade", n.to_i]} ), class: "form-control") %>
   <% end %>
 
   <%= form_group_tag(grade.errors[:description]) do %>
-    <%= f.label :description %>
+    <%= f.label t('forms.description') %>
     <%= f.cktext_area :description, rows: 20, class: 'form-control', placeholder: "description of a new class" %>
   <% end %>
 
@@ -26,7 +26,7 @@
   <div class="row">
     <% @grade.grade_images.each do |img_row| %>
       <div class="edit-form-img-thumb">
-        <%= link_to "Delete", grade_image_path(img_row.id), method: :delete %>
+        <%= link_to "#{t('forms.delete_image')}", grade_image_path(img_row.id), method: :delete %>
         <div class="img-preview-control">
           <img src="<%=img_row.image%>" alt="course image"/>
         </div>
@@ -36,16 +36,9 @@
   <% end %>
 
 
-  
- <%= f.fields_for :image do |ff| %>
-    <div class="field">
-      <%= ff.label :image %><br>
-      <%= ff.file_field :image, multiple: true, name: "grade_images[]" %>
-    </div>
-  <% end %>
 
   <div class="form-group">
-    <%= f.submit "Save Grade", class: 'btn btn-success save-grade-btn'%>
+    <%= f.submit "#{t('forms.save_grade')}", class: 'btn btn-success save-grade-btn'%>
   </div>
 
 <% end %>

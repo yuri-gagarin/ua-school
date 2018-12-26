@@ -13,10 +13,10 @@
   <% end %>
 
   <%= form_group_tag(@workshop_image.errors[:workshop_image]) do %>
-    <%= f.label :image %>
-    <%= f.file_field :image %>
+    <%= f.file_field :image, class: "img-input" %>
+    <%= f.label :choose_an_image, class: "img-input-label" %>
   <% end %>
   <div class="form-group">
-    <%= f.button "Save Image", class: "btn btn-success", name: 'workshop_id', value: @workshop.id %>
+    <%= f.button "#{t('forms.save_image')}", class: "btn btn-success", name: 'workshop_id', value: @workshop.id %>
   </div>
 <% end %>

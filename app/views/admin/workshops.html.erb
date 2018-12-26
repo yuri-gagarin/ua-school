@@ -1,9 +1,15 @@
-<div class="container admin-container">
+<div class="container admin-table-container">
     <div class="row">
-    <div class="text-center mx-auto">
-        <h3><%=t('admin.edit_workshops')%></h3>
-        <%=button_to "#{t('admin.control.new')}", new_workshop_path, class: "btn btn-success", method: :get%>
+        <div class="text-center mx-auto">
+            <h3><%=t('admin.edit_workshops')%></h3>
+        </div>
     </div>
+    <div class="row text-center">
+        <div class="col">
+            <%= button_to "#{t('admin.control.new')}", {controller: "workshops", action: "new"}, class: "btn btn-success", method: :get %>
+        </div>
+    </div>
+    <div class="row">
     <table class="table w-100">
         <thead class="thead-inverse">
         <tr>
@@ -36,5 +42,15 @@
         </tbody>
         <% end %>
     </table>
+    </div>
+    <div class="row">
+        <div class="col back-btn-col">
+            <div class="admin-pag-links">
+                <%= will_paginate @workshops %>
+            </div>
+            <div class="admin-back-link">
+                <%= link_to "#{t('admin.control.main_admin')}", admin_path %>
+            </div>
+        </div>
     </div>
 </div>

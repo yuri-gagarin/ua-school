@@ -1,7 +1,10 @@
-<div class="container admin-container">
+<div class="container admin-table-container">
     <div class="row">
-        <div class="text-center mx-auto">
-            <h4><%= t('admin.edit_grades')%></h4>
+        <h3 class="text-center"><%= t('admin.edit_grades')%></h3>
+    </div>
+    <div class="row text-center">
+        <div class="col">
+            <%= button_to "#{t('admin.control.new')}", {controller: "topics", action: "new"}, class: "btn btn-success", method: :get %>
         </div>
     </div>
     <div class="row">

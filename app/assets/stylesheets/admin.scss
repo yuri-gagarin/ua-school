@@ -23,7 +23,6 @@
 
 .admin-users-container {
     margin-top: 25px;
-    border: 2px solid rgb(12, 102, 187);
     border-radius: 10px;
     padding: 0px 20px 10px 20px;
     .row {
@@ -63,7 +62,6 @@
 }
 .admin-courses-container {
     margin-top: 25px;
-    border: 2px solid rgb(12, 102, 187);
     border-radius: 10px;
     padding: 0px 20px 10px 20px;
     .row {
@@ -102,9 +100,8 @@
         }
     }
 }
-.admin-users-container {
+.admin-workshops-container {
     margin-top: 25px;
-    border: 2px solid rgb(12, 102, 187);
     border-radius: 10px;
     padding: 0px 20px 10px 20px;
     .row {
@@ -145,7 +142,6 @@
 }
 .admin-news-container {
     margin-top: 25px;
-    border: 2px solid rgb(12, 102, 187);
     border-radius: 10px;
     padding: 0px 20px 10px 20px;
     .row {
@@ -186,7 +182,6 @@
 
 .admin-pages-container {
     margin-top: 25px;
-    border: 2px solid rgb(12, 102, 187);
     border-radius: 10px;
     padding: 0px 20px 10px 20px;
     margin-bottom: 85px;
@@ -228,9 +223,9 @@
 }
 
 .admin-table-container {
-    border: 2px solid rgb(39, 144, 243);
     border-radius: 20px;
     margin-top: 50px;
+    margin-bottom: 50px;
     .back-btn-col {
         border-top: 1px solid rgb(39, 144, 243);
         position: relative;

@@ -33,6 +33,47 @@ uk:
     our_history: Наша Історія
     our_finances: Наші Фінанси
     our_organization: Укр Організація
+  forms:
+    name: Імя
+    last_name: Фамілія
+    title: Назва
+    details: Короткі Деталі
+    description: Описання
+    email: Емайл
+    password: Пароль
+    password_confirmation: Підтевердження Паролю
+    grade: Клас
+    user_image: Аватар Користивача
+    choose_file: Вибрати Файл
+    save: Зберегти
+    update: Редагувати
+    delete: Стерти
+    save_image: Зберегти Фото
+    delete_image: Стерти Фото
+    price: Ціна
+    instructor: Інструктор
+    teacher: Вчитель
+    time: Час
+    room: Кімната
+    back: Назад
+    category: Категорія
+    image: Фотографія
+    grade_level: Рівень Класу
+    save_topic: Зберегти Новину
+    save_workshop: Зберегти Гурток
+    save_grade: Зберегти Клас
+    save_course: Зберегти Предмет
+    editing: Редагую
+    editing_course: Редагую Предмет
+    editing_grade: Редагую Клас
+    editing_workshop: Редагую Гурток
+    editing_post: Редагую Завдання
+    image_uploader: Завантажувач Фотографій
+
+    
+    
+    
+    
 
   admin:
     control:

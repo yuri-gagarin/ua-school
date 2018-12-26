@@ -29,7 +29,7 @@ class AdminController < ApplicationController
     end
 
     def news_topics
-        @topics = Topic.paginate(page: params[:page], per_page: 10)
+        @topics = Topic.paginate(page: params[:page], per_page: 5).order("created_at DESC")
     end
 
     def workshops

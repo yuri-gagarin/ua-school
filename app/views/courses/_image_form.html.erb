@@ -13,11 +13,11 @@
   <% end %>
 
   <%= form_group_tag(@course_image.errors[:course_image]) do %>
-    <%= f.label :image %>
+    <%= f.label t('forms.image') %>
     <%= f.file_field :image %>
   <% end %>
 
   <div class="form-group">
-    <%= f.button "Save Image", class: "btn btn-success", name: 'course_id', value: @course.id %>
+    <%= f.button "#{t('forms.save_image')}", class: "btn btn-success", name: 'course_id', value: @course.id %>
   </div>
 <% end %>

@@ -1,5 +1,5 @@
 <div class="container gallery-edit-container">
-    <h1>Editing <%=@grade.level.ordinalize + " Grade"%></h1>
+    <h1>Editing <%=@grade.level.ordinalize + " #{t('forms.grade')}"%></h1>
 
     <div class="row">
         <%= render 'form', grade: @grade %>
