@@ -14,5 +14,6 @@ module Bloccit
     config.autoload_paths << File.join(config.root, "lib")
     config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
     config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
+    config.i18n.default_locale = :'uk'
   end
 end

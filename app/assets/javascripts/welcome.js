@@ -2,7 +2,7 @@ $(function () {
     
     $('.friend-column').on('click', function() {
         let current = window.location.href.split('/');
-        window.location.href = current[0] + "/" + current[3]+ "/" + this.id;
+        window.location.href = current[0] + "/" + "uk" + "/" + this.id;
     });
 
     var stickyToggle = function(sticky, stickyWrapper, scrollElement) {
@@ -34,5 +34,13 @@ $(function () {
         stickyToggle(sticky, stickyWrapper, $(window));
       });
       
+
+      $( '.dropdown' ).on( 'show.bs.dropdown', function() {
+        $( this ).find( '.dropdown-menu' ).first().stop( true, true ).slideDown( 150 );
+      } );
+      $('.dropdown').on( 'hide.bs.dropdown', function(){
+        $( this ).find( '.dropdown-menu' ).first().stop( true, true ).slideUp( 150 );
+      } );
+
      
 }); 

@@ -51,6 +51,42 @@ en:
       edit: Edit
       save: Save
       update: Update
+  forms:
+    name: First Name
+    last_name: Last Name
+    title: Title
+    details: Short Details
+    description: Detailed Description
+    email: Email
+    password: Password
+    password_confirmation: Password Confirmation
+    grade: Grade 
+    user_image: User Image
+    choose_file: Choose File
+    save: Save
+    update: Update
+    delete: Delete
+    save_image: Save Image
+    delete_image: Delete Image
+    price: Price
+    instructor: Instructor
+    teacher: Teacher
+    time: Time
+    room: Toom Number
+    back: Back
+    category: Category
+    image: Picture
+    grade_level: Grade Level
+    save_topic: Save News Topic
+    save_workshop: Save Workshop
+    save_grade: Save Grade
+    save_course: Save Course
+    editing: Editing
+    editing_course: Editing Course
+    editing_grade: Editing Class
+    editing_workshop: Editing Workshop
+    editing_post: Editing Post
+    image_uploader: Image Uploader
 
   info_page:
     building: Our Building

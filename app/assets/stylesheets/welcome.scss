@@ -262,3 +262,16 @@
   }
 }
 
+.announcements-header {
+  position: relative;
+  .index-spacer {
+    position: absolute;
+    width: 100%;
+    border: 2px solid rgb(92, 138, 207);
+    top: 30%;
+  }
+  .news-index-header  {
+    background: white;
+  }
+}
+

@@ -123,43 +123,29 @@ html, body {
     margin-left: -50px;
     z-index: 1000;
   }
-  .dropdown {
-      .dropdown-menu {
-      -webkit-transition: all 0.4s;
-      -moz-transition: all 0.4s;
-      -ms-transition: all 0.4s;
-      -o-transition: all 0.4s;
-      transition: all 0.4s;
-    
-      max-height: 0;
-      display: block;
-      overflow: hidden;
-      opacity: 0;
-      background-color: white;
-      padding-top: 0px;
-      padding-bottom: 0px;
-      a {
-        color: rgb(26, 40, 63);
-        font-weight: bold;
-        padding: 18px 12px 18px 12px;
-      }:hover {
-        background-color:rgb(234, 242, 255);
-        opacity: 1;
-      }
-      .dropdown-divider {
-        border-color: rgb(54, 117, 219);
-        margin-top: 0px;
-        margin-bottom: 0px;
-      }
-    }
-  }
-  .dropdown:hover {
+  .navbar-nav {
     .dropdown-menu {
-      max-height: 500px;
-      opacity: 1;
+      //position: static;
+      float: none;
+      width: auto;
+      height: auto;
+      margin-top: 0;
+      background-color: white;
+      border: 0;
+      overflow: wrap;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      li {
+         a {
+          line-height: 20px;
+          padding: 18px 12px 18px 12px;
+        }
+      }
     }
   }
 }
+
+
 .navbar-second .navbar-nav > li > a {padding-top: 25px !important; padding-bottom: 25px !important;}
 
 
