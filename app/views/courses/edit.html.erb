@@ -1,11 +1,25 @@
-<div class="container course-edit-container">
-    <h1><%=t('forms.editing_course')%></h1>
+<div class="container general-edit-container">
+    <h1 class="text-center"><%= t('forms.editing')%> "<%=@course.name%>"</h1>
+    <div class="row">
+        <%= render 'form', course: @course %>
+    </div>
 
-    <%= render 'form', course: @course %>
+    <% if @course.id != nil %>
+    <div class="row">
+      <h5><%=t('forms.image_uploader')%></h3>
+    </div>
+    <div class="row">
+      <%= render 'image_form', image: @image %>
+    </div>
+  <% end %>
 
-    <%= render 'image_form', course_image: @course_image %>
+  <div class="row">
+    <div class="form-back-btn">
+      <%= link_to "#{t('forms.back')}", admin_courses_path %>
+    </div>
+  </div>
 
-
-    <%= link_to 'Show', @course %> |
-    <%= link_to 'Back', courses_path %>
+    <div class="strikethrough">
+    </div>
+  </div>
 </div>

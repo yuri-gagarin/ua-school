@@ -1,22 +1,24 @@
-<%= form_for @workshop_image do |f| %>
+<div class="image-form">
+  <%= form_for @workshop_image do |f| %>
 
-<% if @workshop_image.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@workshop_image.errors.count, "error") %> prohibited this course from being saved:</h2>
+  <% if @workshop_image.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@workshop_image.errors.count, "error") %> prohibited this course from being saved:</h2>
 
-      <ul>
-      <% @workshop_image.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @workshop_image.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= form_group_tag(@workshop_image.errors[:workshop_image]) do %>
+      <%= f.label t('forms.image') %>
+      <%= f.file_field :image, class: "form-image-input" %>
+    <% end %>
+    <div class="form-group">
+      <%= f.button "#{t('forms.save_image')}", class: "btn btn-success", name: 'workshop_id', value: @workshop.id %>
     </div>
-  <% end %>
-
-  <%= form_group_tag(@workshop_image.errors[:workshop_image]) do %>
-    <%= f.file_field :image, class: "img-input" %>
-    <%= f.label :choose_an_image, class: "img-input-label" %>
-  <% end %>
-  <div class="form-group">
-    <%= f.button "#{t('forms.save_image')}", class: "btn btn-success", name: 'workshop_id', value: @workshop.id %>
-  </div>
 <% end %>
+</div>

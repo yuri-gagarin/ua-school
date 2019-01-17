@@ -12,16 +12,6 @@
   <% end %>
 
   <%= form_group_tag(course.errors[:name]) do %>
-    <%= f.label t('forms.title') %>
-    <%= f.text_field :name, class: 'form-control', placeholder: "Name of a new class" %>
-  <% end %>
-
-  <%= form_group_tag(course.errors[:description]) do %>
-    <%= f.label t('forms.description') %>
-    <%= f.cktext_area :description, rows: 20, class: 'form-control', placeholder: "description of a new class" %>
-  <% end %>
-
-  <%= form_group_tag(course.errors[:name]) do %>
     <%= f.label t('forms.room') %>
     <%= f.text_field :room, class: 'form-control', placeholder: "" %>
   <% end %>
@@ -41,18 +31,31 @@
     <%= collection_select(:grade, :grade_id, @grades, :id, :id, prompt: true, class: 'dropdown', selected: course.grade_id) %>
   </div>
 
-
-  <% if @course.course_images.length > 0 %>
-  <%   @course.course_images.each do |img_row| %>
-      <%= link_to "#{t('forms.delete')}", course_image_path(img_row.id), method: :delete %>
-      <div class="img-preview-control">
-        <img src="<%=img_row.image%>" alt="course image"/>
-      </div>
-  <%   end %>
+  <%= form_group_tag(course.errors[:name]) do %>
+    <%= f.label t('forms.title') %>
+    <%= f.text_field :name, class: 'form-control', placeholder: "Name of a new class" %>
   <% end %>
 
+  <%= form_group_tag(course.errors[:description]) do %>
+    <%= f.label t('forms.description') %>
+    <%= f.cktext_area :description, rows: 20, class: 'form-control', placeholder: "description of a new class" %>
+  <% end %>
+
+  <% if @course.course_images.length > 0 %>
+    <div class="row">
+    <% @course.course_images.each do |img_row| %>
+        <div class="edit-form-img-thumb">
+          <%= link_to "#{t('forms.delete_image')}", course_image_path(img_row.id), method: :delete, data: {confirm: "Are you Sure?"}%>
+          <div class="img-preview-control">
+            <img src="<%=img_row.image%>" alt="course image"/>
+          </div>
+        </div>
+    <%   end %>
+    </div>
+   <% end %>
+
   <div class="form-group">
-    <%= f.submit "#{t('forms.save_course')}", class: 'btn btn-success' %>
+    <%= f.submit "#{t('forms.save_course')}", class: 'btn btn-success save-form-btn' %>
   </div>
 
 <% end %>

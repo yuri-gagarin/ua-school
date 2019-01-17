@@ -1,3 +1,4 @@
+<div class="image-form">
 <%= form_for @grade_image do |f| %>
 
 <% if @grade_image.errors.any? %>
@@ -13,11 +14,12 @@
   <% end %>
 
   <%= form_group_tag(@grade_image.errors[:grade_image]) do %>
-    <%= f.label :image %>
-    <%= f.file_field :image %>
+    <%= f.label t('forms.image') %>
+    <%= f.file_field :image, class: "form-image-input" %>
   <% end %>
 
   <div class="form-group">
     <%= f.button "#{t('forms.save_image')}", class: "btn btn-success", name: 'grade_id', value: @grade.id %>
   </div>
 <% end %>
+</div>

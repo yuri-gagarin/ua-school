@@ -76,6 +76,7 @@ class CoursesController < ApplicationController
     @teachers = User.where(role: 'teacher')
     @grades = Grade.order(level: "ASC")
     @course = Course.find(params[:id])
+    @course_image = CourseImage.new
     @course.user_id = params[:course_instructor][:user_id]
     @course.grade_id = params[:grade][:grade_id]
     @course.assign_attributes(course_params)

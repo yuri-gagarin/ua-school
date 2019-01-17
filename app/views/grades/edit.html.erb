@@ -1,14 +1,13 @@
-<div class="container gallery-edit-container">
-    <h1>Editing <%=@grade.level.ordinalize + " #{t('forms.grade')}"%></h1>
+<div class="container general-edit-container">
+    <h1 class="text-center"><%= t('forms.editing')%> <%=@grade.level.ordinalize + " #{t('forms.grade')}"%></h1>
 
     <div class="row">
         <%= render 'form', grade: @grade %>
     </div>
 
     <% if @grade.id != nil %>
-
     <div class="row">
-         <h3>Image Uploader</h3>
+      <h5><%=t('forms.image_uploader')%></h3>
     </div>
 
     <div class="row">
@@ -17,9 +16,10 @@
 
     <% end %>
     <div class="row">
-        <div class="gallery-back-btn">
+        <div class="form-back-btn">
             <%= link_to 'Back', admin_path %>
         </div>
     </div>
+    <div class="strikethrough">
 </div>
 <br>

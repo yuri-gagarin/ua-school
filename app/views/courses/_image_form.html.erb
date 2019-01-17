@@ -1,23 +1,25 @@
-<%= form_for @course_image do |f| %>
+<div class="image-form">
+  <%= form_for @course_image do |f| %>
 
-<% if @course_image.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@course_image.errors.count, "error") %> prohibited this course from being saved:</h2>
+  <% if @course_image.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@course_image.errors.count, "error") %> prohibited this course from being saved:</h2>
 
-      <ul>
-      <% @course_image.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @course_image.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= form_group_tag(@course_image.errors[:course_image]) do %>
+      <%= f.label t('forms.image') %>
+      <%= f.file_field :image, class: "form-image-input" %>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.button "#{t('forms.save_image')}", class: "btn btn-success", name: 'course_id', value: @course.id %>
     </div>
   <% end %>
-
-  <%= form_group_tag(@course_image.errors[:course_image]) do %>
-    <%= f.label t('forms.image') %>
-    <%= f.file_field :image %>
-  <% end %>
-
-  <div class="form-group">
-    <%= f.button "#{t('forms.save_image')}", class: "btn btn-success", name: 'course_id', value: @course.id %>
-  </div>
-<% end %>
+</div>
