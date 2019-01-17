@@ -99,7 +99,8 @@ uk:
       author: Автор
       main_admin: Головна Адмін Сторінка
 
-
+      confirmed: Затвердити
+      user_confirmed: Затвердженний
 
       new: Новий
       confirm: Затвердити

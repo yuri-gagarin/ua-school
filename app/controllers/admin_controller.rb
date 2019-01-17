@@ -37,7 +37,7 @@ class AdminController < ApplicationController
     end
 
     def administrators
-        @administrators = User.where(role: 'admin').paginate(page: params[:page], per_page: 10)
+        @administrators = User.where(role: 'admin').reorder(email: :asc).paginate(page: params[:page], per_page: 10)
     end
 
     def parents
@@ -49,7 +49,7 @@ class AdminController < ApplicationController
     end
 
     def students
-        @students = User.where(role: 'student').paginate(page: params[:page], per_page: 10)
+        @students = User.where(role: 'student').reorder(email: :asc).paginate(page: params[:page], per_page: 10)
     end
 
     def sponsored_posts
@@ -57,13 +57,21 @@ class AdminController < ApplicationController
     end
 
     def teachers
-        @teachers = User.where(role: 'teacher').paginate(page: params[:page], per_page: 10)
+        @teachers = User.where(role: 'teacher').reorder(email: :asc).paginate(page: params[:page], per_page: 10)
     end
 
 
 
     def confirm_user
-        @user_id = params[:user_id]
-        puts @user_id
+        @user = User.find(params[:user_id])
+        puts @user.approved
+        @user.approved = true
+        if @user.save 
+            flash[:notice] = "Confirmed User"
+            redirect_back(fallback_location: admin_path)
+        else 
+            flash[:notice] = "Error Confirming user"
+            redirect_back(fallback_location: admin_path)
+        end
     end
 end

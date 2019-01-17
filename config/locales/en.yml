@@ -45,6 +45,9 @@ en:
       time: Time
       main_admin: "Main Admin Page"
 
+      confirm: Confirm
+      user_confirmed: User Confirmed
+
       new: New
       confirm: Confirm
       delete: Delete

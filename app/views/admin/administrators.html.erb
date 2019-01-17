@@ -28,7 +28,11 @@
             <td><%= time_tag(user.confirmed_at) %></td>
             <td><%= time_tag(user.last_sign_in_at) %></td>
             <td><%= user.sign_in_count %></td>
-            <td><%= button_to "#{t('admin.control.confirm')}", {controller: "admin", action: "confirm_user", user_id: user.id}, method: :post, class: "btn btn-warning" %></td>
+            <% if user.approved %>
+                <td><%=t('admin.control.user_confirmed')%></td>
+            <% else %>
+                <td><%= button_to "#{t('admin.control.confirm')}", {controller: "admin", action: "confirm_user", user_id: user.id}, method: :post, class: "btn btn-warning", data: {confirm: "#{t('admin.control.confirm')}"} %></td>
+            <% end %>
             <td><%= button_to "#{t('admin..control.delete')}", {controller: "registrations", action: "destroy", user_id: user.id}, method: :delete, class: "btn btn-danger", data: {confirm: "ARE YOU SURE?"} %></td>
         </tr>
         </tbody>
