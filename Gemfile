@@ -45,6 +45,10 @@ group :production do
 
  #devise authentication
  gem 'devise'
+
+ #eu-cookies
+ gem 'cookies_eu'
+
  
  #uploader and cloudinary
  gem 'carrierwave'

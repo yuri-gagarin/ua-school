@@ -275,3 +275,41 @@
   }
 }
 
+/* main div */
+.cookies-eu  
+  {
+    height: 200px;
+    background-color: rgb(92, 138, 207) !important;
+
+  }
+/* content holder */              
+.cookies-eu-content-holder{
+  color: white;
+}  
+/* button holder */
+.cookies-eu-button-holder   {}
+/* button */
+.cookies-eu-ok {
+  width: 100px;
+  height: 50px;
+  display: block;
+  color: orange;
+  text-transform: uppercase;
+  background: #ffffff;
+  padding: 12px 30px;
+  border: 3px solid orange !important;
+  border-radius: 6px;
+  &:hover {
+    border-color: rgb(92, 138, 207);
+    color: rgb(92, 138, 207);
+    border-radius: 20px;
+    transition: all 0.3s ease 0s; 
+  }
+}
+ /* link */          
+.cookies-eu-link   {
+  color: white;
+  &:hover {
+    color: yellow;
+  }          
+}

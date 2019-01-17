@@ -15,4 +15,6 @@
 //= require popper
 //= require bootstrap
 //= require ckeditor/init
+//= require cookies_eu
+
 //= require_tree .
