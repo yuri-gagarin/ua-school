@@ -85,4 +85,9 @@ class AdminController < ApplicationController
             redirect_back(fallback_location: admin_path)
         end
     end
+
+    private
+    def user_confirm
+        params.require(:user).permit(:approved)
+    end
 end
