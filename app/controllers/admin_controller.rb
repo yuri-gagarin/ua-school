@@ -64,13 +64,24 @@ class AdminController < ApplicationController
 
     def confirm_user
         @user = User.find(params[:user_id])
-        puts @user.approved
         @user.approved = true
         if @user.save 
             flash[:notice] = "Confirmed User"
             redirect_back(fallback_location: admin_path)
         else 
             flash[:notice] = "Error Confirming user"
+            redirect_back(fallback_location: admin_path)
+        end
+    end
+
+    def freeze_user
+        @user = User.find(params[:user_id])
+        @user.approved = false
+        if @user.save 
+            flash[:notice] = "Frozen User"
+            redirect_back(fallback_location: admin_path)
+        else
+            flash[:notice] = "Error freezing user. Consider Delete"
             redirect_back(fallback_location: admin_path)
         end
     end

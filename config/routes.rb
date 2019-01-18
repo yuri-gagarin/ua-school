@@ -55,7 +55,8 @@ Rails.application.routes.draw do
     get "/admin/students", to: "admin#students"
     get "/admin/teachers", to: "admin#teachers"
 
-    post "admin/confirm_user" => "admin#confirm_user"
+    post "admin/confirm_user", to: "admin#confirm_user"
+    post "admin/freeze_user", to: "admin#freeze_user"
   
     get 'about' => 'welcome#about'
     get 'index' => 'welcome#index'
