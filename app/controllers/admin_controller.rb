@@ -41,7 +41,7 @@ class AdminController < ApplicationController
     end
 
     def parents
-        @parents = User.paginate(page: params[:page], per_page: 10)
+        @parents = User.where(role: 'member').reorder(email: :asc).paginate(page: params[:page], per_page: 10)
     end
 
     def posts 
