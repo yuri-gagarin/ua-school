@@ -8,75 +8,69 @@
   font-family: 'Academic';
   src: url('academic.ttf') format('truetype');
   
-  }
+}
 
 .main-container {
   padding: 0%;
   position: relative;
 }
 #frontCarousel {
+  margin: 0;
+  width: 100%;
   li {
     background-color: #f9cf00;
   }
-}
-
-.carousel-item {
-  position: relative;
-  .carousel-title {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 3;
-    .carousel-caption-1 {
-      position: relative;
-      padding: 10px 20px;
-      .car-heading-top {
-        font-family: Lobster;
-        font-size: 25px;
-        color: white;
-        position: absolute;
-        left: 20px;
-      }
-      .car-heading-middle {
-        font-size: 125px;
-        font-family: Georgia;
-        color: #d6b81e;
-        letter-spacing: 1px;
-        font-weight: bold;
-      }
-      .car-heading-bottom {
-        font-family: Lobster;
-        font-size: 25px;
-        color: white;
-        position: absolute;
-        right: 20px;
-        bottom: 20px;
+  .carousel-item {
+    .carousel-title {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      .carousel-caption-1 {
+        position: relative;
+        padding: 10px 20px;
+        .car-heading-top {
+          font-family: Lobster;
+          font-size: 25px;
+          color: white;
+          position: absolute;
+          left: 20px;
+        }
+        .car-heading-middle {
+          font-size: 125px;
+          font-family: Georgia;
+          color: #d6b81e;
+          letter-spacing: 1px;
+          font-weight: bold;
+        }
+        .car-heading-bottom {
+          font-family: Lobster;
+          font-size: 25px;
+          color: white;
+          position: absolute;
+          right: 20px;
+          bottom: 20px;
+        }
       }
     }
   }
-}
-.carousel-item:after {
-  content:"";
-  display:block;
-  position:absolute;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
-  background:rgba(68, 56, 3, 0.527);
-  z-index: 1;
+  .carousel-item:after {
+    content:"";
+    display:block;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background:rgba(68, 56, 3, 0.527);
+    z-index: 1;
+  }
 }
 
-
-
-#frontCarousel {
-  margin: 0;
-  width: 100%;
-}
 .carousel-fade .carousel-item {
   opacity: 0;
-  transition-duration: 2s;
+  transition-duration: 6s;
   transition-property: opacity;
  }
  
@@ -99,6 +93,8 @@
   transform: translateX(0);
   transform: translate3d(0, 0, 0);
  }
+
+
 //announcements front page
 
 .announcements-header {
@@ -116,7 +112,7 @@
 }
 
 .announcements-row {
-  margin: 20px 10% 10px 10%;
+  margin: 20px 5% 10px 5%;
   .card {
     margin-bottom: 20px;
     .card-img-top {
@@ -130,8 +126,7 @@
       .card-img {
         width: 100%;
         //overflow: hidden;
-        width: 100%;
-        height: 15vw;
+        height: 225px;
         object-fit: cover;
       } 
     }
@@ -276,20 +271,24 @@
 }
 
 /* main div */
-.cookies-eu  
+.eu-cookie-div
   {
-    height: 150px;
+    height: 190px;
+    width: 100vw;
     background-color: rgb(92, 138, 207) !important;
     opacity: 0.9;
-
+    position: fixed !important;
+    top: 0px !important;
+    z-index: 999 !important;
   }
 /* content holder */              
 .cookies-eu-content-holder{
   color: white;
-  position: relative;
 }  
 /* button holder */
-.cookies-eu-button-holder   {}
+.cookies-eu-button-holder   {
+
+}
 /* button */
 .cookies-eu-ok {
   width: 100px;
@@ -325,3 +324,49 @@
     color: yellow;
   }          
 }
+
+
+
+
+@media screen and (max-width: 769px) {
+  .announcements-row {
+    .card {
+      .card-img-top {
+        position: relative;
+        display:block;
+        a{
+          position: relative;
+          opacity: 0.7;
+          z-index: 10;
+        }
+        .card-img {
+          width: 100%;
+          height: 250px;
+          object-fit: cover;
+        } 
+      }
+      .card-title { 
+        a {
+          font-family: Georgia, 'Times New Roman', Times, serif;
+          font-weight: bold;
+        }
+      }
+      .card-body {
+        margin-top: -10px;
+        padding-bottom: 0px;
+      }
+      .card-time {
+        float: left;
+        color: green;
+        display: block;
+      }
+      .card-author {
+        float: right;
+        color: orange;
+        display: block;
+      }
+    }
+  }
+}
+
+

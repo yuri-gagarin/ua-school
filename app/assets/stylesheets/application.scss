@@ -38,6 +38,7 @@ html, body {
   height: 100%;
   width: 100%;
   background-color:  white;
+  //overflow-x: hidden;
 }
 
 @media only screen and (min-width: 700px) {
@@ -73,7 +74,35 @@ html, body {
 @media only screen and (min-width: 767px) {
   .navbar-second {
     max-height: 65px;
+  }
+  .sticky.is-sticky {
+    background-color: rgb(101, 172, 219) !important;
+    min-height: 0 !important;
+    opacity: 1;
+    transition: background-color 0.5s linear;
+    transition: min-height 0.5s linear;
+    .navbar-nav {
+      li {
+        a {padding-top: 30px !important; padding-bottom: 10px !important;}
+      }
+    }
   }  
+
+  .navbar-second { 
+    -webkit-transition:padding 0.2s ease;
+    -moz-transition:padding 0.2s ease; 
+    -o-transition:padding 0.2s ease;        
+    transition:padding 0.2s ease;  
+  }
+  
+  
+  .sticky {
+    padding-top: 0.2em !important;
+    padding-bottom: 0.2em !important;
+    background-color: #0b3f7a;
+    min-height: 80px !important;
+    opacity: 1;
+  }
 }
 @media only screen and (max-width: 767px) {
   .navbar-second {
@@ -169,37 +198,13 @@ html, body {
 }
 
 
-.navbar-second { 
-  -webkit-transition:padding 0.2s ease;
-  -moz-transition:padding 0.2s ease; 
-  -o-transition:padding 0.2s ease;        
-  transition:padding 0.2s ease;  
-}
 
 
-.sticky {
-  padding-top: 0.2em !important;
-  padding-bottom: 0.2em !important;
-  background-color: #0b3f7a;
-  min-height: 80px !important;
-  opacity: 1;
-}
 
-.sticky.is-sticky {
-  background-color: rgb(101, 172, 219) !important;
-  min-height: 0 !important;
-  opacity: 1;
-  transition: background-color 0.5s linear;
-  transition: min-height 0.5s linear;
-  .navbar-nav {
-    li {
-      a {padding-top: 30px !important; padding-bottom: 10px !important;}
-    }
-  }
-}
 footer {
   background-color: #f9cf00;
-  position: fixed;
+  position: absolute;
+  z-index: 10;
   bottom: 0;
 }
 
@@ -325,4 +330,3 @@ footer {
 }
 
 
-@import 'cookies_eu';

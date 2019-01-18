@@ -42,5 +42,14 @@ $(function () {
         $( this ).find( '.dropdown-menu' ).first().stop( true, true ).slideUp( 150 );
       } );
 
+      $( window ).resize(function() {
+        if($(window).width() > 500 && $(window).width() <= 1024) {
+          $('.announcements-row').addClass("no-gutters");
+        } 
+        else {
+          $('.announcements-row').removeClass("lg-2x");
+        }
+      });
+
      
 }); 

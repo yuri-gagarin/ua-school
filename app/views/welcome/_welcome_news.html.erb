@@ -1,6 +1,6 @@
 <% @news_topics.each do |topic_item| %>
-  <div class="col-lg-4 col-md-4 col-sm-12 d-flex align-items-stretch">
-    <div class="card">
+  <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 d-flex">
+    <div class="card flex-fill">
       <div class="card-img-top">
         <%if topic_item.topic_images.length > 0 %>
           <% topic_image = topic_item.topic_images[0] %>
