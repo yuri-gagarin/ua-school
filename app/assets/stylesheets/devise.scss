@@ -1,4 +1,30 @@
 //users#edit
+
+@media screen and (max-width: 769px) {
+    .login-container {
+        position: absolute;
+        left: 0;
+        width: 100% !important;
+        height: 100vh !important;
+        margin: 0px 0px !important;
+        padding: 0px 0px;
+        background: white !important;
+        form {
+            padding: 0px;
+            width: 100%;
+        }
+    }
+    .login-links-container {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0px 0px;
+        background: white !important;
+        .login-links {
+            width: 100% !important;
+        }
+    }
+}
+
 .edit-usr-avatar {
     img {
         height: 100px;

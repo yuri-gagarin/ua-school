@@ -40,7 +40,7 @@ html, body {
   background-color:  white;
 }
 
-@media only screen and (min-width: 576px) {
+@media only screen and (min-width: 700px) {
   .navbar-first {
     min-height: 10px;
     padding-right: 0px;
@@ -70,12 +70,12 @@ html, body {
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 767px) {
   .navbar-second {
     max-height: 65px;
   }  
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .navbar-second {
     #school-logo {
       display: none;

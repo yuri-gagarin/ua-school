@@ -1,6 +1,7 @@
 <% if cookies && cookies['cookie_eu_consented'] != 'true' %>
   <div class="cookies-eu js-cookies-eu">
-    <span class="cookies-eu-content-holder"><%= t('cookies_eu.cookies_text') %> All of the description for the cookie disclaimer here</span>
+    <span class="cookies-eu-content-holder">We use cookies to improve our service for you. You can find more information in our data protection declaration.
+    </span>
     <span class="cookies-eu-button-holder">
         <button class="cookies-eu-ok js-cookies-eu-ok"> <%= t('cookies_eu.ok') %> </button>
     <% if defined?(link).present? %>
